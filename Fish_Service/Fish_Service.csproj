@@ -58,4 +58,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)\WX_Store\bin\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
