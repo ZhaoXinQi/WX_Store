@@ -4,13 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WxShop_Model;
-using Fish_IRepository;
 using IBaseService;
 namespace WX_Store.Controllers
 {
     public class HomeController : Controller
     {
-        private IBannerService BannerService { get; set; }
+        public IBannerService BannerService { get; set; }//这里需要用public  依赖注入
         // GET: Home
         public ActionResult Index()
         {
