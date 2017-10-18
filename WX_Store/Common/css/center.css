@@ -1,0 +1,442 @@
+@charset "utf-8";
+/* CSS Document */
+b{ font-weight: normal;}
+input:focus{ outline: none;}
+select:focus{ outline: none;}
+textarea:focus{ outline: none;}
+i,em{font-style: normal;}
+
+
+/**个人中心首页**/
+.centerindex{}
+.centerindex .geren{ background-image: url("../images/centerbg_01.jpg"); background-size: 100% 100%; padding:20px 15px; position: relative;}
+.centerindex .geren .imga{ display: block; width: 100px; height: 100px; overflow: hidden; border-radius: 50%; margin: 0 auto; cursor: pointer; }
+.centerindex .geren .imga img{ display:block; width: 100px; height: 100px; overflow: hidden;}
+.centerindex .geren .name{ display: block; font-size: 16px; color: #fff; line-height: 26px; padding: 3px; text-align: center; cursor: pointer;}
+.centerindex .geren h6{ text-align: center; color: #fff; padding: 5px 0 0 0;}
+.centerindex .geren h6 span{ display: inline-block; font-size: 12px; border-radius: 10px; line-height: 22px; padding: 0 4px; border: 1px solid #fff;}
+.centerindex .geren h6 i{ display: block; font-size: 13px; line-height: 25px;}
+.centerindex .geren .seta{ display: block; position: absolute; right: 15px; top:10px; width: 24px; height: 24px; cursor: pointer;}
+.centerindex .geren .seta img{ display: block; width: 24px; height: 24px;}
+.centerindex .link{}
+.centerindex .link .sg{ background-color: #fff; margin: 0 0 8px 0;}
+.centerindex .link .sg .biga{ display: block; padding: 8px 12px; border-bottom: 1px solid #e5e5e5; overflow: hidden; line-height: 36px; font-size: 16px; color: #000;}
+.centerindex .link .sg .biga.bg{ background-position: 98% center; background-repeat: no-repeat; background-size: 11px auto; background-image: url("../images/centericon_48.png");}
+.centerindex .link .sg .biga span{ display: block; float: left; color: #000; padding-left: 34px; background-position: left center; background-repeat: no-repeat; background-size: 24px auto;}
+.centerindex .link .sg .biga i{ display: block; float: right; color: #666; padding-right: 20px; background-image: url("../images/centericon_14.png"); background-size: 13px auto; background-repeat: no-repeat; font-size: 14px; background-position: right center; background-size: 10px auto;}
+.centerindex .link .sg .biga span.bg1{ background-image: url("../images/centericon_11.png");}
+.centerindex .link .sg .biga span.bg2{ background-image: url("../images/centericon_36.png");}
+.centerindex .link .sg .biga span.bg3{ background-image: url("../images/centericon_51.png");}
+.centerindex .link .sg .biga span.bg4{ background-image: url("../images/centericon_56.png");}
+.centerindex .link .sg .biga span.bg5{ background-image: url("../images/centericon_59.png");}
+.centerindex .link .sg .biga span.bg6{ background-image: url("../images/centericon_63.png");}
+.centerindex .link .sg .biga span.bg7{ background-image: url("../images/centericon_65.png");}
+.centerindex .link .sg .both{ overflow: hidden; border-bottom: 1px solid #e5e5e5; padding: 0px 12px;}
+.centerindex .link .sg .both a{ padding: 12px 0; display: block; float: left; width: 50%; text-align: center; font-size: 14px; color: #666; line-height: 24px; background-image: url("../images/centericon_14.png"); background-size: 10px auto; background-position: 90% center; background-repeat: no-repeat;}
+.centerindex .link .sg .both a span{ display:block; font-size: 14px; line-height: 30px;}
+.centerindex .link .sg .both a span b{ font-size: 20px; color: #000;}
+.centerindex .link .sg .both a span img{ display: block; width: 30px; height: 30px; padding: 2px; margin: 0 auto;}
+.centerindex .link .sg .both a i{ display: block;}
+.centerindex .link .sg .both a:last-child{ border-left: 1px solid #e5e5e5;}
+.centerindex .link .sg .kind{ overflow: hidden; padding: 10px 10px 8px 10px; border-bottom: 1px solid #e5e5e5;}
+.centerindex .link .sg .kind a{ display: block; width: 20%; position: relative; float: left; text-align: center; color: #000;}
+.centerindex .link .sg .kind a img{ display: block; width: 30px; height: 30px; margin: 0 auto; margin-bottom: 2px;}
+.centerindex .link .sg .kind a i{ display: block; height: 20px; font-size: 14px; line-height: 20px; overflow: hidden;}
+.centerindex .link .sg .kind a b{ display: block; position: absolute; left: 50%; top: 0; width: 18px; height: 18px; background-color: red; font-size: 12px; color: #fff; text-align: center; border-radius: 50%; margin-left:8px; line-height: 18px;}
+/**个人中心首页**/
+
+@media(max-width: 420px) {
+    .centerindex .link .sg .biga.bg{ background-size: 10px auto; }
+    .centerindex .link .sg .biga span{ background-size: 20px auto; padding-left: 30px; font-size: 15px;}
+    .centerindex .link .sg .kind a img{ width: 26px; height: 26px;}
+    .centerindex .link .sg .kind a i{ font-size: 13px; line-height: 19px; height: 19px;}
+}
+
+/**个人中心-设置**/
+.centerset{ margin: 6px 0;}
+.centerset .come{ background-color: #fff;}
+.centerset .come a{ display: block; padding: 8px 12px; overflow: hidden; border-bottom: 1px solid #e5e5e5; line-height: 30px;}
+.centerset .come a span{ display: block; float: left; font-size: 15px; color: #000; padding-left: 28px; background-position: left center; background-repeat: no-repeat; background-size: 20px auto;}
+.centerset .come a i{ display: block; float: right; color: #000; font-size: 16px; font-style: italic; font-family: "Arial"; text-align: right;}
+.centerset .come a i.bg{ background-position: right center; padding-right: 20px; background-image: url("../images/centericon_48.png"); background-size: 8px auto;background-repeat: no-repeat; width: 20px; height: 30px; }
+.centerset .come a span.bg1{ background-image: url("../images/centerset_03.png");}
+.centerset .come a span.bg2{ background-image: url("../images/centerset_07.png");}
+.centerset .come a span.bg3{ background-image: url("../images/centerset_11.png");}
+/**个人中心-设置**/
+
+
+/**个人中心-设置-资料**/
+.setziliao{ margin: 6px 0;}
+.setziliao ul{ background-color: #fff;}
+.setziliao ul li{ border-bottom: 1px solid #e5e5e5; padding: 4px 12px 4px 80px; line-height: 40px; font-size: 15px; color: #000; overflow: hidden; position: relative;}
+.setziliao ul li span{ display: block; width: 60px; position: absolute; left: 12px; top: 50%; height: 32px; line-height: 32px; margin-top: -16px;}
+.setziliao ul li label{  display: block; padding-right: 18px; background-image: url("../images/centericon_14.png"); background-size: 9px auto; background-repeat: no-repeat; background-position:right center; height: 40px; line-height: 40px;}
+.setziliao ul li label input{ display: block; width: 100%; text-align: right; border: none; height: 40px; line-height: 40px; color: #555;}
+.setziliao ul li label input[type="file"]{ opacity: 0; cursor: not-allowed; position: absolute; left: 0; top: 0;}
+.setziliao ul li label img{ display: block; width:40px; height: 40px; border-radius: 50%; float: right;}
+.setziliao ul li label.bg{ padding: 0; background-image: none; position: relative; overflow: hidden;}
+/**个人中心-设置-资料**/
+
+/**public**/
+.makesure{ position: fixed; left:0; bottom:0; width: 100%; height: 42px; line-height: 42px; color: #fff; text-align: center; font-size: 16px; background-color: #000; display: block; }
+/**public**/
+
+/**个人中心-设置-手机号**/
+.setphone{}
+.setphone h3{ font-size:14px; line-height:40px; height:40px; color:#666; padding:0 10px;}
+.setphone .fill{ }
+.setphone .fill dl{ padding:8px 10px 8px 76px; background-color:#fff; font-size:14px; line-height:34px; color:#555; border-bottom:1px solid #e5e5e5; position:relative;}
+.setphone .fill dl dt{ position:absolute; left:10px; top:8px; width:66px; height:34px; font-size:15px;}
+.setphone .fill dl dd{ overflow:hidden;}
+.setphone .fill dl dd input{ display:block; border:none; color:#555; text-indent:5px; line-height:34px; height:34px; width:100%; background-color:transparent;}
+.setphone .fill dl dd input.w60{ width:60%; float:left;}
+.setphone .fill dl dd span{ display:block; float:right; height:30px; line-height:30px; color:#999; text-align:center; padding:0 10px; margin:2px 0; border-radius:3px; overflow:hidden; background-color:#f2f2f2; font-size:13px; cursor: pointer;}
+.setphone .fill dl dd a{ display:block; float:right; height:34px; line-height:34px; cursor:pointer; color:#555; font-size:13px;}
+/**个人中心-设置-手机号**/
+
+/**个人设置-帮助中心**/
+.sethelp{}
+.sethelp .list{ margin: 6px 0; background-color:#fff;}
+.sethelp .list a{ display: block; padding: 3px 12px; border-bottom: 1px solid #e5e5e5;}
+.sethelp .list a span{ display: block; line-height: 34px; font-size: 14px; color: #000; padding-right: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background-image: url("../images/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size:7px auto;}
+/**个人设置-帮助中心**/
+
+/**个人中心订单**/
+.centerorder{ padding-bottom: 20px;}
+.orderkind{ overflow: hidden; padding:0 12px; background-color: #fff; border-top: 5px solid #f0f1f5; border-bottom: 5px solid #f0f1f5; position: fixed; width: 100%; left: 0; top: 46px; z-index: 10; }
+.orderkind a{ display: block; width: 20%; float:left; text-align: center; color: #000; cursor: pointer;}
+.orderkind a span{ display: inline-block; padding: 8px 0; border-bottom: 2px solid #fff; font-size: 15px; line-height: 30px;}
+.orderkind a.on span{ border-bottom: 2px solid #000;}
+.centerorder .list{}
+.centerorder .list .sg{ margin-bottom: 6px; border-top: 1px solid #e5e5e5; background-color: #fff;}
+.centerorder .list .sg .num{ display: block; border-bottom: 1px solid #e5e5e5; padding: 5px 112px 5px 10px;position: relative; overflow: hidden;}
+.centerorder .list .sg .num span{ display: block; padding-left:20px; background-image: url("../images/centerorder_07.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.centerorder .list .sg .num i{ position:absolute; right: 10px; top: 50%; height: 30px; line-height: 30px; text-align: right; font-size: 14px; color:#f72a3b; margin-top: -15px; width:100px;}
+.centerorder .list .sg .thing{ padding: 8px 12px 8px 110px; border-bottom: 1px solid #e5e5e5; min-height: 102px;  position: relative;}
+.centerorder .list .sg .thing .imga{ display: block; width:90px; height:90px; position: absolute; left: 12px; top: 50%; margin-top: -45px; border-radius: 5px; overflow: hidden; cursor:pointer;}
+.centerorder .list .sg .thing .imga img{ display: block; width: 100px; height: 100px;}
+.centerorder .list .sg .thing .text{ font-size: 14px; color: #000;}
+.centerorder .list .sg .thing .text .name{ display: block; padding-right: 70px; position: relative; color: #000;}
+.centerorder .list .sg .thing .text .name span{ display: block;}
+.centerorder .list .sg .thing .text .name span i{ display: block; line-height: 18px; height: 40px; padding: 2px 0; overflow: hidden; }
+.centerorder .list .sg .thing .text .name span em{ display:block; line-height: 18px; margin: 2px 0 4px 0; font-size: 13px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.centerorder .list .sg .thing .text .name span.price{ position: absolute; right: 0px; top: 0; width:65px; text-align: right; font-family: "Arial";}
+.centerorder .list .sg .thing .text .name span.price i{ line-height: 20px; height: 20px;}
+.centerorder .list .sg .thing .text .discuss{ display: block; width: 50px; height: 24px; line-height: 24px; color: #fff; background-color: #000; text-align: center; border-radius: 3px; cursor: pointer; text-align: center; font-size: 12px; margin-top: 2px;}
+.centerorder .list .sg .sum{ padding: 6px 12px; border-bottom: 1px solid #e5e5e5; text-align: right; font-size: 14px; color: #111; line-height: 30px;}
+.centerorder .list .sg .sum i{ color: #f72a3b; font-family: "Arial";}
+.centerorder .list .sg .sum b{ color: #f72a3b; font-size: 18px; font-family: "Arial";}
+.centerorder .list .sg .caozuo{ padding: 6px 12px; border-bottom: 1px solid #e5e5e5; overflow: hidden; }
+.centerorder .list .sg .caozuo a{ display: block; min-width: 80px; text-align: center; float: right; margin-left: 10px; font-size: 13px; line-height: 30px; color: #000; border-radius: 4px; padding: 0 8px; border: 1px solid #000; cursor: pointer; }
+.centerorder .list .sg .caozuo a.bg{ background-color: #000; color: #fff;}
+.centerorder .list .sg .caozuo a.surea{ background-color: #000; color: #fff;}
+.centerorder .list .sg .caozuo a.paya{ background-color: #000; color: #fff;}
+.centerorder .list .sg .mation{ padding: 8px 12px; border-bottom: 1px solid #e5e5e5;}
+.centerorder .list .sg .mation h4{ font-size: 15px; line-height: 21px; color: #f72a3b; margin-bottom: 5px;}
+.centerorder .list .sg .mation h5{ font-size: 13px; line-height: 20px; color: #666;}
+
+.centerorder .empty{ padding: 30px 15px;}
+.centerorder .empty img{ display: block; max-width: 100%; max-width: 160px; margin: 15px auto;}
+.centerorder .empty h2{ font-size: 16px; line-height: 30px; color: #000; text-align: center;}
+.centerorder .empty a{ display: block; width: 120px; line-height: 36px; border: 1px solid #000; border-radius: 5px; margin: 15px auto; text-align: center; font-size: 15px; text-align: center; color: #000;}
+    /**个人中心订单**/
+
+/**很多弹窗**/
+.popbg{ width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(0,0,0,0.5); z-index: 9998; display: none;}
+.pop{ width: 76%; position: fixed; left: 12%; top: 50%; margin-top: -100px; background-color: #fff; text-align: center; border-radius: 8px; z-index: 9999; display: none; }
+.pop h2{ font-size: 16px; color: #222; text-align: center; line-height: 24px;padding: 20px 15px 3px 15px;}
+.pop p{ font-size: 13px; line-height: 19px; color: #666; text-align: center; padding: 0 15px 20px 15px;}
+.pop .only{ display: block; overflow: hidden; border-top: 1px solid #e5e5e5;}
+.pop .only a{ display: block; float: left; width: 50%; padding: 10px 0; font-size: 15px; color: #0f5dfc; color: #000; cursor: pointer;}
+.pop .only a:last-child{ border-left: 1px solid #e5e5e5;}
+/**很多弹窗**/
+
+@media(max-width:420px ){
+    .orderkind a span{ font-size: 14px;}
+    .centerorder .list .sg .num span{ font-size: 14px;background-size: 13px auto; padding-left: 17px;}
+    .centerorder .list .sg .num i{ font-size: 13px;}
+    .centerorder .list .sg .thing .text{ font-size: 13px;}
+}
+
+/**订单详情**/
+.orderdetail{ padding-bottom: 30px;}
+.orderdetail .state{ padding: 15px 15px; text-align: center; font-size: 14px; line-height: 24px; color: #111;}
+.orderdetail .state img{ display: block; margin: 0 auto; width:32px; margin: 5px auto 0 auto;}
+.orderdetail .dizhi{ background-color: #fff; padding: 15px 12px 15px 44px; background-position: 12px center; background-repeat: no-repeat; background-size: 24px auto; background-image: url("../images/dengfukuan_07.png"); border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
+.orderdetail .dizhi p{ font-size: 15px; line-height: 30px; color: #000; overflow: hidden;}
+.orderdetail .dizhi p span{ display: block; float: left;}
+.orderdetail .dizhi p i{ display: block; float: right; font-size: 13px;}
+.orderdetail .dizhi h6{ font-size: 13px; line-height: 23px; color: #666;}
+.orderdetail .qingdan{ background-color: #fff; margin: 8px 0 0 0; border-top: 1px solid #e5e5e5;}
+.orderdetail .qingdan .num{ display: block; border-bottom: 1px solid #e5e5e5; padding: 5px 100px 5px 12px;position: relative; overflow: hidden;}
+.orderdetail .qingdan .num span{ display: block; padding-left:20px; background-image: url("../images/dengfukuan_11.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.orderdetail .qingdan .num i{ position:absolute; right: 12px; top: 50%; height: 30px; line-height: 30px; text-align: right; font-size: 14px; color:#f72a3b; margin-top: -15px; width: 84px;}
+.orderdetail .qingdan .sg{ padding: 8px 12px 8px 110px; border-bottom: 1px solid #e5e5e5; min-height: 102px;  position: relative;}
+.orderdetail .qingdan .sg .imga{ display: block; width:90px; height:90px; position: absolute; left: 12px; top: 50%; margin-top: -45px; border-radius: 5px; overflow: hidden; cursor:pointer;}
+.orderdetail .qingdan .sg .imga img{ display: block; width: 100px; height: 100px;}
+.orderdetail .qingdan .sg .text{ font-size: 14px; color: #000;}
+.orderdetail .qingdan .sg .text .name{ display: block; padding-right: 70px; position: relative; color: #000;}
+.orderdetail .qingdan .sg .text .name span{ display: block;}
+.orderdetail .qingdan .sg .text .name span i{ display: block; line-height: 18px; height: 40px; padding: 2px 0; overflow: hidden; }
+.orderdetail .qingdan .sg .text .name span em{ display:block; line-height: 18px; margin: 2px 0 4px 0; font-size: 13px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.orderdetail .qingdan .sg .text .name span.price{ position: absolute; right: 0px; top: 0; width:65px; text-align: right; font-family: "Arial";}
+.orderdetail .qingdan .sg .text .name span.price i{ line-height: 20px; height: 20px;}
+.orderdetail .qingdan .sg .text .discuss{ display: block; width: 50px; height: 24px; line-height: 24px; color: #fff; background-color: #000; text-align: center; border-radius: 3px; cursor: pointer; text-align: center; font-size: 12px; margin-top: 2px;}
+.orderdetail .qingdan .sum{ padding: 6px 12px; border-bottom: 1px solid #e5e5e5; text-align: right; font-size: 14px; color: #111; line-height: 30px;}
+.orderdetail .qingdan .sum i{ color: #f72a3b; font-family: "Arial";}
+.orderdetail .qingdan .sum b{ color: #f72a3b; font-size: 18px; font-family: "Arial";}
+.orderdetail .caozuo{ padding: 8px 12px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; margin-top: 8px; overflow: hidden; background-color: #fff; }
+.orderdetail .caozuo a{ display: block; width: 80px; text-align: center; float: right; margin-left: 10px; font-size: 13px; line-height: 30px; color: #000; border-radius: 4px; padding: 0 8px; border: 1px solid #000; cursor: pointer; }
+.orderdetail .caozuo a.surea{ background-color: #000; color: #fff;}
+.orderdetail .caozuo a.paya{ background-color: #000; color: #fff;}
+.orderdetail .tail{}
+.orderdetail .tail h3{ padding: 8px 12px; font-size: 16px; color: #555; line-height: 29px;}
+.orderdetail .tail dl{ background-color: #fff; padding: 10px 15px 10px 100px; border-bottom: 1px solid #e5e5e5; font-size: 14px; line-height: 25px; color: #555; position: relative; }
+.orderdetail .tail dl dt{ position: absolute; left: 12px; top: 10px; color: #111;}
+.orderdetail .tail dl dd{ text-align: right; font-size: 13px;}
+.orderdetail .tail dl dd i{ color: #f72a3b;}
+/**订单详情**/
+
+@media(max-width:420px ){
+    .orderdetail .dizhi p{ font-size: 14px;}
+    .orderdetail .dizhi p i{ font-size: 12px;}
+    .orderdetail .dizhi h6{ font-size: 12px; line-height: 18px;}
+}
+
+/**订单物流**/
+.orderwuliu{}
+.orderwuliu .goods{ padding: 15px 12px 15px 115px; position: relative; background-color: #fff; margin: 6px 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
+.orderwuliu .goods .imga{ display: block; width: 90px; overflow: hidden; border-radius: 4px; position: absolute; left: 12px; top: 50%; margin-top: -45px;}
+.orderwuliu .goods .imga img{ display: block; width: 90px; height: 90px;}
+.orderwuliu .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../images/centerwuliu_03.png"); z-index: 2;}
+.orderwuliu .goods p{ font-size: 14px; line-height: 24px; color: #666;}
+.orderwuliu .goods p span{ color: #111;}
+.orderwuliu .goods p i{ color: #f72a3b;}
+.orderwuliu .goods p a{ color: #0096ff;}
+.orderwuliu .trace{ background-color: #fff; padding-bottom: 40px;}
+.orderwuliu .trace h2{ padding:12px 12px; border-bottom: 1px solid #e5e5e5;}
+.orderwuliu .trace h2 span{ display: block; border-left: 3px solid #000; padding-left:5px; color: #000; font-size: 15px; line-height: 15px;}
+.orderwuliu .trace .list{ background-image: url("../images/centerwuliu_11.png"); background-position:33px 20px; margin: 15px 0; padding: 0px 15px ; background-repeat:repeat-y;}
+.orderwuliu .trace .list .sg{ padding-bottom:20px; padding-left: 44px; background-image: url("../images/centerwuliu_15.png"); background-position: 11px top; background-repeat: no-repeat; font-size: 14px; color: #555; line-height: 26px; }
+.orderwuliu .trace .list .sg p{ font-size: 14px; line-height: 22px; padding-bottom: 5px;}
+.orderwuliu .trace .list .sg h6{ font-size: 13px; color: #666; line-height: 20px;}
+.orderwuliu .trace .list .sg:first-child{ background-image: url("../images/centerwuliu_07.png"); background-position: 5px top; color: #25ae5f; }
+.orderwuliu .trace .list .sg:first-child p{ color: #25ae5f;}
+.orderwuliu .trace .list .sg:first-child h6{ color: #25ae5f;}
+/**订单物流**/
+
+/**订单评价**/
+.orderpingjia{}
+.orderpingjia .goods{ padding: 15px 12px 15px 105px; position: relative; background-color: #fff; margin: 6px 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
+.orderpingjia .goods .imga{ display: block; width: 80px; overflow: hidden; border-radius: 4px; position: absolute; left: 12px; top: 50%; margin-top: -40px;}
+.orderpingjia .goods .imga img{ display: block; width: 80px; height: 80px;}
+.orderpingjia .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../images/centerwuliu_03.png"); z-index: 2;}
+.orderpingjia .goods .text{ display: block;}
+.orderpingjia .goods .text span{ display: block; color: #111; font-size: 14px; line-height: 20px; height: 40px; margin-bottom: 8px; }
+.orderpingjia .goods .text i{ color: #f72a3b; display: block;}
+.orderpingjia .pingjia{ background-color: #fff; padding-bottom:15px;}
+.orderpingjia .pingjia h2{ padding:12px 12px; border-bottom: 1px solid #e5e5e5;}
+.orderpingjia .pingjia h2 span{ display: block; border-left: 3px solid #000; padding-left:5px; color: #000; font-size: 15px; line-height: 15px;}
+.orderpingjia .pingjia .fill{ padding:15px 12px 8px 12px;}
+.orderpingjia .pingjia .fill textarea{ background-color:#f0f0f0; padding: 5px 8px; color: #555; line-height: 22px; font-size: 14px; border: none; border-radius: 4px; overflow: hidden; width: 100%; resize: none;height: 76px;}
+.orderpingjia .pingjia .fill .imgbox{ margin: 5px 0; overflow: hidden;}
+.orderpingjia .pingjia .fill .imgbox a{ display: block; float: left; width: 80px; position: relative; margin: 15px 15px 0 0; cursor: pointer;}
+.orderpingjia .pingjia .fill .imgbox a .zs{ display: block; width: 80px; height: 80px;}
+.orderpingjia .pingjia .fill .imgbox a .close{ position:absolute; right: -8px; top: -8px; width: 16px; height: 16px; cursor: pointer;}
+.orderpingjia .pingjia .fill .imgbox .adda{ margin:15px 0 0 0; overflow: hidden; height: 80px;}
+.orderpingjia .pingjia .fill .imgbox .adda input{ display: block; width: 100%; height: 100%; position: absolute; opacity: 0; cursor:pointer; z-index: 5; left: 0; top: 0;}
+.orderpingjia .pingjia .fill .score{ overflow: hidden; padding: 15px 0 0 0;}
+.orderpingjia .pingjia .fill .score span{ display: block; margin-right: 10px; float: left; font-size: 15px; color: #222; line-height: 30px;}
+.orderpingjia .pingjia .fill .score em{ display: block; float: left; overflow: hidden;}
+.orderpingjia .pingjia .fill .score em i{ display: block; width: 20px; height: 30px; background-image: url("../images/orderpingjia_13.png"); background-repeat: no-repeat; background-size: 18px auto; background-position: center center; float: left; cursor: pointer;}
+.orderpingjia .pingjia .fill .score em i.on{ background-image: url("../images/orderpingjia_11.png");}
+/**订单评价**/
+
+
+/**退款申请**/
+.refunds{}
+.refunds ul{}
+.refunds ul li{ font-size: 15px; line-height: 30px; color: #111;}
+.refunds ul li p{ padding: 8px 12px;}
+.refunds ul li p span{ color: #dd2727; padding: 0 1px;}
+.refunds ul li p i{ font-size: 13px; color: #666;}
+.refunds ul li label{ display: block; background-color: #fff; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5; padding: 6px 12px;}
+.refunds ul li label input{ display: block; width: 100%; border: none; background-color: transparent; font-size: 14px; color: #666; line-height: 30px; height: 30px;}
+.refunds ul li label select{ display: block; width: 100%; border: none; background-color: transparent; font-size: 14px; color: #666; line-height: 30px; height: 30px;}
+.refunds ul li label textarea{ display: block; width: 100%; border: none; background-color: transparent; font-size: 14px; color: #666; line-height: 20px; height: 90px; resize: none; padding: 5px 2px;}
+.refunds ul li .imgbox{ margin: 5px 0; overflow: hidden; background-color: #fff; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5; padding: 6px 12px 20px 12px;}
+.refunds ul li .imgbox a{ display: block; float: left; width: 80px; position: relative; margin: 15px 15px 0 0; cursor: pointer;}
+.refunds ul li .imgbox a .zs{ display: block; width: 80px; height: 80px;}
+.refunds ul li .imgbox a .close{ position:absolute; right: -8px; top: -8px; width: 16px; height: 16px; cursor: pointer;}
+.refunds ul li .imgbox .adda{ margin:15px 0 0 0; overflow: hidden; height: 80px;}
+.refunds ul li .imgbox .adda input{ display: block; width: 100%; height: 100%; position: absolute; opacity: 0; cursor:pointer; z-index: 5; left: 0; top: 0;}
+
+.refunds .tip{ background-color:#fff; padding: 8px 12px; margin-top: 8px; font-size: 14px; line-height: 22px; color: #555; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5;}
+.refunds .tip p{ padding-bottom: 5px;}
+.refunds .tip p i{color: #dd2727;}
+.refunds .tip h2{ font-size: 15px; line-height: 33px; color: #dd2727; margin-bottom: 10px;}
+.refunds .tip h3{ font-size: 15px; line-height: 33px; color: #000; margin-bottom: 10px;}
+.refunds .tip h6{ line-height: 30px; font-size: 13px;}
+.refunds .tip h6 a{ color: #1099e0; text-decoration: underline; cursor: pointer;}
+.refunds .backa{ display: block; width: 140px; line-height: 36px; font-size: 15px; color: #000; text-align: center; border: 1px solid #000; border-radius: 3px; margin: 30px auto; cursor: pointer;}
+/**退款申请**/
+
+/**钱包收益**/
+.income{}
+.income .mine{ background-color: #fff; padding: 12px 12px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; position: relative;}
+.income .mine h5{ font-size: 15px; line-height: 30px; color: #111; padding-bottom: 4px;}
+.income .mine h6{ font-size: 30px; line-height: 40px; color: #000; font-family: 'Arial';}
+.income .mine h6 input{ display: block; height: 40px; background-color: transparent; border: none; line-height: 40px; color: #000; font-family: 'Arial'; font-size: 30px;}
+.income > h4{ font-size: 15px; line-height: 36px; color: #666;background-color: #fff; padding:2px 12px; }
+.income .mine a{ position:absolute; right: 12px; top: 12px; display: block; width: 20px; height: 20px; border-radius: 50%; overflow: hidden;}
+.income .mine a img{ display: block; width: 20px; height: 20px; border-radius: 50%; overflow: hidden; }
+.income .sg{ margin-top: 8px; background-color: #fff; border-top: 1px solid #e5e5e5; }
+.income .sg p{ display: block; border-bottom: 1px solid #e5e5e5; padding: 8px 12px 8px 140px; font-size: 14px; line-height: 26px; overflow: hidden; position: relative;}
+.income .sg p .ru{ display: block; padding-left:26px; background-size: 20px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../images/centershouyi_07.png"); width: 120px; position: absolute; left: 12px; top: 8px; color: #000;}
+.income .sg p .ru i{ color: #1099e0; font-size: 12px; padding-left: 4px;}
+.income .sg p .come{ display: block; width: 100%; height: 26px; padding-right: 14px;background-image: url("../images/centericon_48.png"); background-position:right center; background-repeat: no-repeat; background-size: 8px auto; }
+.income .sgl{ margin: 8px 0; background-color: #fff; border-top: 1px solid #e5e5e5; }
+.income .sgl a{ display: block; border-bottom: 1px solid #e5e5e5; padding: 8px 12px 8px 12px; font-size: 15px; line-height: 30px; overflow: hidden; position: relative;background-image: url("../images/centericon_48.png"); background-position: 98% center; background-repeat: no-repeat; background-size: 8px auto;}
+.income .sgl a span{ display: block; padding-left:30px; background-size: 24px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../images/centertixian_03.png");color: #000;}
+
+
+.income .tip{ background-color:#fff; padding: 8px 12px; margin-top: 8px; font-size: 14px; line-height: 24px; color: #555; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5;}
+.income .tip p{ padding-bottom: 5px; text-align: justify;}
+.income .tip p i{color: #dd2727;}
+.income .tip h2{ font-size: 15px; line-height: 33px; color: #dd2727; margin-bottom: 10px;}
+.income .tip h3{ font-size: 15px; line-height: 33px; color: #000; margin-bottom: 10px;}
+
+.income .mingxi{}
+.income .mingxi h2{ line-height: 35px; font-size: 16px; color: #666; padding: 4px 12px;}
+.income .mingxi .list{ background-color: #fff;}
+.income .mingxi .list dl{ padding: 8px 150px 8px 12px; overflow: hidden; border-bottom: 1px solid #e5e5e5; position: relative;}
+.income .mingxi .list dl dt{ display: block; width: 100%; height: 49px; overflow: hidden; float: left; overflow: hidden;}
+.income .mingxi .list dl dt.pleft{ position: relative; padding-left: 53px;}
+.income .mingxi .list dl dd{ display: block; text-align: right; height: 49px; top: 8px; position: absolute; right: 12px; width: 130px; overflow: hidden;}
+.income .mingxi .list dl span{ display: block; font-size: 16px; line-height: 26px; color: #000;}
+.income .mingxi .list dl i{ display: block; font-size: 13px; line-height: 23px; color: #666;}
+.income .mingxi .list dl dd span{ font-size: 20px; font-family: "Arial";}
+.income .mingxi .list dl dt img{ display: block; width: 41px; height: 41px; position: absolute; left: 0; top: 4px;}
+.income .mingxi .list dl dt em{ display: block; height: 49px; line-height: 49px; font-size: 15px; color: #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.income .mingxi .list dl dt.pleft em i{ display: inline-block; color: #666; font-size: 13px; padding-left: 2px;}
+.income .mingxi.tance{ border-top: 1px solid #e5e5e5; margin-top: 6px; }
+
+.ftop h2{ position: relative;}
+.ftop h2 span{ display: inline-block; padding-right: 20px; background-image: url("../images/centermingxi_03.png"); background-position: right center; background-repeat: no-repeat; font-size: 16px; background-size: 12px auto;}
+.ftop h2 span.on{ background-image: url("../images/centermingxi_06.png");}
+.ftop h2 p{ position: absolute; left: 50%; top: 35px; width: 100px; margin-left: -50px; display:none;}
+.ftop h2 p img{ display: block; width: 17px; height: 8px; margin: 0 auto;}
+.ftop h2 p a{ display: block; width:100px; height: 36px; line-height: 36px; color: #fff; font-size: 15px; background-color: #000; border-radius: 2px; cursor: pointer; text-align: center;}
+/**钱包收益**/
+
+/**分享二维码**/
+.centcode{ padding: 10px 12px;}
+.centcode.full{ padding: 0;}
+.centcode .code{ background-color: #fff; padding: 30px 20px; border-radius: 10px; text-align: center;}
+.centcode .code .geren{padding:20px 15px; position: relative;}
+.centcode .code .geren .imga{ display: block; width: 100px; height: 100px; overflow: hidden; border-radius: 50%; margin: 0 auto; cursor: pointer; }
+.centcode .code .geren .imga img{ display:block; width: 100px; height: 100px; overflow: hidden;}
+.centcode .code .geren .name{ display: block; font-size: 16px; color: #000; line-height: 26px; padding: 3px; text-align: center; cursor: pointer;}
+.centcode .code .geren h6{ text-align: center; color: #000; padding: 5px 0 0 0;}
+.centcode .code .geren h6 i{ display: block; font-size: 13px; line-height: 25px;}
+.centcode .code .show{}
+.centcode .code .ma{ margin-top: 20px;}
+.centcode .code .ma img{ display: block; width: 60%; margin: 10px auto; min-width: 200px;}
+.centcode .code .show h3{ font-size: 15px; line-height: 25px; color: #000; text-align:center ;}
+.centcode .share{ background-color: #fe4e4e; position: fixed; width: 100%; height: 100%; top:46px;}
+.centcode .share >img{ display: block; width: 100%;}
+.centcode .share p{ width: 100%; position: relative;}
+.centcode .share p img{ display: block; width: 100%; }
+.centcode .share p .ma{ width: 42%; left: 29%; top:26%; border: 1px solid #fff; position: absolute; }
+.centcode .share a{ display: block; width: 200px; margin:-20px auto 0 auto; cursor: pointer;}
+.centcode .share a img{ display: block; width: 100%;}
+/**分享二维码**/
+
+/**收货地址**/
+.address{}
+.address .list{}
+.address .list .sg{ padding: 10px 12px; margin-top: 6px; border-bottom: 1px solid #e5e5e5;  border-top: 1px solid #e5e5e5; background-color: #fff; }
+.address .list .sg a{ display: block; padding-right: 18px; background-image:url("../images/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size: 9px auto;}
+.address .list .sg a .name{ display: block; color: #000; position: relative; padding-right: 100px; height: 30px; line-height: 30px; font-size: 15px;}
+.address .list .sg a .name i{ display: block;}
+.address .list .sg a .name em{ position: absolute; right: 0; top: 0; height: 30px; line-height: 30px; width: 100px; font-size: 13px; display: block;}
+.address .list .sg a .place{ display: block; font-size: 13px; line-height: 23px; color: #666; margin-top: 3px;}
+.address .list .sg a .place i{ color: #f01115; padding-right: 2px; display: none;}
+.address .list .sg.on a .place i{ display: inline-block;}
+
+.address .fill{ margin-top: 8px;}
+.address .fill a{ display: block; padding: 6px 30px 6px 15px; background-color: #fff; border-bottom: 1px solid #e5e5e5;}
+.address .fill a span{ display: block; font-size: 14px; line-height: 20px; color: #000;}
+.address .fill a input{ display: block; height: 26px; line-height: 26px; border:none; background-color: transparent; font-size: 14px; color: #666;}
+.address .chose{ background-color: #fff; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5; padding: 2px 12px; margin-top: 6px;}
+.address .chose span{ display:block; font-size: 14px; line-height: 36px; color:#000; padding-right: 25px; background-image: url("../images/centdizhi_10.png"); background-position: right center; background-repeat: no-repeat; background-size: 20px auto; }
+.address .chose.on span{ background-image: url("../images/centdizhi_07.png");}
+.address .fill a.bg{ background-image: url("../images/centericon_48.png"); background-position:97% center; background-repeat: no-repeat; background-size: 9px auto; }
+
+.address .tit{ overflow: hidden; background-color: #222; margin: 6px 0;}
+.address .tit a{ display: block; width: 33.3%; float: left; text-align:center; height: 40px; font-size: 16px; text-align: center; color: #fff; line-height: 40px;}
+.address .tit a:nth-child(2){ border-left: 1px solid #fff; border-right: 1px solid #fff;}
+.address .tit a.on{ background-color: #000;}
+.address .xulie{}
+.address .xulie a{ padding: 3px 12px; background-color:#fff; line-height: 36px; color: #000; font-size: 14px; display: block; border-bottom: 1px solid #e5e5e5; }
+/**收货地址**/
+
+/**意见反馈**/
+.mind{}
+.mind .fill{ background-color: #fff; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; margin-top: 6px;}
+.mind .fill p{ padding: 5px 12px; border-bottom: 1px solid #e5e5e5; font-size: 15px; line-height: 33px; color: #000; margin-bottom: 10px;}
+.mind .fill textarea{ padding: 5px 12px; display: block; border: none; font-size: 14px; line-height: 22px; height: 120px; width: 100%; color: #666; background-color: transparent; }
+.mind h6{ margin: 8px 0 0 0; padding: 0 12px; font-size: 13px; line-height: 21px; color: #666;}
+/**意见反馈**/
+
+
+/**关于我们**/
+.aboutus{ padding: 8px 8px;}
+.aboutus .txt{ background-color: #fff; padding: 10px 14px; font-size: 13px; line-height:23px; color: #444; margin-bottom: 8px; text-align: justify;}
+.aboutus .txt h2{ font-size: 16px; line-height: 30px; margin-bottom: 5px; text-align:center; color: #000;}
+.aboutus .txt img{ display: block; margin: 10px 0; width: 100%; box-shadow: 0 0 5px #bbb;}
+/**关于我们**/
+
+/**我的收藏**/
+.collect{}
+.collect .list{ padding: 0 12px; background-color: #fff; margin-top: 6px; border-top: 1px solid #e5e5e5;}
+.collect .list .sg{ display: block; border-bottom: 1px solid #e5e5e5; position: relative; transition:all ease-in-out 0.3s; }
+.collect .list .sg label{ display: none;}
+.collect .list .sg a{ display: block; position: relative; padding:14px 0 14px 90px;}
+.collect .list .sg a .pic{ display:block; position: absolute; left:0; top: 50%; margin-top: -40px; height: 80px; width: 80px; }
+.collect .list .sg a .pic img{ display: block; height: 80px; width: 80px;}
+.collect .list .sg a .txt{ display: block;}
+.collect .list .sg a .txt>i{ display:block; font-size: 15px; line-height: 25px; color: #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.collect .list .sg a .txt em{ display:block; font-size: 13px; line-height: 20px; margin: 4px 0; color: #666; }
+.collect .list .sg a .txt b{ display:block; font-size: 14px; line-height: 24px; color: #000;}
+.collect .list .sg a .txt b i{ font-size: 18px; font-family: "Arial";  }
+.collect .list .sg .del{ position: absolute; right: 0; top: 14px; width: 20px; height: 20px; display: none; cursor: pointer;}
+.collect .list .sg.on{ padding: 0 30px 0 30px;}
+.collect .list .sg.on label{ display: block; position: absolute; left: 0; top: 50%; width: 20px; height: 20px; margin-top: -10px; cursor:pointer; background-image: url("../images/centdizhi_10.png"); background-position: center center; background-repeat: no-repeat; background-size: 16px 16px;}
+.collect .list .sg.on label.on{ background-image: url("../images/centdizhi_07.png");}
+.collect .list .sg.on .del{ display: block;}
+/**我的收藏**/
+
+/**编辑处理**/
+.deal{ position: fixed; left: 0; bottom: 0; width: 100%; height: 44px; line-height: 44px; overflow: hidden; background-color: #fff; display: none;}
+.deal span{ display: block; width: 50%; color: #fff; height: 44px; float: left; text-align: center; font-size: 16px; background-color: #000; cursor: pointer;}
+.deal span em{ display: inline-block; background-position: left center; background-repeat: no-repeat; background-size: 20px 20px;}
+.deal i{ display: block; width: 50%; background-color: #f01115; float:left; font-size: 16px; color: #fff; text-align: center; line-height: 44px; cursor: pointer;}
+/**编辑处理**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Master_Page.cshtml";
+}
+
+<h2>Index</h2>
+
+<!--banner start-->
+<div class="swiper-container index_banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a><img src="images/index_banner.jpg" alt=""></a></div>
+        <div class="swiper-slide"><a><img src="images/index_img01.jpg" alt=""></a></div>
+        <div class="swiper-slide"><a><img src="images/index_img03.jpg" alt=""></a></div>
+    </div>
+    <div class="swiper-pagination swiper-index"></div>
+</div>
+<script>
+	var swiper1 = new Swiper('.index_banner', {
+		pagination: '.swiper-index',
+		paginationClickable: true,
+		loop: true,
+		autoplay: 4000,
+	});
+</script>
+<!--banner over-->
+<div class="index_knowledge">
+    <img src="images/icon_0902.png">
+    <div class="swiper-container dlist">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>two冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+        </div>
+    </div>
+</div>
+<script>
+  var swiper1 = new Swiper('.dlist', {
+    loop: true,
+    autoplay: 4000,
+    direction : 'vertical'
+  });
+</script>
+<div class="index_main">
+    <p class="index_mtitle"> <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="index_xianshi.html">限时</a></p>
+    <ul>
+        <li>
+            <a href="product_xq.html"><img src="images/index_img01.jpg"></a>
+            <div class="product_text">
+                <h2>
+                    <p>特级云南冬虫夏草</p>
+                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
+                </h2>
+                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                <h3>
+                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
+                    <a href="product_xq.html">立即购买</a>
+                </h3>
+            </div>
+        </li>
+        <li>
+            <a href="product_xq.html"><img src="images/index_img02.jpg"></a>
+            <div class="product_text">
+                <h2>
+                    <p>特级云南冬虫夏草</p>
+                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
+                </h2>
+                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                <h3>
+                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
+                    <a href="product_xq.html">立即购买</a>
+                </h3>
+            </div>
+        </li>
+        <li>
+            <a href="product_xq.html"><img src="images/index_img03.jpg"></a>
+            <div class="product_text">
+                <h2>
+                    <p>特级云南冬虫夏草</p>
+                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
+                </h2>
+                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                <h3>
+                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
+                    <a href="product_xq.html">立即购买</a>
+                </h3>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="index_icon">
+    <p>
+        <span><img src="images/icon_01.png"><i>品质保证</i></span>
+        <span><img src="images/icon_02.png"><i>送货保障</i></span>
+        <span><img src="images/icon_003.png"><i>7天包换</i></span>
+        <span><img src="images/icon_04.png"><i>质量保障</i></span>
+    </p>
+</div>

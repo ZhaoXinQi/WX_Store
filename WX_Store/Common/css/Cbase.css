@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+a{ text-decoration:none;}
+a{blr:expression(this.onFocus=this.blur());}
+a:focus{outline:none !important;}
+* {padding: 0;margin: 0; -webkit-tap-highlight-color:rgba(255,0,0,0);box-sizing:border-box;-moz-box-sizing:border-box; /* Firefox */-webkit-box-sizing:border-box; /* Safari */}
+h1,h2,h3,h4,h5,h6{ font-weight:normal; padding:0px; margin:0px;}
+img{ border:none;}
+ul,li{ list-style:none;}
+p{ padding:0; margin:0;}
+i{ font-style:normal;}
+body{padding:0; margin:0;font-family:Arial,Microsoft YaHei; min-width:320px; max-width:640px; margin:0 auto;background:#f0f1f5;}
+input,button,textarea,select{font-family: Arial,Microsoft YaHei;}
+
+
+/***ftop开始***/
+.ftop{ line-height:40px; background-color:#fff; padding:3px 10px; position:fixed; left:0; top:0; width:100%;z-index:10; height:46px;}
+.ftop .back{ display:block; width:18%; float:left; cursor: pointer;}
+.ftop .back img{ display:block; width:15px; height:22px; margin:9px 5px;}
+.ftop h2{ font-size:18px; line-height:40px; color:#000; text-align:center; width:64%; float:left;}
+.ftop .comea{ display:block; width:18%; float:right; text-align:right; font-size:14px; color:#000; line-height:40px; cursor: pointer;}
+.ftop .comea img{ display: block; width: 36px; height: 40px; padding:9px 7px; float: right; margin: 0 auto;}
+.ftop .comea.fs{ font-size:13px;}
+/***ftop结束***/
+
+
+/**夺宝导航开始**/
+.fixft{ padding:6px 10px 1px 10px; background-color:#fff; overflow:hidden; position:fixed; left:0; bottom:0; width:100%;z-index:10; border-top:1px solid #e5e5e5;}
+.fixft a{ display:block; float:left; width:25%; text-align:center; font-size:14px; color:#000;}
+.fixft a span{ display:block; position:relative; width:40px; margin:0 auto;}
+.fixft a span img{ display:block; width:22px; height:22px; margin:0 auto 2px auto;}
+.fixft a span img.img2{ display:none;}
+.fixft a span em{ display:block; width:18px; height:18px; line-height:18px; font-size:12px; color:#fff; text-align:center; position:absolute; right:0; top:0; background-color:#f72a3b; font-style:normal; border-radius:50%;}
+.fixft a i{ display:block; font-size:14px; line-height:20px;}
+.fixft a.current span img.img1{ display:none;}
+.fixft a.current span img.img2{ display:block;}
+.fixft a.current i{ color:#000;}
+/**夺宝导航结束**/
+@media(max-width: 360px) {
+    .ftop .comea{ font-size: 13px;}
+}

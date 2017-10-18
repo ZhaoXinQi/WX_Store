@@ -98,12 +98,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\css\animate.css" />
+    <Content Include="Common\css\Cbase.css" />
+    <Content Include="Common\css\center.css" />
+    <Content Include="Common\css\fullscreenstyle.css" />
+    <Content Include="Common\css\index.css" />
+    <Content Include="Common\css\swiper.min.css" />
+    <Content Include="Common\js\base.js" />
+    <Content Include="Common\js\index.js" />
+    <Content Include="Common\js\jquery-1.7.2.min.js" />
+    <Content Include="Common\js\jquery.fullscreenslides.js" />
+    <Content Include="Common\js\swiper.min.js" />
+    <Content Include="Common\js\timer.js" />
+    <Content Include="Common\js\wow.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -112,6 +126,9 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Master_Page.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Seach.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
@@ -157,7 +173,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)\WX_Store\bin"</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)\WX_Store\bin\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
