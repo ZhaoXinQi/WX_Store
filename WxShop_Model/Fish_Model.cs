@@ -12,6 +12,7 @@ namespace WxShop_Model
         {
         }
 
+        public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Customar> Customar { get; set; }
         public virtual DbSet<Favarite> Favarite { get; set; }
         public virtual DbSet<OrderChild> OrderChild { get; set; }
@@ -27,6 +28,10 @@ namespace WxShop_Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Banner>()
+                .Property(e => e.P_Code)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Customar>()
                 .Property(e => e.Phone)
                 .IsUnicode(false);
@@ -114,6 +119,12 @@ namespace WxShop_Model
             modelBuilder.Entity<ProductInfo>()
                 .Property(e => e.ProductSortCode)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<ProductInfo>()
+                .HasMany(e => e.Banner)
+                .WithOptional(e => e.ProductInfo)
+                .HasForeignKey(e => e.P_Code)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.Favarite)

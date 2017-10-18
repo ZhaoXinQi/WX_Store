@@ -52,10 +52,6 @@
       <Project>{61b276c4-47bb-4e94-be9f-7637127fa0c5}</Project>
       <Name>IBaseService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{67051148-84b7-4835-8c2c-65801857227a}</Project>
-      <Name>WxShop_Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

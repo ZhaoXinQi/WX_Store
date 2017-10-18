@@ -12,6 +12,7 @@ namespace WxShop_Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductInfo()
         {
+            Banner = new HashSet<Banner>();
             Favarite = new HashSet<Favarite>();
             OrderChild = new HashSet<OrderChild>();
             ProductReview = new HashSet<ProductReview>();
@@ -46,6 +47,9 @@ namespace WxShop_Model
         public int? SpecificationId { get; set; }
 
         public bool IsHot { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Banner> Banner { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favarite> Favarite { get; set; }

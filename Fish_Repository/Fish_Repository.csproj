@@ -56,10 +56,6 @@
       <Project>{6b8e7226-13f0-4e15-8136-3227d74a3635}</Project>
       <Name>Fish_IRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{67051148-84b7-4835-8c2c-65801857227a}</Project>
-      <Name>WxShop_Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
