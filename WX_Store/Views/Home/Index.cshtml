@@ -3,14 +3,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Master_Page.cshtml";
 }
-
+@using WxShop_Model
 @{Html.RenderPartial("Seach");}
 <!--banner start-->
 <div class="swiper-container index_banner">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><a><img src="images/index_banner.jpg" alt=""></a></div>
+        @foreach (Banner item in ViewBag.Banner as List<Banner>)
+        {
+            <div class="swiper-slide"><a><img src="~/Common/img/@item.img" alt=""></a></div>
+        }
+        @*<div class="swiper-slide"><a><img src="images/index_banner.jpg" alt=""></a></div>
         <div class="swiper-slide"><a><img src="images/index_img01.jpg" alt=""></a></div>
-        <div class="swiper-slide"><a><img src="images/index_img03.jpg" alt=""></a></div>
+        <div class="swiper-slide"><a><img src="images/index_img03.jpg" alt=""></a></div>*@
     </div>
     <div class="swiper-pagination swiper-index"></div>
 </div>
