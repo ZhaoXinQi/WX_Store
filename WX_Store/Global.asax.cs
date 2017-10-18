@@ -11,7 +11,7 @@ namespace WX_Store
     {
         protected void Application_Start()
         {
-            AutofacConfig.autoDepence();//把autoconfig定义成全局的变量
+            AutofacConfig.SautoDepence();//把autoconfig定义成全局的变量
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

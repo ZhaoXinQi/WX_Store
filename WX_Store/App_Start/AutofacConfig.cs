@@ -11,7 +11,7 @@ namespace WX_Store.App_Start
 {
     public class AutofacConfig
     {
-        public static void autoDepence()
+        public static void SautoDepence()
         {
             //先实例化一个构造器
             var builder = new ContainerBuilder();

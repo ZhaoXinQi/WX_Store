@@ -10,12 +10,13 @@ namespace WX_Store.Controllers
 {
     public class HomeController : Controller
     {
-        private IBannerService bannerService { get; set; }
+        private IBannerService BannerService { get; set; }
         // GET: Home
         public ActionResult Index()
         {
-            var GetBanner = bannerService.GetEntities(x => true);
+            var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
+
             return View();
         }
         public ActionResult Seach()
