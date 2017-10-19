@@ -32,9 +32,13 @@
     <img src="images/icon_0902.png">
     <div class="swiper-container dlist">
         <div class="swiper-wrapper">
-            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+            @foreach (ShowNews item in ViewBag.ShowNews as List<ShowNews>)
+            {
+                <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>@item.Title</a>
+            }
+            @*<a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
             <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>two冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
-            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>*@
         </div>
     </div>
 </div>

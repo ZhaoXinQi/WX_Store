@@ -10,11 +10,14 @@ namespace WX_Store.Controllers
     public class HomeController : Controller
     {
         public IBannerService BannerService { get; set; }//这里需要用public  依赖注入
+        public IShowNewsService ShowNewsService { get; set; }
         // GET: Home
         public ActionResult Index()
         {
             var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
+            var GetShowNews = ShowNewsService.GetEntities(x => true);
+            ViewBag.ShowNews = GetShowNews.ToList();
             return View();
         }
         public ActionResult Seach()
