@@ -9,7 +9,7 @@ i,em{font-style: normal;}
 
 /**个人中心首页**/
 .centerindex{}
-.centerindex .geren{ background-image: url("../images/centerbg_01.jpg"); background-size: 100% 100%; padding:20px 15px; position: relative;}
+.centerindex .geren{ background-image: url("../~/Common/img/centerbg_01.jpg"); background-size: 100% 100%; padding:20px 15px; position: relative;}
 .centerindex .geren .imga{ display: block; width: 100px; height: 100px; overflow: hidden; border-radius: 50%; margin: 0 auto; cursor: pointer; }
 .centerindex .geren .imga img{ display:block; width: 100px; height: 100px; overflow: hidden;}
 .centerindex .geren .name{ display: block; font-size: 16px; color: #fff; line-height: 26px; padding: 3px; text-align: center; cursor: pointer;}
@@ -21,18 +21,18 @@ i,em{font-style: normal;}
 .centerindex .link{}
 .centerindex .link .sg{ background-color: #fff; margin: 0 0 8px 0;}
 .centerindex .link .sg .biga{ display: block; padding: 8px 12px; border-bottom: 1px solid #e5e5e5; overflow: hidden; line-height: 36px; font-size: 16px; color: #000;}
-.centerindex .link .sg .biga.bg{ background-position: 98% center; background-repeat: no-repeat; background-size: 11px auto; background-image: url("../images/centericon_48.png");}
+.centerindex .link .sg .biga.bg{ background-position: 98% center; background-repeat: no-repeat; background-size: 11px auto; background-image: url("../~/Common/img/centericon_48.png");}
 .centerindex .link .sg .biga span{ display: block; float: left; color: #000; padding-left: 34px; background-position: left center; background-repeat: no-repeat; background-size: 24px auto;}
-.centerindex .link .sg .biga i{ display: block; float: right; color: #666; padding-right: 20px; background-image: url("../images/centericon_14.png"); background-size: 13px auto; background-repeat: no-repeat; font-size: 14px; background-position: right center; background-size: 10px auto;}
-.centerindex .link .sg .biga span.bg1{ background-image: url("../images/centericon_11.png");}
-.centerindex .link .sg .biga span.bg2{ background-image: url("../images/centericon_36.png");}
-.centerindex .link .sg .biga span.bg3{ background-image: url("../images/centericon_51.png");}
-.centerindex .link .sg .biga span.bg4{ background-image: url("../images/centericon_56.png");}
-.centerindex .link .sg .biga span.bg5{ background-image: url("../images/centericon_59.png");}
-.centerindex .link .sg .biga span.bg6{ background-image: url("../images/centericon_63.png");}
-.centerindex .link .sg .biga span.bg7{ background-image: url("../images/centericon_65.png");}
+.centerindex .link .sg .biga i{ display: block; float: right; color: #666; padding-right: 20px; background-image: url("../~/Common/img/centericon_14.png"); background-size: 13px auto; background-repeat: no-repeat; font-size: 14px; background-position: right center; background-size: 10px auto;}
+.centerindex .link .sg .biga span.bg1{ background-image: url("../~/Common/img/centericon_11.png");}
+.centerindex .link .sg .biga span.bg2{ background-image: url("../~/Common/img/centericon_36.png");}
+.centerindex .link .sg .biga span.bg3{ background-image: url("../~/Common/img/centericon_51.png");}
+.centerindex .link .sg .biga span.bg4{ background-image: url("../~/Common/img/centericon_56.png");}
+.centerindex .link .sg .biga span.bg5{ background-image: url("../~/Common/img/centericon_59.png");}
+.centerindex .link .sg .biga span.bg6{ background-image: url("../~/Common/img/centericon_63.png");}
+.centerindex .link .sg .biga span.bg7{ background-image: url("../~/Common/img/centericon_65.png");}
 .centerindex .link .sg .both{ overflow: hidden; border-bottom: 1px solid #e5e5e5; padding: 0px 12px;}
-.centerindex .link .sg .both a{ padding: 12px 0; display: block; float: left; width: 50%; text-align: center; font-size: 14px; color: #666; line-height: 24px; background-image: url("../images/centericon_14.png"); background-size: 10px auto; background-position: 90% center; background-repeat: no-repeat;}
+.centerindex .link .sg .both a{ padding: 12px 0; display: block; float: left; width: 50%; text-align: center; font-size: 14px; color: #666; line-height: 24px; background-image: url("../~/Common/img/centericon_14.png"); background-size: 10px auto; background-position: 90% center; background-repeat: no-repeat;}
 .centerindex .link .sg .both a span{ display:block; font-size: 14px; line-height: 30px;}
 .centerindex .link .sg .both a span b{ font-size: 20px; color: #000;}
 .centerindex .link .sg .both a span img{ display: block; width: 30px; height: 30px; padding: 2px; margin: 0 auto;}
@@ -58,10 +58,10 @@ i,em{font-style: normal;}
 .centerset .come a{ display: block; padding: 8px 12px; overflow: hidden; border-bottom: 1px solid #e5e5e5; line-height: 30px;}
 .centerset .come a span{ display: block; float: left; font-size: 15px; color: #000; padding-left: 28px; background-position: left center; background-repeat: no-repeat; background-size: 20px auto;}
 .centerset .come a i{ display: block; float: right; color: #000; font-size: 16px; font-style: italic; font-family: "Arial"; text-align: right;}
-.centerset .come a i.bg{ background-position: right center; padding-right: 20px; background-image: url("../images/centericon_48.png"); background-size: 8px auto;background-repeat: no-repeat; width: 20px; height: 30px; }
-.centerset .come a span.bg1{ background-image: url("../images/centerset_03.png");}
-.centerset .come a span.bg2{ background-image: url("../images/centerset_07.png");}
-.centerset .come a span.bg3{ background-image: url("../images/centerset_11.png");}
+.centerset .come a i.bg{ background-position: right center; padding-right: 20px; background-image: url("../~/Common/img/centericon_48.png"); background-size: 8px auto;background-repeat: no-repeat; width: 20px; height: 30px; }
+.centerset .come a span.bg1{ background-image: url("../~/Common/img/centerset_03.png");}
+.centerset .come a span.bg2{ background-image: url("../~/Common/img/centerset_07.png");}
+.centerset .come a span.bg3{ background-image: url("../~/Common/img/centerset_11.png");}
 /**个人中心-设置**/
 
 
@@ -70,7 +70,7 @@ i,em{font-style: normal;}
 .setziliao ul{ background-color: #fff;}
 .setziliao ul li{ border-bottom: 1px solid #e5e5e5; padding: 4px 12px 4px 80px; line-height: 40px; font-size: 15px; color: #000; overflow: hidden; position: relative;}
 .setziliao ul li span{ display: block; width: 60px; position: absolute; left: 12px; top: 50%; height: 32px; line-height: 32px; margin-top: -16px;}
-.setziliao ul li label{  display: block; padding-right: 18px; background-image: url("../images/centericon_14.png"); background-size: 9px auto; background-repeat: no-repeat; background-position:right center; height: 40px; line-height: 40px;}
+.setziliao ul li label{  display: block; padding-right: 18px; background-image: url("../~/Common/img/centericon_14.png"); background-size: 9px auto; background-repeat: no-repeat; background-position:right center; height: 40px; line-height: 40px;}
 .setziliao ul li label input{ display: block; width: 100%; text-align: right; border: none; height: 40px; line-height: 40px; color: #555;}
 .setziliao ul li label input[type="file"]{ opacity: 0; cursor: not-allowed; position: absolute; left: 0; top: 0;}
 .setziliao ul li label img{ display: block; width:40px; height: 40px; border-radius: 50%; float: right;}
@@ -98,7 +98,7 @@ i,em{font-style: normal;}
 .sethelp{}
 .sethelp .list{ margin: 6px 0; background-color:#fff;}
 .sethelp .list a{ display: block; padding: 3px 12px; border-bottom: 1px solid #e5e5e5;}
-.sethelp .list a span{ display: block; line-height: 34px; font-size: 14px; color: #000; padding-right: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background-image: url("../images/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size:7px auto;}
+.sethelp .list a span{ display: block; line-height: 34px; font-size: 14px; color: #000; padding-right: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background-image: url("../~/Common/img/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size:7px auto;}
 /**个人设置-帮助中心**/
 
 /**个人中心订单**/
@@ -110,7 +110,7 @@ i,em{font-style: normal;}
 .centerorder .list{}
 .centerorder .list .sg{ margin-bottom: 6px; border-top: 1px solid #e5e5e5; background-color: #fff;}
 .centerorder .list .sg .num{ display: block; border-bottom: 1px solid #e5e5e5; padding: 5px 112px 5px 10px;position: relative; overflow: hidden;}
-.centerorder .list .sg .num span{ display: block; padding-left:20px; background-image: url("../images/centerorder_07.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.centerorder .list .sg .num span{ display: block; padding-left:20px; background-image: url("../~/Common/img/centerorder_07.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .centerorder .list .sg .num i{ position:absolute; right: 10px; top: 50%; height: 30px; line-height: 30px; text-align: right; font-size: 14px; color:#f72a3b; margin-top: -15px; width:100px;}
 .centerorder .list .sg .thing{ padding: 8px 12px 8px 110px; border-bottom: 1px solid #e5e5e5; min-height: 102px;  position: relative;}
 .centerorder .list .sg .thing .imga{ display: block; width:90px; height:90px; position: absolute; left: 12px; top: 50%; margin-top: -45px; border-radius: 5px; overflow: hidden; cursor:pointer;}
@@ -162,14 +162,14 @@ i,em{font-style: normal;}
 .orderdetail{ padding-bottom: 30px;}
 .orderdetail .state{ padding: 15px 15px; text-align: center; font-size: 14px; line-height: 24px; color: #111;}
 .orderdetail .state img{ display: block; margin: 0 auto; width:32px; margin: 5px auto 0 auto;}
-.orderdetail .dizhi{ background-color: #fff; padding: 15px 12px 15px 44px; background-position: 12px center; background-repeat: no-repeat; background-size: 24px auto; background-image: url("../images/dengfukuan_07.png"); border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
+.orderdetail .dizhi{ background-color: #fff; padding: 15px 12px 15px 44px; background-position: 12px center; background-repeat: no-repeat; background-size: 24px auto; background-image: url("../~/Common/img/dengfukuan_07.png"); border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
 .orderdetail .dizhi p{ font-size: 15px; line-height: 30px; color: #000; overflow: hidden;}
 .orderdetail .dizhi p span{ display: block; float: left;}
 .orderdetail .dizhi p i{ display: block; float: right; font-size: 13px;}
 .orderdetail .dizhi h6{ font-size: 13px; line-height: 23px; color: #666;}
 .orderdetail .qingdan{ background-color: #fff; margin: 8px 0 0 0; border-top: 1px solid #e5e5e5;}
 .orderdetail .qingdan .num{ display: block; border-bottom: 1px solid #e5e5e5; padding: 5px 100px 5px 12px;position: relative; overflow: hidden;}
-.orderdetail .qingdan .num span{ display: block; padding-left:20px; background-image: url("../images/dengfukuan_11.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.orderdetail .qingdan .num span{ display: block; padding-left:20px; background-image: url("../~/Common/img/dengfukuan_11.png"); background-size: 15px auto; background-repeat: no-repeat; background-position: left center; line-height: 30px; font-size: 15px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .orderdetail .qingdan .num i{ position:absolute; right: 12px; top: 50%; height: 30px; line-height: 30px; text-align: right; font-size: 14px; color:#f72a3b; margin-top: -15px; width: 84px;}
 .orderdetail .qingdan .sg{ padding: 8px 12px 8px 110px; border-bottom: 1px solid #e5e5e5; min-height: 102px;  position: relative;}
 .orderdetail .qingdan .sg .imga{ display: block; width:90px; height:90px; position: absolute; left: 12px; top: 50%; margin-top: -45px; border-radius: 5px; overflow: hidden; cursor:pointer;}
@@ -208,7 +208,7 @@ i,em{font-style: normal;}
 .orderwuliu .goods{ padding: 15px 12px 15px 115px; position: relative; background-color: #fff; margin: 6px 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
 .orderwuliu .goods .imga{ display: block; width: 90px; overflow: hidden; border-radius: 4px; position: absolute; left: 12px; top: 50%; margin-top: -45px;}
 .orderwuliu .goods .imga img{ display: block; width: 90px; height: 90px;}
-.orderwuliu .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../images/centerwuliu_03.png"); z-index: 2;}
+.orderwuliu .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../~/Common/img/centerwuliu_03.png"); z-index: 2;}
 .orderwuliu .goods p{ font-size: 14px; line-height: 24px; color: #666;}
 .orderwuliu .goods p span{ color: #111;}
 .orderwuliu .goods p i{ color: #f72a3b;}
@@ -216,11 +216,11 @@ i,em{font-style: normal;}
 .orderwuliu .trace{ background-color: #fff; padding-bottom: 40px;}
 .orderwuliu .trace h2{ padding:12px 12px; border-bottom: 1px solid #e5e5e5;}
 .orderwuliu .trace h2 span{ display: block; border-left: 3px solid #000; padding-left:5px; color: #000; font-size: 15px; line-height: 15px;}
-.orderwuliu .trace .list{ background-image: url("../images/centerwuliu_11.png"); background-position:33px 20px; margin: 15px 0; padding: 0px 15px ; background-repeat:repeat-y;}
-.orderwuliu .trace .list .sg{ padding-bottom:20px; padding-left: 44px; background-image: url("../images/centerwuliu_15.png"); background-position: 11px top; background-repeat: no-repeat; font-size: 14px; color: #555; line-height: 26px; }
+.orderwuliu .trace .list{ background-image: url("../~/Common/img/centerwuliu_11.png"); background-position:33px 20px; margin: 15px 0; padding: 0px 15px ; background-repeat:repeat-y;}
+.orderwuliu .trace .list .sg{ padding-bottom:20px; padding-left: 44px; background-image: url("../~/Common/img/centerwuliu_15.png"); background-position: 11px top; background-repeat: no-repeat; font-size: 14px; color: #555; line-height: 26px; }
 .orderwuliu .trace .list .sg p{ font-size: 14px; line-height: 22px; padding-bottom: 5px;}
 .orderwuliu .trace .list .sg h6{ font-size: 13px; color: #666; line-height: 20px;}
-.orderwuliu .trace .list .sg:first-child{ background-image: url("../images/centerwuliu_07.png"); background-position: 5px top; color: #25ae5f; }
+.orderwuliu .trace .list .sg:first-child{ background-image: url("../~/Common/img/centerwuliu_07.png"); background-position: 5px top; color: #25ae5f; }
 .orderwuliu .trace .list .sg:first-child p{ color: #25ae5f;}
 .orderwuliu .trace .list .sg:first-child h6{ color: #25ae5f;}
 /**订单物流**/
@@ -230,7 +230,7 @@ i,em{font-style: normal;}
 .orderpingjia .goods{ padding: 15px 12px 15px 105px; position: relative; background-color: #fff; margin: 6px 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
 .orderpingjia .goods .imga{ display: block; width: 80px; overflow: hidden; border-radius: 4px; position: absolute; left: 12px; top: 50%; margin-top: -40px;}
 .orderpingjia .goods .imga img{ display: block; width: 80px; height: 80px;}
-.orderpingjia .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../images/centerwuliu_03.png"); z-index: 2;}
+.orderpingjia .goods .imga i{ display: block; width: 100%; height: 24px; line-height: 24px; color: #fff; font-size: 12px; text-align: center; position: absolute; left: 0; bottom: 0; background-image: url("../~/Common/img/centerwuliu_03.png"); z-index: 2;}
 .orderpingjia .goods .text{ display: block;}
 .orderpingjia .goods .text span{ display: block; color: #111; font-size: 14px; line-height: 20px; height: 40px; margin-bottom: 8px; }
 .orderpingjia .goods .text i{ color: #f72a3b; display: block;}
@@ -248,8 +248,8 @@ i,em{font-style: normal;}
 .orderpingjia .pingjia .fill .score{ overflow: hidden; padding: 15px 0 0 0;}
 .orderpingjia .pingjia .fill .score span{ display: block; margin-right: 10px; float: left; font-size: 15px; color: #222; line-height: 30px;}
 .orderpingjia .pingjia .fill .score em{ display: block; float: left; overflow: hidden;}
-.orderpingjia .pingjia .fill .score em i{ display: block; width: 20px; height: 30px; background-image: url("../images/orderpingjia_13.png"); background-repeat: no-repeat; background-size: 18px auto; background-position: center center; float: left; cursor: pointer;}
-.orderpingjia .pingjia .fill .score em i.on{ background-image: url("../images/orderpingjia_11.png");}
+.orderpingjia .pingjia .fill .score em i{ display: block; width: 20px; height: 30px; background-image: url("../~/Common/img/orderpingjia_13.png"); background-repeat: no-repeat; background-size: 18px auto; background-position: center center; float: left; cursor: pointer;}
+.orderpingjia .pingjia .fill .score em i.on{ background-image: url("../~/Common/img/orderpingjia_11.png");}
 /**订单评价**/
 
 
@@ -292,12 +292,12 @@ i,em{font-style: normal;}
 .income .mine a img{ display: block; width: 20px; height: 20px; border-radius: 50%; overflow: hidden; }
 .income .sg{ margin-top: 8px; background-color: #fff; border-top: 1px solid #e5e5e5; }
 .income .sg p{ display: block; border-bottom: 1px solid #e5e5e5; padding: 8px 12px 8px 140px; font-size: 14px; line-height: 26px; overflow: hidden; position: relative;}
-.income .sg p .ru{ display: block; padding-left:26px; background-size: 20px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../images/centershouyi_07.png"); width: 120px; position: absolute; left: 12px; top: 8px; color: #000;}
+.income .sg p .ru{ display: block; padding-left:26px; background-size: 20px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../~/Common/img/centershouyi_07.png"); width: 120px; position: absolute; left: 12px; top: 8px; color: #000;}
 .income .sg p .ru i{ color: #1099e0; font-size: 12px; padding-left: 4px;}
-.income .sg p .come{ display: block; width: 100%; height: 26px; padding-right: 14px;background-image: url("../images/centericon_48.png"); background-position:right center; background-repeat: no-repeat; background-size: 8px auto; }
+.income .sg p .come{ display: block; width: 100%; height: 26px; padding-right: 14px;background-image: url("../~/Common/img/centericon_48.png"); background-position:right center; background-repeat: no-repeat; background-size: 8px auto; }
 .income .sgl{ margin: 8px 0; background-color: #fff; border-top: 1px solid #e5e5e5; }
-.income .sgl a{ display: block; border-bottom: 1px solid #e5e5e5; padding: 8px 12px 8px 12px; font-size: 15px; line-height: 30px; overflow: hidden; position: relative;background-image: url("../images/centericon_48.png"); background-position: 98% center; background-repeat: no-repeat; background-size: 8px auto;}
-.income .sgl a span{ display: block; padding-left:30px; background-size: 24px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../images/centertixian_03.png");color: #000;}
+.income .sgl a{ display: block; border-bottom: 1px solid #e5e5e5; padding: 8px 12px 8px 12px; font-size: 15px; line-height: 30px; overflow: hidden; position: relative;background-image: url("../~/Common/img/centericon_48.png"); background-position: 98% center; background-repeat: no-repeat; background-size: 8px auto;}
+.income .sgl a span{ display: block; padding-left:30px; background-size: 24px auto; background-repeat: no-repeat; background-position: left center; background-image: url("../~/Common/img/centertixian_03.png");color: #000;}
 
 
 .income .tip{ background-color:#fff; padding: 8px 12px; margin-top: 8px; font-size: 14px; line-height: 24px; color: #555; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5;}
@@ -322,8 +322,8 @@ i,em{font-style: normal;}
 .income .mingxi.tance{ border-top: 1px solid #e5e5e5; margin-top: 6px; }
 
 .ftop h2{ position: relative;}
-.ftop h2 span{ display: inline-block; padding-right: 20px; background-image: url("../images/centermingxi_03.png"); background-position: right center; background-repeat: no-repeat; font-size: 16px; background-size: 12px auto;}
-.ftop h2 span.on{ background-image: url("../images/centermingxi_06.png");}
+.ftop h2 span{ display: inline-block; padding-right: 20px; background-image: url("../~/Common/img/centermingxi_03.png"); background-position: right center; background-repeat: no-repeat; font-size: 16px; background-size: 12px auto;}
+.ftop h2 span.on{ background-image: url("../~/Common/img/centermingxi_06.png");}
 .ftop h2 p{ position: absolute; left: 50%; top: 35px; width: 100px; margin-left: -50px; display:none;}
 .ftop h2 p img{ display: block; width: 17px; height: 8px; margin: 0 auto;}
 .ftop h2 p a{ display: block; width:100px; height: 36px; line-height: 36px; color: #fff; font-size: 15px; background-color: #000; border-radius: 2px; cursor: pointer; text-align: center;}
@@ -356,7 +356,7 @@ i,em{font-style: normal;}
 .address{}
 .address .list{}
 .address .list .sg{ padding: 10px 12px; margin-top: 6px; border-bottom: 1px solid #e5e5e5;  border-top: 1px solid #e5e5e5; background-color: #fff; }
-.address .list .sg a{ display: block; padding-right: 18px; background-image:url("../images/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size: 9px auto;}
+.address .list .sg a{ display: block; padding-right: 18px; background-image:url("../~/Common/img/centericon_48.png"); background-position: right center; background-repeat: no-repeat; background-size: 9px auto;}
 .address .list .sg a .name{ display: block; color: #000; position: relative; padding-right: 100px; height: 30px; line-height: 30px; font-size: 15px;}
 .address .list .sg a .name i{ display: block;}
 .address .list .sg a .name em{ position: absolute; right: 0; top: 0; height: 30px; line-height: 30px; width: 100px; font-size: 13px; display: block;}
@@ -369,9 +369,9 @@ i,em{font-style: normal;}
 .address .fill a span{ display: block; font-size: 14px; line-height: 20px; color: #000;}
 .address .fill a input{ display: block; height: 26px; line-height: 26px; border:none; background-color: transparent; font-size: 14px; color: #666;}
 .address .chose{ background-color: #fff; border-bottom: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5; padding: 2px 12px; margin-top: 6px;}
-.address .chose span{ display:block; font-size: 14px; line-height: 36px; color:#000; padding-right: 25px; background-image: url("../images/centdizhi_10.png"); background-position: right center; background-repeat: no-repeat; background-size: 20px auto; }
-.address .chose.on span{ background-image: url("../images/centdizhi_07.png");}
-.address .fill a.bg{ background-image: url("../images/centericon_48.png"); background-position:97% center; background-repeat: no-repeat; background-size: 9px auto; }
+.address .chose span{ display:block; font-size: 14px; line-height: 36px; color:#000; padding-right: 25px; background-image: url("../~/Common/img/centdizhi_10.png"); background-position: right center; background-repeat: no-repeat; background-size: 20px auto; }
+.address .chose.on span{ background-image: url("../~/Common/img/centdizhi_07.png");}
+.address .fill a.bg{ background-image: url("../~/Common/img/centericon_48.png"); background-position:97% center; background-repeat: no-repeat; background-size: 9px auto; }
 
 .address .tit{ overflow: hidden; background-color: #222; margin: 6px 0;}
 .address .tit a{ display: block; width: 33.3%; float: left; text-align:center; height: 40px; font-size: 16px; text-align: center; color: #fff; line-height: 40px;}
@@ -412,8 +412,8 @@ i,em{font-style: normal;}
 .collect .list .sg a .txt b i{ font-size: 18px; font-family: "Arial";  }
 .collect .list .sg .del{ position: absolute; right: 0; top: 14px; width: 20px; height: 20px; display: none; cursor: pointer;}
 .collect .list .sg.on{ padding: 0 30px 0 30px;}
-.collect .list .sg.on label{ display: block; position: absolute; left: 0; top: 50%; width: 20px; height: 20px; margin-top: -10px; cursor:pointer; background-image: url("../images/centdizhi_10.png"); background-position: center center; background-repeat: no-repeat; background-size: 16px 16px;}
-.collect .list .sg.on label.on{ background-image: url("../images/centdizhi_07.png");}
+.collect .list .sg.on label{ display: block; position: absolute; left: 0; top: 50%; width: 20px; height: 20px; margin-top: -10px; cursor:pointer; background-image: url("../~/Common/img/centdizhi_10.png"); background-position: center center; background-repeat: no-repeat; background-size: 16px 16px;}
+.collect .list .sg.on label.on{ background-image: url("../~/Common/img/centdizhi_07.png");}
 .collect .list .sg.on .del{ display: block;}
 /**我的收藏**/
 

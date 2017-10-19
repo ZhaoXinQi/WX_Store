@@ -49,55 +49,31 @@
 <div class="index_main">
     <p class="index_mtitle"> <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="index_xianshi.html">限时</a></p>
     <ul>
+       @foreach (ProductInfo item in ViewBag.Pro as List<ProductInfo>)
+       {
         <li>
-            <a href="product_xq.html"><img src="images/index_img01.jpg"></a>
+            <a href="product_xq.html"><img src="~/Common/img/index_img02.jpg"></a>
             <div class="product_text">
                 <h2>
-                    <p>特级云南冬虫夏草</p>
-                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
+                    <p>@item.Name</p>
+                    <span><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_07.png"></span>
                 </h2>
-                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                <p>@item.Describe</p>
                 <h3>
-                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
+                    <p><i>￥</i><b>@item.Price</b><span>特级</span><span>甄选</span></p>
                     <a href="product_xq.html">立即购买</a>
                 </h3>
             </div>
         </li>
-        <li>
-            <a href="product_xq.html"><img src="images/index_img02.jpg"></a>
-            <div class="product_text">
-                <h2>
-                    <p>特级云南冬虫夏草</p>
-                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
-                </h2>
-                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
-                <h3>
-                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
-                    <a href="product_xq.html">立即购买</a>
-                </h3>
-            </div>
-        </li>
-        <li>
-            <a href="product_xq.html"><img src="images/index_img03.jpg"></a>
-            <div class="product_text">
-                <h2>
-                    <p>特级云南冬虫夏草</p>
-                    <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"></span>
-                </h2>
-                <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
-                <h3>
-                    <p><i>￥</i><b>180.00</b><span>特级</span><span>甄选</span></p>
-                    <a href="product_xq.html">立即购买</a>
-                </h3>
-            </div>
-        </li>
+       }
+        @{ }
     </ul>
 </div>
 <div class="index_icon">
     <p>
-        <span><img src="images/icon_01.png"><i>品质保证</i></span>
-        <span><img src="images/icon_02.png"><i>送货保障</i></span>
-        <span><img src="images/icon_003.png"><i>7天包换</i></span>
-        <span><img src="images/icon_04.png"><i>质量保障</i></span>
+        <span><img src="~/Common/img/icon_01.png"><i>品质保证</i></span>
+        <span><img src="~/Common/img/icon_02.png"><i>送货保障</i></span>
+        <span><img src="~/Common/img/icon_003.png"><i>7天包换</i></span>
+        <span><img src="~/Common/img/icon_04.png"><i>质量保障</i></span>
     </p>
 </div>

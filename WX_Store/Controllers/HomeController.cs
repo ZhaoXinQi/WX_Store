@@ -10,7 +10,8 @@ namespace WX_Store.Controllers
     public class HomeController : Controller
     {
         public IBannerService BannerService { get; set; }//这里需要用public  依赖注入
-        public IShowNewsService ShowNewsService { get; set; }
+        public IShowNewsService ShowNewsService { get; set; }//滚动新闻属性  依赖注入
+        public IProService ProService { get; set; }
         // GET: Home
         public ActionResult Index()
         {
@@ -18,6 +19,9 @@ namespace WX_Store.Controllers
             ViewBag.Banner = GetBanner.ToList();
             var GetShowNews = ShowNewsService.GetEntities(x => true);
             ViewBag.ShowNews = GetShowNews.ToList();
+            var GetPro = ProService.GetEntities(x => x.IsHot = true);
+            ViewBag.Pro = GetPro.ToList();
+            
             return View();
         }
         /// <summary>
