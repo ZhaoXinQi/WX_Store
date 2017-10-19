@@ -165,6 +165,7 @@
     <Content Include="Common\img\dengfukuan_07.png" />
     <Content Include="Common\img\dengfukuan_11.png" />
     <Content Include="Common\img\enter.png" />
+    <Content Include="Common\img\icon1.jpg" />
     <Content Include="Common\img\icon_003.png" />
     <Content Include="Common\img\icon_01.png" />
     <Content Include="Common\img\icon_010.png" />
@@ -293,7 +294,7 @@
       <Name>IBaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{d81b5915-b63c-4add-b44c-8262dcc22511}</Project>
+      <Project>{71a99dd9-d0df-4074-948b-9d2259905b37}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

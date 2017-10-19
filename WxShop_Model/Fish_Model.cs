@@ -27,6 +27,7 @@ namespace WxShop_Model
         public virtual DbSet<Specification> Specification { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<ProImage> ProImage { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -146,6 +147,12 @@ namespace WxShop_Model
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<ProductInfo>()
+                .HasMany(e => e.ProImage)
+                .WithOptional(e => e.ProductInfo)
+                .HasForeignKey(e => e.Pcode)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.ShoppongCart)
                 .WithOptional(e => e.ProductInfo)
                 .HasForeignKey(e => e.Pcode)
@@ -188,6 +195,10 @@ namespace WxShop_Model
 
             modelBuilder.Entity<Stock>()
                 .Property(e => e.BillId)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProImage>()
+                .Property(e => e.Pcode)
                 .IsUnicode(false);
         }
     }
