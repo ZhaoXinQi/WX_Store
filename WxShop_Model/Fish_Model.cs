@@ -23,10 +23,8 @@ namespace WxShop_Model
         public virtual DbSet<ProductSort> ProductSort { get; set; }
         public virtual DbSet<SeachProduct> SeachProduct { get; set; }
         public virtual DbSet<ShoppongCart> ShoppongCart { get; set; }
-        public virtual DbSet<ShowNews> ShowNews { get; set; }
         public virtual DbSet<Specification> Specification { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -176,10 +174,6 @@ namespace WxShop_Model
             modelBuilder.Entity<ShoppongCart>()
                 .Property(e => e.Totale)
                 .HasPrecision(19, 4);
-
-            modelBuilder.Entity<ShowNews>()
-                .Property(e => e.Content)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Specification>()
                 .HasMany(e => e.ProductInfo)

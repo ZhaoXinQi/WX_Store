@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1174307E-50A6-497B-8BDB-02BC69B4A4C1}</ProjectGuid>
+    <ProjectGuid>{675FEB1C-B207-47A9-9D58-3A77086761C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WxShop_Model</RootNamespace>
@@ -62,10 +62,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeachProduct.cs" />
     <Compile Include="ShoppongCart.cs" />
-    <Compile Include="ShowNews.cs" />
     <Compile Include="Specification.cs" />
     <Compile Include="Stock.cs" />
-    <Compile Include="sysdiagrams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
