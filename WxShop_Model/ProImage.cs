@@ -9,9 +9,13 @@ namespace WxShop_Model
     [Table("ProImage")]
     public partial class ProImage
     {
+        [Key]
+        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
+        [Key]
+        [Column(Order = 1)]
         [StringLength(8)]
         public string Pcode { get; set; }
 

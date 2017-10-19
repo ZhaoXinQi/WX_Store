@@ -59,7 +59,7 @@
       <Name>Fish_IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{71a99dd9-d0df-4074-948b-9d2259905b37}</Project>
+      <Project>{205bcc2e-5207-4d2d-8c00-c51fba7d077c}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

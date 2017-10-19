@@ -21,13 +21,13 @@ namespace WxShop_Model
         public virtual DbSet<ProductInfo> ProductInfo { get; set; }
         public virtual DbSet<ProductReview> ProductReview { get; set; }
         public virtual DbSet<ProductSort> ProductSort { get; set; }
+        public virtual DbSet<ProImage> ProImage { get; set; }
         public virtual DbSet<SeachProduct> SeachProduct { get; set; }
         public virtual DbSet<ShoppongCart> ShoppongCart { get; set; }
         public virtual DbSet<ShowNews> ShowNews { get; set; }
         public virtual DbSet<Specification> Specification { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<ProImage> ProImage { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -148,9 +148,8 @@ namespace WxShop_Model
 
             modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.ProImage)
-                .WithOptional(e => e.ProductInfo)
-                .HasForeignKey(e => e.Pcode)
-                .WillCascadeOnDelete();
+                .WithRequired(e => e.ProductInfo)
+                .HasForeignKey(e => e.Pcode);
 
             modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.ShoppongCart)
@@ -170,6 +169,10 @@ namespace WxShop_Model
 
             modelBuilder.Entity<ProductSort>()
                 .Property(e => e.Code)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProImage>()
+                .Property(e => e.Pcode)
                 .IsUnicode(false);
 
             modelBuilder.Entity<ShoppongCart>()
@@ -195,10 +198,6 @@ namespace WxShop_Model
 
             modelBuilder.Entity<Stock>()
                 .Property(e => e.BillId)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ProImage>()
-                .Property(e => e.Pcode)
                 .IsUnicode(false);
         }
     }
