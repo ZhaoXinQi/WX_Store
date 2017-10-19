@@ -251,6 +251,7 @@
     <Content Include="Common\img\sharetip_06.png" />
     <Content Include="Common\img\sharetip_09.png" />
     <Content Include="Common\img\sharetip_13.png" />
+    <Content Include="Common\img\timg1.jpg" />
     <Content Include="Common\js\base.js" />
     <Content Include="Common\js\index.js" />
     <Content Include="Common\js\jquery-1.7.2.min.js" />

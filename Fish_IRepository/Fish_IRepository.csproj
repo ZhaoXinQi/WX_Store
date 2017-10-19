@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBannerRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IProRepository.cs" />
     <Compile Include="IShwoNewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
