@@ -20,7 +20,15 @@ namespace WX_Store.Controllers
             ViewBag.ShowNews = GetShowNews.ToList();
             return View();
         }
+        /// <summary>
+        /// 搜索的分部视图
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Seach()
+        {
+            return PartialView();
+        }
+        public ActionResult SeachHtml()
         {
             return View();
         }

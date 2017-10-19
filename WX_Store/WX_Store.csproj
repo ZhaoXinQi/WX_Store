@@ -274,6 +274,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\Master_Page.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SeachHtml.cshtml" />
     <Content Include="Views\Home\Seach.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
