@@ -43,6 +43,7 @@
     <Compile Include="BannerService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowNewsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fish_IRepository\Fish_IRepository.csproj">

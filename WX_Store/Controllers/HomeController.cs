@@ -15,7 +15,6 @@ namespace WX_Store.Controllers
         {
             var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
-         //   WxShop_Model Fish_Model
             return View();
         }
         public ActionResult Seach()
