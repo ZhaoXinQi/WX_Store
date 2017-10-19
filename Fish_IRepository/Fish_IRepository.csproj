@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{675feb1c-b207-47a9-9d58-3a77086761c1}</Project>
+      <Project>{d81b5915-b63c-4add-b44c-8262dcc22511}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>
