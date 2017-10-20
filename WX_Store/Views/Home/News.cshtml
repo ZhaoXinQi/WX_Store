@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>News</title>
+    <link href="~/Common/css/Cbase.css" rel="stylesheet" />
+    <link href="~/Common/css/index.css" rel="stylesheet" />
+    <script src="~/Common/js/jquery-1.7.2.min.js"></script>
+    <script src="~/Common/js/base.js"></script>
+    <script src="~/Common/js/index.js"></script>
+</head>
+<body>
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+        <h2>公告详情</h2>
+        <a class="comea">&nbsp;</a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <div class="notice noti">
+        <div class="notice_xq">
+            <h2><span>@ViewBag.ShowNews_Title</span><i>@ViewBag.ShowNews_Times</i></h2>
+            <div class="notice_text">
+               @ViewBag.ShowNews_Content
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

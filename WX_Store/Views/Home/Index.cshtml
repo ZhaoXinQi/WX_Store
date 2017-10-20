@@ -12,11 +12,7 @@
         {
             <div class="swiper-slide"><a><img src="~/Common/img/@item.img" alt=""></a></div>
         }
-        @*<div class="swiper-slide"><a><img src="~/Common/img/index_banner.jpg" alt=""></a></div>
-        <div class="swiper-slide"><a><img src="~/Common/img/index_img01.jpg" alt=""></a></div>
-        <div class="swiper-slide"><a><img src="~/Common/img/index_img03.jpg" alt=""></a></div>*@
     </div>
-
     <div class="swiper-pagination swiper-index"></div>
 </div>
 <script>
@@ -34,7 +30,7 @@
         <div class="swiper-wrapper">
             @foreach (ShowNews item in ViewBag.ShowNews as List<ShowNews>)
             {
-                <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>@item.Title</a>
+                <a class="swiper-slide" href="~/Home/News/@item.id"><i>最热</i>@item.Title</a>
             }          
         </div>
     </div>

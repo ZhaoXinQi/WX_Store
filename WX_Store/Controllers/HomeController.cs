@@ -36,5 +36,13 @@ namespace WX_Store.Controllers
         {
             return View();
         }
+        public ActionResult News(int id)//利用路由规则
+        {
+            var GetShowNews = ShowNewsService.GetEntity(x => x.id == id);
+            ViewBag.ShowNews_Title = GetShowNews.Title;
+            ViewBag.ShowNews_ConTent = GetShowNews.Content;
+            ViewBag.ShowNews_Time = GetShowNews.CreateTime;
+            return View();
+        }
     }
 }
