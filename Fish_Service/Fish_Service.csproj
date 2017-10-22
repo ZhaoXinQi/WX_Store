@@ -56,7 +56,7 @@
       <Name>IBaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{205bcc2e-5207-4d2d-8c00-c51fba7d077c}</Project>
+      <Project>{8c3ddf0c-4175-405b-88ec-bd7d62269201}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

@@ -52,7 +52,7 @@ namespace WX_Store.Controllers
         }
         public ActionResult HotSell()
         {
-            //查询热销商品信息
+            //查询热销商品信息 WxShop_Model Fish_Model
             var GetPro = ProService.GetEntities(x => x.IsHot = true).Take(3);
             ViewBag.Pro = GetPro.ToList();
             return PartialView();

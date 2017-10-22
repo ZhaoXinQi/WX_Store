@@ -40,6 +40,9 @@ namespace WxShop_Model
         [Required]
         public string Content { get; set; }
 
+        [StringLength(50)]
+        public string img { get; set; }
+
         public DateTime CreateTime { get; set; }
 
         [StringLength(4)]

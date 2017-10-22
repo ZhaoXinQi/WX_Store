@@ -216,6 +216,7 @@
     <Content Include="Common\img\img_02.jpg" />
     <Content Include="Common\img\img_03.jpg" />
     <Content Include="Common\img\img_04.jpg" />
+    <Content Include="Common\img\img_0489.jpg" />
     <Content Include="Common\img\img_05.jpg" />
     <Content Include="Common\img\img_06.jpg" />
     <Content Include="Common\img\img_07.jpg" />
@@ -252,6 +253,7 @@
     <Content Include="Common\img\sharetip_09.png" />
     <Content Include="Common\img\sharetip_13.png" />
     <Content Include="Common\img\timg1.jpg" />
+    <Content Include="Common\img\u=1391500251,1068251357&amp;fm=27&amp;gp=0.jpg" />
     <Content Include="Common\js\base.js" />
     <Content Include="Common\js\index.js" />
     <Content Include="Common\js\jquery-1.7.2.min.js" />
@@ -298,7 +300,7 @@
       <Name>IBaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{205bcc2e-5207-4d2d-8c00-c51fba7d077c}</Project>
+      <Project>{8c3ddf0c-4175-405b-88ec-bd7d62269201}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

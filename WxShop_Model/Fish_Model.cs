@@ -120,6 +120,10 @@ namespace WxShop_Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<ProductInfo>()
+                .Property(e => e.img)
+                .IsFixedLength();
+
+            modelBuilder.Entity<ProductInfo>()
                 .Property(e => e.ProductSortCode)
                 .IsUnicode(false);
 
