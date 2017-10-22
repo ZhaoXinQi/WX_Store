@@ -15,13 +15,12 @@ namespace WX_Store.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //查询banner
             var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
+            //查询滚动新闻
             var GetShowNews = ShowNewsService.GetEntities(x => true);
-            ViewBag.ShowNews = GetShowNews.ToList();
-            var GetPro = ProService.GetEntities(x => x.IsHot = true);
-            ViewBag.Pro = GetPro.ToList();
-            
+            ViewBag.ShowNews = GetShowNews.ToList();          
             return View();
         }
         /// <summary>
@@ -36,13 +35,34 @@ namespace WX_Store.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// ShowNews内容页
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult News(int id)//利用路由规则
         {
+            //查询处点击的新闻的信息
             var GetShowNews = ShowNewsService.GetEntity(x => x.id == id);
+            //赋值
             ViewBag.ShowNews_Title = GetShowNews.Title;
             ViewBag.ShowNews_ConTent = GetShowNews.Content;
             ViewBag.ShowNews_Time = GetShowNews.CreateTime;
             return View();
+        }
+        public ActionResult HotSell()
+        {
+            //查询热销商品信息
+            var GetPro = ProService.GetEntities(x => x.IsHot = true).Take(3);
+            ViewBag.Pro = GetPro.ToList();
+            return PartialView();
+        }
+        public ActionResult tuijian()
+        {
+            //查询热销商品信息
+            var GetPro = ProService.GetEntities(x =>true).OrderByDescending(x=>x.IsHot).Take(1);
+            ViewBag.Pro = GetPro.ToList();
+            return PartialView();
         }
     }
 }

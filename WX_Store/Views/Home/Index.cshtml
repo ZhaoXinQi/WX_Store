@@ -4,7 +4,51 @@
     Layout = "~/Views/Shared/Master_Page.cshtml";
 }
 @using WxShop_Model
-@{Html.RenderPartial("Seach","home");}
+<script>
+    $(function () {
+        $("#HotSell").click(function () {
+            $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
+            $("tuijian").attr("class", "on1");
+            $("xianshi").attr("class", "on1");
+            $.ajax({
+                type: "post",
+                data: { "id":""},
+                url: "/home/HotSell",
+                success: function (data) {
+                    $("#ShowPro").html(data);
+                }
+            })
+        })
+        $("#tuijian").click(function () {
+            $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
+            $("HotSell").attr("class", "on1");
+            $("xianshi").attr("class", "on1");
+            alert(1);
+            $.ajax({
+                type: "post",
+                data: { "id": "" },
+                url: "/home/tuijian",
+                success: function (data) {
+                    $("#ShowPro").html(data);
+                }
+            })
+        })
+        $("#xianshi").click(function () {
+            $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
+            $("tuijian").attr("class", "on1");
+            $("HotSell").attr("class", "on1");
+            $.ajax({
+                type: "post",
+                data: { "id": "" },
+                url: "/home/xianshi",
+                success: function (data) {
+                    $("#ShowPro").html(data);
+                }
+            })
+        })
+    })
+</script>
+@{Html.RenderPartial("Seach", "home");}
 <!--banner start-->
 <div class="swiper-container index_banner">
     <div class="swiper-wrapper">
@@ -43,27 +87,10 @@
   });
 </script>
 <div class="index_main">
-    <p class="index_mtitle"> <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="index_xianshi.html">限时</a></p>
-    <ul>
-       @foreach (ProductInfo item in ViewBag.Pro as List<ProductInfo>)
-       {
-        <li>
-            <a href="product_xq.html"><img src="~/Common/img/index_img02.jpg"></a>
-            <div class="product_text">
-                <h2>
-                    <p>@item.Name</p>
-                    <span><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_07.png"></span>
-                </h2>
-                <p>@item.Describe</p>
-                <h3>
-                    <p><i>￥</i><b>@item.Price</b><span>特级</span><span>甄选</span></p>
-                    <a href="product_xq.html">立即购买</a>
-                </h3>
-            </div>
-        </li>
-       }
-        @{ }
-    </ul>
+    <p class="index_mtitle"> <a class="on" href="#" id="HotSell">热销</a> <a href="#" id="tuijian">推荐</a> <a href="index_xianshi.html" id="xianshi">限时</a></p>
+    <div id="ShowPro">
+        @{Html.RenderAction("HotSell","Home");}
+    </div>
 </div>
 <div class="index_icon">
     <p>

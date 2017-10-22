@@ -1,0 +1,20 @@
+﻿<ul>
+    @foreach (var item in ViewBag.Pro)
+    {
+        <li>
+            <a href="product_xq.html"><img src="~/Common/img/index_img02.jpg"></a>
+            <div class="product_text">
+                <h2>
+                    <p>@item.Name</p>
+                    <span><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_06.png"><img src="~/Common/img/icon_07.png"></span>
+                </h2>
+                <p>@item.Describe</p>
+                <h3>
+                    <p><i>￥</i><b>@item.Price</b><span>特级</span><span>甄选</span></p>
+                    <a href="product_xq.html">立即购买</a>
+                </h3>
+            </div>
+        </li>
+    }
+</ul>
+

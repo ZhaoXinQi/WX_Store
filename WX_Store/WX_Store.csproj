@@ -279,6 +279,8 @@
     <Content Include="Views\Home\SeachHtml.cshtml" />
     <Content Include="Views\Home\Seach.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\HotSell.cshtml" />
+    <Content Include="Views\Home\tuijian.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
