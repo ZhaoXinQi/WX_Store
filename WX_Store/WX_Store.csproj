@@ -285,6 +285,7 @@
     <Content Include="Views\Home\HotSell.cshtml" />
     <Content Include="Views\Home\tuijian.cshtml" />
     <Content Include="Views\Sort\sort.cshtml" />
+    <Content Include="Views\Sort\ProductInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

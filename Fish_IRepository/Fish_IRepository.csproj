@@ -44,6 +44,8 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IProRepository.cs" />
     <Compile Include="IShwoNewsRepository.cs" />
+    <Compile Include="ISortFirstRepository.cs" />
+    <Compile Include="ISortSecondRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

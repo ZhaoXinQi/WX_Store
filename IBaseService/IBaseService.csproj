@@ -43,6 +43,7 @@
     <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="IShowNewsService.cs" />
+    <Compile Include="ISortFirstService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IProService.cs" />
   </ItemGroup>
