@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BannerService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="ProPagesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProService.cs" />
     <Compile Include="ShowNewsService.cs" />

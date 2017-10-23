@@ -22,7 +22,12 @@ namespace WX_Store.Controllers
         public ActionResult ProductInfo()
         {
             string id = Request["id"];
-            var pro = ProService.GetEntities(x => x.Code == id);
+            //if(id==null)
+            //{
+
+            //}
+            //根据类别code查询处商品
+            var pro = ProService.GetEntities(x => x.ProductSortCode == id);
             ViewBag.pro = pro.ToList();
             return PartialView();
         }

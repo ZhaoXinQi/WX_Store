@@ -9,11 +9,13 @@
     $(function () {
         $(".MySortFirst").click(function () {
             var Code = $(this).attr("data_value");
+            alert(1);
             $.ajax({
                 type: "post",
                 data: { "id": Code },
                 url: "/Sort/ProductInfo",
                 success: function (date) {
+                    alert(date);
                     $(".fenlist").html(date);
                 }
             })
