@@ -31,7 +31,7 @@ namespace WX_Store.Controllers
                 id = productSort.Code;
             }
             //根据类别code查询处商品
-            var pro = SortSecondService.GetEntities(x => x.Code == id);
+            var pro = SortSecondService.GetEntities(x => x.FirstCode == id);
             ViewBag.pro = pro.ToList();
             return PartialView();
         }
