@@ -13,7 +13,7 @@ namespace WxShop_Model
 
         public int num { get; set; }
 
-        [StringLength(8)]
+        [StringLength(12)]
         public string BillId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

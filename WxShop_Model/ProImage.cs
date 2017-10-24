@@ -16,7 +16,7 @@ namespace WxShop_Model
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(8)]
+        [StringLength(12)]
         public string Pcode { get; set; }
 
         [StringLength(50)]

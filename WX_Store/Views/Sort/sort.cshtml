@@ -9,19 +9,19 @@
     $(function () {
         $(".MySortFirst").click(function () {
             var Code = $(this).attr("data_value");
-            alert(1);
+            alert(Code);
             $.ajax({
                 type: "post",
                 data: { "id": Code },
                 url: "/Sort/ProductInfo",
-                success: function (date) {
-                    alert(date);
-                    $(".fenlist").html(date);
+                success: function (data) {
+                    alert(data);
+                    $('.fenlist').html(data);
                 }
             })
         })
     })
-  
+    WxShop_Model    Fish_Model.cs
 </script>
 <!--分类页面-->
 <!--分类-->
@@ -37,11 +37,10 @@
     <div class="fen-box">
         <div class="fff">
             <div class="fenlist">
-              
+                @Html.Action("ProductInfo", "sort")
             </div>
         </div>
     </div>
-</div>
 </div>
 <!--分类-->
 <!--分类页面-->
@@ -50,7 +49,7 @@
     $(".fen-nav,.fen-box").css("height",m+"px");
 
 
-    var $lii = $(".fenlei .fen-nav li");
+                    var $lii = $(".fenlei .fen-nav li");
     $(".fenlei .fen-box .fenlist").hide();
     $(".fenlei .fen-box .fenlist").first().show();
     $lii.click(function(){
@@ -62,17 +61,17 @@
 
 
         $(this).addClass("on").siblings().removeClass("on");
-        var indexx = $lii.index(this);
+                    var indexx = $lii.index(this);
         $('.fenlei .fen-box').animate({scrollTop: '0px'},500);
         $(".fenlei .fen-box .fff .fenlist").hide();
         $(".fenlei .fen-box .fff .fenlist").eq(indexx).show();
-    })
+                })
     var w=$(".fenli li img").width();
     $(".fenli li img").height(w);
     $(window).resize(function(){
-        var w=parseInt($(".fenli li img").width());
+                    var w=parseInt($(".fenli li img").width());
         $(".fenli li img").height(w);
-    })
+                })
 
 </script>
 

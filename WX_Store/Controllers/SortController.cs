@@ -13,19 +13,23 @@ namespace WX_Store.Controllers
         public ISortFirstService SortFirstService { get; set; }
         public IProService ProService { get; set; }
         // GET: Sort
+        //查询一级菜单
         public ActionResult sort()
         {
             var SortFirst= SortFirstService.GetEntities(x => true).ToList();
             ViewBag.SortFirst = SortFirst;
+            Session["Code"] = SortFirst;
             return View();
         }
         public ActionResult ProductInfo()
         {
             string id = Request["id"];
-            //if(id==null)
-            //{
-
-            //}
+            if (id == null)
+            {
+                List<ProductSort> list = Session["Code"] as List<ProductSort>;
+                ProductSort productSort = list.FirstOrDefault(x => true);
+                id = productSort.Code;
+            }
             //根据类别code查询处商品
             var pro = ProService.GetEntities(x => x.ProductSortCode == id);
             ViewBag.pro = pro.ToList();

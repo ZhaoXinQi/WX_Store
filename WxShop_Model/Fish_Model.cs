@@ -20,6 +20,7 @@ namespace WxShop_Model
         public virtual DbSet<PayMethod> PayMethod { get; set; }
         public virtual DbSet<ProductInfo> ProductInfo { get; set; }
         public virtual DbSet<ProductReview> ProductReview { get; set; }
+        public virtual DbSet<ProductSecondSort> ProductSecondSort { get; set; }
         public virtual DbSet<ProductSort> ProductSort { get; set; }
         public virtual DbSet<ProImage> ProImage { get; set; }
         public virtual DbSet<SeachProduct> SeachProduct { get; set; }
@@ -169,6 +170,10 @@ namespace WxShop_Model
 
             modelBuilder.Entity<ProductReview>()
                 .Property(e => e.Pcode)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProductSecondSort>()
+                .Property(e => e.Code)
                 .IsUnicode(false);
 
             modelBuilder.Entity<ProductSort>()

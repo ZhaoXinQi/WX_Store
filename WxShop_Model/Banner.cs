@@ -15,7 +15,7 @@ namespace WxShop_Model
         [StringLength(50)]
         public string img { get; set; }
 
-        [StringLength(8)]
+        [StringLength(12)]
         public string P_Code { get; set; }
 
         public DateTime CreateTime { get; set; }

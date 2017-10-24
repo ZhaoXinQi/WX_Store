@@ -1,14 +1,28 @@
-﻿<ul>
-    @foreach (var item in ViewBag.pro)
+﻿@using WxShop_Model
+<ul>
+    @foreach (ProductInfo item in ViewBag.pro as List<ProductInfo>)
     {
-        <li>
-            <a class="imga" href="search_list.html"><img src="~/Common/img/timg (2).jpg"></a>
-            <a class="txta" href="search_list.html">
-                <span>@item.Name</span>
-                <i>冬虫夏草有负性频率、降低心肌耗氧量、改善心肌缺血、抗血小板聚集和抗心律失常等作用。虫草醇提取物对急性病毒性心肌炎有明显保护作用。</i>
-            </a>
-        </li>
-      
-           }
+        if (item.img.Split(',').Count() > 1)
+        {
+            <li>
+                <a class="imga" href="search_list.html"><img src="~/Common/img/@item.img.ToString().Split(',')[1]"></a>
+                <a class="txta" href="search_list.html">
+                    <span>@item.Name</span>
+                    <i>@item.Describe</i>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a class="imga" href="search_list.html"><img src="~/Common/img/@item.img.ToString().Split(',')[0]"></a>
+                <a class="txta" href="search_list.html">
+                    <span>@item.Name</span>
+                    <i>@item.Describe</i>
+                </a>
+            </li>
+        }
+
+    }
 
 </ul>

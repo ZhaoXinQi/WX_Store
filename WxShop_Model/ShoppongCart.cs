@@ -13,7 +13,7 @@ namespace WxShop_Model
 
         public Guid? Cid { get; set; }
 
-        [StringLength(8)]
+        [StringLength(12)]
         public string Pcode { get; set; }
 
         [Column(TypeName = "money")]

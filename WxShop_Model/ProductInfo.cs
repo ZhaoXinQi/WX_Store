@@ -22,7 +22,7 @@ namespace WxShop_Model
         }
 
         [Key]
-        [StringLength(8)]
+        [StringLength(12)]
         public string Code { get; set; }
 
         [Required]
