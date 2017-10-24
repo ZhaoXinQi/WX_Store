@@ -176,6 +176,14 @@ namespace WxShop_Model
                 .Property(e => e.Code)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<ProductSecondSort>()
+                .Property(e => e.FirstCode)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProductSecondSort>()
+                .Property(e => e.img)
+                .IsUnicode(false);
+
             modelBuilder.Entity<ProductSort>()
                 .Property(e => e.Code)
                 .IsUnicode(false);

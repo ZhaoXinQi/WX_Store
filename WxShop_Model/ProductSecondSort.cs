@@ -18,5 +18,11 @@ namespace WxShop_Model
         [Required]
         [StringLength(8)]
         public string Code { get; set; }
+
+        [StringLength(4)]
+        public string FirstCode { get; set; }
+
+        [StringLength(50)]
+        public string img { get; set; }
     }
 }

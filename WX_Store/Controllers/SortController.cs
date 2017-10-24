@@ -11,7 +11,7 @@ namespace WX_Store.Controllers
     {
         //利用属性进行依赖注入
         public ISortFirstService SortFirstService { get; set; }
-        public IProService ProService { get; set; }
+        public ISortSecondService SortSecondService { get; set; }
         // GET: Sort
         //查询一级菜单
         public ActionResult sort()
@@ -31,7 +31,7 @@ namespace WX_Store.Controllers
                 id = productSort.Code;
             }
             //根据类别code查询处商品
-            var pro = ProService.GetEntities(x => x.ProductSortCode == id);
+            var pro = SortSecondService.GetEntities(x => x.Code == id);
             ViewBag.pro = pro.ToList();
             return PartialView();
         }

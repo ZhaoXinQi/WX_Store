@@ -9,7 +9,7 @@ namespace Fish_IRepository
     /// <summary>
     /// 查询
     /// </summary>
-    public  interface ISortSecondRepository:IBaseRepository<ProductInfo>
+    public  interface ISortSecondRepository:IBaseRepository<ProductSecondSort>
     {
     }
 }
