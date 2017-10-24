@@ -21,6 +21,7 @@ namespace WX_Store.Controllers
             Session["Code"] = SortFirst;
             return View();
         }
+        //二级菜单
         public ActionResult ProductInfo()
         {
             string id = Request["id"];

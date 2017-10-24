@@ -12,7 +12,7 @@
             $("xianshi").attr("class", "on1");
             $.ajax({
                 type: "post",
-                data: { "id":""},
+                data: { "id": "" },
                 url: "/home/HotSell",
                 success: function (data) {
                     $("#ShowPro").html(data);
@@ -45,7 +45,8 @@
                     $("#ShowPro").html(data);
                 }
             })
-        })
+        })   
+            $("#Index").attr("class", "current");           
     })
 </script>
 @{Html.RenderPartial("Seach", "home");}
