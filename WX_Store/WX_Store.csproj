@@ -293,6 +293,7 @@
     <Content Include="Views\Home\tuijian.cshtml" />
     <Content Include="Views\Sort\sort.cshtml" />
     <Content Include="Views\Sort\ProductInfo.cshtml" />
+    <Content Include="Views\Sort\ProductAll.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,7 +311,7 @@
       <Name>IBaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{f7c779bd-5ec0-4215-9e4c-72bc64da066d}</Project>
+      <Project>{ac788bcc-a4cc-43f3-a3cc-a6fc2547d041}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

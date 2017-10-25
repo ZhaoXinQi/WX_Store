@@ -45,7 +45,7 @@ namespace WxShop_Model
 
         public DateTime CreateTime { get; set; }
 
-        [StringLength(4)]
+        [StringLength(8)]
         public string ProductSortCode { get; set; }
 
         public int? SpecificationId { get; set; }

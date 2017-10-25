@@ -3,8 +3,8 @@
     @foreach (ProductSecondSort item in ViewBag.pro as List<ProductSecondSort>)
     {
             <li>
-                <a class="imga" href="search_list.html"><img src="~/Common/img/@item.img"></a>
-                <a class="txta" href="search_list.html">
+                <a class="imga" href="~/Sort/ProductAll?id=@item.Code" name="@item.Code"><img src="~/Common/img/@item.img"></a>
+                <a class="txta" href="~/sort/ProductAll?id=@item.Code">
                     <span>@item.Name</span>                    
                 </a>
             </li>

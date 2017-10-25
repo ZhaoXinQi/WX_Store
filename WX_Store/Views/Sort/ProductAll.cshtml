@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ProductAll";
+    Layout = "~/Views/Shared/Master_Page.cshtml";
+}
+@using WxShop_Model
+<!--ftop开始-->
+<div class="search_list">
+    <p><a class="on"><span>综合</span></a><a><span>销量</span></a><a><span>评价</span></a><a><span class="bg">价格</span></a></p>
+    <ul>
+        @foreach (ProductInfo  item in ViewBag.Pro as List<ProductInfo>)
+        {
+            <li>
+                <a href="product_xq.html">
+                    <img src="~/Common/img/@item.img.Split(',')[0]">
+                    <div class="search_item">
+                        <p>@item.Name</p>
+                        <h2><i>￥</i><b>@item.Price</b><span>月销18252笔</span></h2>
+                    </div>
+                </a>
+            </li>
+        }
+       
+    </ul>
+</div>
+
+<script>
+    $(".search_list ul li a img").each(function(){
+        var w = $(this).width();
+        $(this).height(w+"px");
+    })
+
+</script>
+
+

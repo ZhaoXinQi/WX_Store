@@ -16,7 +16,7 @@ namespace WxShop_Model
         public string Name { get; set; }
 
         [Required]
-        [StringLength(4)]
+        [StringLength(8)]
         public string Code { get; set; }
     }
 }

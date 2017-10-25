@@ -19,7 +19,7 @@ namespace WxShop_Model
         [StringLength(8)]
         public string Code { get; set; }
 
-        [StringLength(4)]
+        [StringLength(8)]
         public string FirstCode { get; set; }
 
         [StringLength(50)]
