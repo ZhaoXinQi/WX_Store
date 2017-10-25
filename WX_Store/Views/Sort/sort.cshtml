@@ -7,15 +7,19 @@
 @Html.Action("seach", "home")
 <script>
     $(function () {
+        //$(".MySortFirst").first().attr("class", "on");
+        //一级菜单栏切换二级菜单
         $(".MySortFirst").click(function () {
             var Code = $(this).attr("data_value");
+          //  $(".MySortFirst").removeAttr("class");
+            $(this).attr("class", "on");
             alert(Code);
             $.ajax({
                 type: "post",
                 data: { "id": Code },
                 url: "/Sort/ProductInfo",
                 success: function (data) {
-                    alert(data);
+                    
                     $('.fenlist').html(data);
                 }
             })
@@ -28,6 +32,7 @@
 <div class="fenlei">
     <div class="fen-nav">
         <ul>
+            @*一级菜单*@
             @foreach (ProductSort item in ViewBag.SortFirst as List<ProductSort>)
             {
                 <li class="MySortFirst" data_value="@item.Code">@item.Name</li>
@@ -37,6 +42,7 @@
     <div class="fen-box">
         <div class="fff">
             <div class="fenlist">
+                @*二级菜单*@
                 @Html.Action("ProductInfo", "sort")
             </div>
         </div>

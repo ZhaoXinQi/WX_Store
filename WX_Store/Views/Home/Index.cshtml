@@ -23,7 +23,7 @@
             $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
             $("HotSell").attr("class", "on1");
             $("xianshi").attr("class", "on1");
-            alert(1);
+            //alert(1);
             $.ajax({
                 type: "post",
                 data: { "id": "" },
@@ -88,7 +88,7 @@
   });
 </script>
 <div class="index_main">
-    <p class="index_mtitle"> <a class="on" href="#" id="HotSell">热销</a> <a href="#" id="tuijian">推荐</a> <a href="index_xianshi.html" id="xianshi">限时</a></p>
+    <p class="index_mtitle"> <a class="on" href="#" id="HotSell">热销</a> <a href="#" id="tuijian">推荐</a> <a href="#" id="xianshi">限时</a></p>
     <div id="ShowPro">
         @{Html.RenderAction("HotSell","Home");}
     </div>

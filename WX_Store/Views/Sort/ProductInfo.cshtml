@@ -2,26 +2,12 @@
 <ul>
     @foreach (ProductSecondSort item in ViewBag.pro as List<ProductSecondSort>)
     {
-        @*if (item.img.Split(',').Count() > 1)
-        {
-            <li>
-                <a class="imga" href="search_list.html"><img src="~/Common/img/@item.img.ToString().Split(',')[1]"></a>
-                <a class="txta" href="search_list.html">
-                    <span>@item.Name</span>
-                  
-                </a>
-            </li>
-        }
-        else
-        {*@
             <li>
                 <a class="imga" href="search_list.html"><img src="~/Common/img/@item.img"></a>
                 <a class="txta" href="search_list.html">
-                    <span>@item.Name</span>
+                    <span>@item.Name</span>                    
                 </a>
             </li>
-            //}
-
-        }
+    }
 
 </ul>

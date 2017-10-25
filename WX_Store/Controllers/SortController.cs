@@ -18,17 +18,18 @@ namespace WX_Store.Controllers
         {
             var SortFirst= SortFirstService.GetEntities(x => true).ToList();
             ViewBag.SortFirst = SortFirst;
-            Session["Code"] = SortFirst;
+            Session["Code"] = SortFirst;//把查询到的保存起来,默认二级菜单用
             return View();
         }
         //二级菜单
         public ActionResult ProductInfo()
         {
             string id = Request["id"];
+            //第一次进如分类页是空的,需要给他赋值
             if (id == null)
             {
-                List<ProductSort> list = Session["Code"] as List<ProductSort>;
-                ProductSort productSort = list.FirstOrDefault(x => true);
+                List<ProductSort> list = Session["Code"] as List<ProductSort>;//获取一级菜单信息
+                ProductSort productSort = list.FirstOrDefault(x => true);//查找一级菜单第一条信息
                 id = productSort.Code;
             }
             //根据类别code查询处商品
