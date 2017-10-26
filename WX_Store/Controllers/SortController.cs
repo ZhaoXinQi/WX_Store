@@ -42,6 +42,7 @@ namespace WX_Store.Controllers
         {
             string code = id;//  Request["id"];
             var product = ProService.GetEntities(x => x.ProductSortCode == code);
+           // var product1=ProService.GetEntityPages(0,4,true ,x=>true, == code);
             ViewBag.Pro = product.ToList();
             return View();
         }
