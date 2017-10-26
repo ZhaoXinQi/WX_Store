@@ -11,7 +11,7 @@
         @foreach (ProductInfo  item in ViewBag.Pro as List<ProductInfo>)
         {
             <li>
-                <a href="">
+                <a href="~/ProductInfo/ProductInfo?id=@item.Code">
                     <img src="~/Common/img/@item.img.Split(',')[0]">
                     <div class="search_item">
                         <p>@item.Name</p>

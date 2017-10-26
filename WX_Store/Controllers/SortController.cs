@@ -40,6 +40,7 @@ namespace WX_Store.Controllers
         }
         public ActionResult ProductAll(string id)
         {
+            //查询出根据分类的商品
             string code = id;//  Request["id"];
             var product = ProService.GetEntities(x => x.ProductSortCode == code);
            // var product1=ProService.GetEntityPages(0,4,true ,x=>true, == code);

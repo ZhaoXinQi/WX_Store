@@ -1,0 +1,297 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width" />
+<link href="~/Common/css/Cbase.css" rel="stylesheet" />
+<link href="~/Common/css/index.css" rel="stylesheet" />
+<link href="~/Common/css/swiper.min.css" rel="stylesheet" />
+<script src="~/Common/js/jquery-1.7.2.min.js"></script>
+<script src="~/Common/js/base.js"></script>
+<script src="~/Common/js/swiper.min.js"></script>
+<script src="~/Common/js/index.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body class="modularbox">
+    <!--ftop开始-->
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+        <h2>产品详情</h2>
+        <a style="color:#000" class="comea">分享有礼</a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <!---banner start--->
+    <div class="product_box">
+        <div class="swiper-container product_details">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a><img src="images/img_01.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="images/img_03.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="images/img_08.jpg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="pro_text">
+            <h2>
+                <p>@ViewBag.name</p>
+                <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"><img src="images/icon_07.png"></span>
+            </h2>
+            <p>@ViewBag.describe</p>
+            <div class="pro_det">
+                <h3><i>￥</i><b>188.00</b><span>特级</span><span>甄选</span></h3>
+                <p><span>库存：616 </span><i></i><span>月销量：1988笔</span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+	var swiper1 = new Swiper('.product_details', {
+        slidesPerView:1.5,
+        paginationClickable: true,
+        spaceBetween: 30,
+        freeMode: true
+	});
+    </script>
+    <!---banner over--->
+    <div class="pro_standard">
+        <h2><span>选择商品规格/口味</span><img src="images/icon_015.png"></h2>
+        <div class="pro_stand">
+            <dl>
+                <dt>食品口味</dt>
+                <dd>原味</dd>
+                <dd>奶油味</dd>
+                <dd>碳烤味</dd>
+                <dd>五香味</dd>
+                <dd>香辣味</dd>
+                <dd>原味</dd>
+                <dd>原味</dd>
+                <dd>奶油味</dd>
+                <dd>碳烤味</dd>
+                <dd>五香味</dd>
+                <dd>香辣味</dd>
+            </dl>
+            <dl>
+                <dt>规格</dt>
+                <dd>原味</dd>
+                <dd>奶油味</dd>
+                <dd>碳烤味</dd>
+                <dd>五香味</dd>
+                <dd>香辣味</dd>
+            </dl>
+        </div>
+        <div class="shu"><i>购买数量</i><span class="jia"><img src="images/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jian"><img src="images/icon_016.png"></span></div>
+    </div>
+    <script>
+	$(function(){
+        var jian = $(".jian");
+        var jia = $(".jia");
+        var kunchun = 10; //当库存不足时，可以提醒用户。
+        jia.click(function() {
+            var n = $(this).siblings("input").val();
+            n++;
+            if (n > kunchun) {
+                alert("库存不足啦!");
+				$(this).siblings("input").val(kunchun - 1);
+				return false;
+            }
+            $(this).siblings("input").val(n)
+			return false;
+        });
+		jian.click(function() {
+            var n = $(this).siblings("input").val();
+            n--;
+            if (n < 1) {
+                $(this).siblings("input").val(n + 1);
+                return false;
+            }
+            $(this).siblings("input").val(n)
+			return false
+        })
+    });
+    </script>
+    <div class="pro_description modular">
+        <h2><span>商品描述</span></h2>
+        <div class="miaoshu">
+            冬虫夏草为虫体与菌座相连而成，全长9～12厘米。虫体如三眠老蚕，长约3～6厘米，粗约0.4～0.7厘米。外表呈深黄色，粗糙，背部有多数横皱纹，腹面有足8对，位于虫体中部的4对明显易见。
+        </div>
+    </div>
+    <div class="pro_description modular">
+        <h2><span>基本参数</span></h2>
+        <div class="canshu">
+            <table>
+                <tr><td>品色</td><td>红色</td></tr>
+                <tr><td>年份</td><td>1896</td></tr>
+                <tr><td>产地</td><td>中国云南</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="pro_description modular">
+        <h2><span>更多图片</span></h2>
+        <div class="tu_pian">
+            <img src="images/img_04.jpg"><img src="images/img_07.jpg"><img src="images/img_08.jpg">
+        </div>
+    </div>
+    <div class="pro_description modular">
+        <h2><span>用户评价</span></h2>
+        <div class="pingjia">
+            <div class="pingjia_item">
+                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <div class="ping_text">
+                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
+                    <div class="wrapper">
+                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pingjia_item">
+                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <div class="ping_text">
+                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
+                </div>
+            </div>
+            <div class="pingjia_item">
+                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <div class="ping_text">
+                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
+                    <div class="wrapper">
+                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link href="css/fullscreenstyle.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery.fullscreenslides.js"></script>
+        <script type="text/javascript">
+$(function(){
+	$('.image img').fullscreenslides();
+	var $container = $('#fullscreenSlideshowContainer');
+	$container.bind("init", function() {
+		$container
+		.append('<div class="ui" id="fs-close">&times;</div>')
+		.append('<div class="ui" id="fs-loader">Loading...</div>')
+		.append('<div class="ui" id="fs-prev">&lt;</div>')
+		.append('<div class="ui" id="fs-next">&gt;</div>')
+		.append('<div class="ui" id="fs-caption"><span></span></div>');
+		$('#fs-prev').click(function(){
+			$container.trigger("prevSlide");
+		});
+
+		$('#fs-next').click(function(){
+			$container.trigger("nextSlide");
+		});
+
+		$('#fs-close').click(function(){
+			$container.trigger("close");
+		});
+
+	})
+
+	.bind("startLoading", function() {
+		$('#fs-loader').show();
+	})
+
+	.bind("stopLoading", function() {
+		$('#fs-loader').hide();
+	})
+
+	.bind("startOfSlide", function(event, slide) {
+
+		$('#fs-caption span').text(slide.title);
+		$('#fs-caption').show();
+	})
+
+	.bind("endOfSlide", function(event, slide) {
+		$('#fs-caption').hide();
+	});
+
+});
+        </script>
+        <div class="fixft pro_bottom">
+            <span><b><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">客服</a></b><b>收藏</b></span>
+            <p><a>加入购物车</a><a href="confirm_order.html">立即购买</a></p>
+        </div>
+
+        <div id="box" class="sidebar">
+            <ul>
+                <li><a href="#luxian1" class="linka"><span>商品描述</span><i></i></a></li>
+                <li><a href="#luxian2" class="linka"><span>基本参数</span><i></i></a></li>
+                <li><a href="#luxian3" class="linka"><span>更多图片</span><i></i></a></li>
+                <li><a href="#luxian4" class="linka"><span>用户评价</span><i></i></a></li>
+            </ul>
+            <p class="gotop"><a class="topshang"><span>返回顶部</span><i></i></a></p>
+        </div>
+
+
+        <!--提醒分享-->
+        <div class="sharetip">
+            <img src="images/sharetip_06.png" alt="">
+            <a><img src="images/sharetip_09.png" alt=""></a>
+        </div>
+        <!--提醒分享-->
+
+        <script>
+    $(function(){
+        $(".ftop .comea").click(function(){
+            $("html,body").css({"overflow":"hidden"});
+            $(".sharetip").fadeIn();
+        })
+        $(".sharetip a").click(function(){
+            $("html,body").css({"overflow":"auto"});
+            $(".sharetip").fadeOut();
+        })
+    })
+        </script>
+
+
+
+
+        <script>
+/****窗口滚动****/
+window.onscroll = function(){
+    var t = document.documentElement.scrollTop || document.body.scrollTop;
+        if(t>350){
+        $("#box").show();
+        }else{
+        $("#box").hide();
+        }
+    }
+        </script>
+
+        <script>
+$(function(){
+	$("#box a.linka").each(function(n){
+		$(this).on("click", function(){
+			//获得当前第N个div距页面顶部的距离
+			var a = $(".modular").eq(n).offset().top;
+			var b = a - 50;
+			$('html,body').animate({scrollTop: b}, 800);
+		});
+	});
+})
+        </script>
+
+        <script>
+$(document).scroll(function() {
+	var nowtop= $(document).scrollTop();
+	var nowtopa = $(".modularbox .modular").length;
+	var aArray = {};//定义一个数组
+	for(var i=0;i<nowtopa;i++){
+		//aArray[i] = $(".tripdays").eq(i).offset().top;
+		gh = $(".modular").eq(i).offset().top;
+		gx = $(".modular").eq(i).height();
+		if(nowtop > (gh-220) && nowtop< (gh+gx-220)){
+			$("#box a.linka").removeClass('on');
+			$("#box a.linka").eq(i).addClass('on');
+		}
+	}
+});
+        </script>
+        
+        </body>
+</html>
+

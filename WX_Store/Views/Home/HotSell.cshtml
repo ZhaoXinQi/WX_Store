@@ -3,7 +3,7 @@
     @foreach (ProductInfo item in ViewBag.Pro as List<ProductInfo>)
      {
         <li>
-            <a href="product_xq.html"><img src="~/Common/img/@item.img.Split(',')[0]"></a>
+            <a href="~/ProductInfo/ProductInfo?id=@item.Code"><img src="~/Common/img/@item.img.Split(',')[0]"></a>
             <div class="product_text">
                 <h2>
                     <p>@item.Name</p>
