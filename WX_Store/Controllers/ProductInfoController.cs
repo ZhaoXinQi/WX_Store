@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using WxShop_Model;
 using IBaseService;
+using System.Reflection;
+
 namespace WX_Store.Controllers
 {
     public class ProductInfoController : Controller
     {
-        public IProService ProService { get; set; }
+        public IProService ProService { get; set; }//定义商品属性,依赖注入
+        public IStockService StockService { get; set; }
         // GET: ProductInfo
         public ActionResult ProductInfo()
         {
@@ -18,6 +21,21 @@ namespace WX_Store.Controllers
             var pro = ProService.GetEntity(x => x.Code == code);
             ViewBag.name = pro.Name;
             ViewBag.describe = pro.Describe;//描述
+            ViewBag.price = pro.Price;
+            //遍历出来图片
+            //for(int i=0;i < pro.img.Split(',').Length;i++)
+            //{
+            //    ViewBag.img[i] = pro.img.Split(',')[i];
+            //}
+            ViewBag.img1 = pro.img.Split(',')[0];
+            ViewBag.img2 = pro.img.Split(',')[1];
+          //  ViewBag.img3 = pro.img.Split(',')[2];
+            //根据商品查询出来库存
+            Stock stock = StockService.GetEntity(x => x.BillId == code);
+            ViewBag.stock = stock.num;
+            PropertyInfo[] pis = typeof(Stock).GetProperties();//反射  暂时用不到,用来遍历实体用
+            //根据商品查询处商品规格
+
             return View();
         }
     }

@@ -48,6 +48,7 @@
     <Compile Include="ShowNewsService.cs" />
     <Compile Include="SortFirstService.cs" />
     <Compile Include="SortSecondService.cs" />
+    <Compile Include="StockService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fish_IRepository\Fish_IRepository.csproj">

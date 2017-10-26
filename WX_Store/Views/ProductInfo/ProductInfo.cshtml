@@ -12,6 +12,8 @@
 <script src="~/Common/js/base.js"></script>
 <script src="~/Common/js/swiper.min.js"></script>
 <script src="~/Common/js/index.js"></script>
+<script src="~/Common/js/timer.js"></script>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -20,7 +22,7 @@
 <body class="modularbox">
     <!--ftop开始-->
     <div class="ftop">
-        <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+        <a class="back" onClick="javascript:history.back(-1);"><img src="/Common/img/icon_03.png"></a>
         <h2>产品详情</h2>
         <a style="color:#000" class="comea">分享有礼</a>
         <div style="clear: both;"></div>
@@ -30,20 +32,20 @@
     <div class="product_box">
         <div class="swiper-container product_details">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a><img src="images/img_01.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a><img src="images/img_03.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a><img src="images/img_08.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="/Common/img/@ViewBag.img1" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="/Common/img/@ViewBag.img2" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="/Common/img/@ViewBag.img3" alt=""></a></div>
             </div>
         </div>
         <div class="pro_text">
             <h2>
                 <p>@ViewBag.name</p>
-                <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"><img src="images/icon_07.png"></span>
+                <span><img src="/Common/img/icon_06.png"><img src="/Common/img/icon_06.png"><img src="/Common/img/icon_06.png"><img src="/Common/img/icon_07.png"><img src="/Common/img/icon_07.png"></span>
             </h2>
             <p>@ViewBag.describe</p>
             <div class="pro_det">
-                <h3><i>￥</i><b>188.00</b><span>特级</span><span>甄选</span></h3>
-                <p><span>库存：616 </span><i></i><span>月销量：1988笔</span></p>
+                <h3><i>￥</i><b>@ViewBag.price</b><span>特级</span><span>甄选</span></h3>
+                <p><span>库存：@ViewBag.stock </span><i></i><span>月销量：1988笔</span></p>
             </div>
         </div>
     </div>
@@ -57,22 +59,8 @@
     </script>
     <!---banner over--->
     <div class="pro_standard">
-        <h2><span>选择商品规格/口味</span><img src="images/icon_015.png"></h2>
+        <h2><span>选择商品规格</span><img src="/Common/img/icon_015.png"></h2>
         <div class="pro_stand">
-            <dl>
-                <dt>食品口味</dt>
-                <dd>原味</dd>
-                <dd>奶油味</dd>
-                <dd>碳烤味</dd>
-                <dd>五香味</dd>
-                <dd>香辣味</dd>
-                <dd>原味</dd>
-                <dd>原味</dd>
-                <dd>奶油味</dd>
-                <dd>碳烤味</dd>
-                <dd>五香味</dd>
-                <dd>香辣味</dd>
-            </dl>
             <dl>
                 <dt>规格</dt>
                 <dd>原味</dd>
@@ -82,7 +70,7 @@
                 <dd>香辣味</dd>
             </dl>
         </div>
-        <div class="shu"><i>购买数量</i><span class="jia"><img src="images/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jian"><img src="images/icon_016.png"></span></div>
+        <div class="shu"><i>购买数量</i><span class="jia"><img src="/Common/img/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jian"><img src="/Common/img/icon_016.png"></span></div>
     </div>
     <script>
 	$(function(){
@@ -131,38 +119,40 @@
     <div class="pro_description modular">
         <h2><span>更多图片</span></h2>
         <div class="tu_pian">
-            <img src="images/img_04.jpg"><img src="images/img_07.jpg"><img src="images/img_08.jpg">
+            <img src="/Common/img/img_04.jpg"><img src="/Common/img/img_07.jpg"><img src="/Common/img/img_08.jpg">
         </div>
     </div>
     <div class="pro_description modular">
         <h2><span>用户评价</span></h2>
         <div class="pingjia">
             <div class="pingjia_item">
-                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <img src="/Common/img/img_06.jpg" />
+                <i>李易峰</i><span>06-21 23:22</span>
                 <div class="ping_text">
                     <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
                     <div class="wrapper">
-                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
-                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
                     </div>
                 </div>
             </div>
             <div class="pingjia_item">
-                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <img src="/Common/img/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
                 <div class="ping_text">
                     <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
                 </div>
             </div>
             <div class="pingjia_item">
-                <img src="images/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
+                <img src="/Common/img/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
                 <div class="ping_text">
                     <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
                     <div class="wrapper">
-                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
-                        <div class="image"><a rel="gallery" href="images/img_01.jpg"><img src="images/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <link href="css/fullscreenstyle.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="js/jquery.fullscreenslides.js"></script>
@@ -229,8 +219,8 @@ $(function(){
 
         <!--提醒分享-->
         <div class="sharetip">
-            <img src="images/sharetip_06.png" alt="">
-            <a><img src="images/sharetip_09.png" alt=""></a>
+            <img src="/Common/img/sharetip_06.png" alt="">
+            <a><img src="/Common/img/sharetip_09.png" alt=""></a>
         </div>
         <!--提醒分享-->
 
@@ -246,10 +236,6 @@ $(function(){
         })
     })
         </script>
-
-
-
-
         <script>
 /****窗口滚动****/
 window.onscroll = function(){
@@ -261,7 +247,6 @@ window.onscroll = function(){
         }
     }
         </script>
-
         <script>
 $(function(){
 	$("#box a.linka").each(function(n){
@@ -274,7 +259,6 @@ $(function(){
 	});
 })
         </script>
-
         <script>
 $(document).scroll(function() {
 	var nowtop= $(document).scrollTop();
