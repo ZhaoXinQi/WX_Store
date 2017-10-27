@@ -46,6 +46,7 @@
     <Compile Include="IShowNewsService.cs" />
     <Compile Include="ISortFirstService.cs" />
     <Compile Include="ISortSecondService.cs" />
+    <Compile Include="ISpecificationService.cs" />
     <Compile Include="IStockService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IProService.cs" />
@@ -56,7 +57,7 @@
       <Name>Fish_IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{ac788bcc-a4cc-43f3-a3cc-a6fc2547d041}</Project>
+      <Project>{51098d48-4d5d-4303-b15b-18fe32ef613b}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

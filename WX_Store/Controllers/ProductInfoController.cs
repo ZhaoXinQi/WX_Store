@@ -12,7 +12,8 @@ namespace WX_Store.Controllers
     public class ProductInfoController : Controller
     {
         public IProService ProService { get; set; }//定义商品属性,依赖注入
-        public IStockService StockService { get; set; }
+        public IStockService StockService { get; set; }//库存
+        public ISpecificationService SpecificationService { get; set; }//规格
         // GET: ProductInfo
         public ActionResult ProductInfo()
         {
@@ -29,13 +30,15 @@ namespace WX_Store.Controllers
             //}
             ViewBag.img1 = pro.img.Split(',')[0];
             ViewBag.img2 = pro.img.Split(',')[1];
-          //  ViewBag.img3 = pro.img.Split(',')[2];
+            //  ViewBag.img3 = pro.img.Split(',')[2];
             //根据商品查询出来库存
             Stock stock = StockService.GetEntity(x => x.BillId == code);
             ViewBag.stock = stock.num;
             PropertyInfo[] pis = typeof(Stock).GetProperties();//反射  暂时用不到,用来遍历实体用
             //根据商品查询处商品规格
-
+            int? id = pro.SpecificationId;
+            Specification specification = SpecificationService.GetEntity(x => x.Id == id);
+            ViewBag.Spcification = specification.Style;
             return View();
         }
     }

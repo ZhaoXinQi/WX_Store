@@ -47,12 +47,13 @@
     <Compile Include="IShwoNewsRepository.cs" />
     <Compile Include="ISortFirstRepository.cs" />
     <Compile Include="ISortSecondRepository.cs" />
+    <Compile Include="ISpecificationRepository.cs" />
     <Compile Include="IStockRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{ac788bcc-a4cc-43f3-a3cc-a6fc2547d041}</Project>
+      <Project>{51098d48-4d5d-4303-b15b-18fe32ef613b}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>
