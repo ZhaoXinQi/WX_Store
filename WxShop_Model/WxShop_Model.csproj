@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{51098D48-4D5D-4303-B15B-18FE32EF613B}</ProjectGuid>
+    <ProjectGuid>{2E2BD443-28B9-4BB5-A677-F2DBBA5D7B10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WxShop_Model</RootNamespace>

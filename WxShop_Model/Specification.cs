@@ -9,12 +9,8 @@ namespace WxShop_Model
     [Table("Specification")]
     public partial class Specification
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Specification()
-        {
-            ProductInfo = new HashSet<ProductInfo>();
-        }
-
+        [Key]
+        [Column(Order = 0)]
         public int Id { get; set; }
 
         [StringLength(20)]
@@ -23,7 +19,11 @@ namespace WxShop_Model
         [StringLength(10)]
         public string Size { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductInfo> ProductInfo { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        [StringLength(12)]
+        public string ProCode { get; set; }
+
+        public virtual ProductInfo ProductInfo { get; set; }
     }
 }

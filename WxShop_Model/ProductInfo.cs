@@ -19,6 +19,7 @@ namespace WxShop_Model
             ProImage = new HashSet<ProImage>();
             ShoppongCart = new HashSet<ShoppongCart>();
             Stock = new HashSet<Stock>();
+            Specification = new HashSet<Specification>();
         }
 
         [Key]
@@ -61,8 +62,6 @@ namespace WxShop_Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderChild> OrderChild { get; set; }
 
-        public virtual Specification Specification { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductReview> ProductReview { get; set; }
 
@@ -74,5 +73,8 @@ namespace WxShop_Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock> Stock { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Specification> Specification { get; set; }
     }
 }

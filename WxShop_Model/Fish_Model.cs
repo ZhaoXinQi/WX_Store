@@ -168,6 +168,12 @@ namespace WxShop_Model
                 .HasForeignKey(e => e.BillId)
                 .WillCascadeOnDelete();
 
+            modelBuilder.Entity<ProductInfo>()
+                .HasMany(e => e.Specification)
+                .WithRequired(e => e.ProductInfo)
+                .HasForeignKey(e => e.ProCode)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<ProductReview>()
                 .Property(e => e.Pcode)
                 .IsUnicode(false);
@@ -209,9 +215,8 @@ namespace WxShop_Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Specification>()
-                .HasMany(e => e.ProductInfo)
-                .WithOptional(e => e.Specification)
-                .WillCascadeOnDelete();
+                .Property(e => e.ProCode)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Stock>()
                 .Property(e => e.BillId)
