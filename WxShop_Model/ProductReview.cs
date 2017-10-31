@@ -23,6 +23,9 @@ namespace WxShop_Model
         [StringLength(50)]
         public string Image { get; set; }
 
+        [StringLength(200)]
+        public string Content { get; set; }
+
         public virtual Customar Customar { get; set; }
 
         public virtual ProductInfo ProductInfo { get; set; }

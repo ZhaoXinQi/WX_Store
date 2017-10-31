@@ -14,6 +14,7 @@ namespace WX_Store.Controllers
         public IProService ProService { get; set; }//定义商品属性,依赖注入
         public IStockService StockService { get; set; }//库存
         public ISpecificationService SpecificationService { get; set; }//规格
+        public  IProductReviewService ProductReviewService { get; set; }//评价
         // GET: ProductInfo
         public ActionResult ProductInfo()
         {
@@ -43,6 +44,9 @@ namespace WX_Store.Controllers
             ViewBag.Spcification = specification1;
             //产品描述
             ViewBag.describe = pro.Describe;
+            //用户评价
+            var proDuctReview = ProductReviewService.GetEntities(x => x.Pcode == pro.Code);
+            ViewBag.ProReview = proDuctReview.ToList();
             return View();
         }
     }

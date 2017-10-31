@@ -127,33 +127,21 @@
     <div class="pro_description modular">
         <h2><span>用户评价</span></h2>
         <div class="pingjia">
-            <div class="pingjia_item">
-                <img src="/Common/img/img_06.jpg" />
-                <i>李易峰</i><span>06-21 23:22</span>
-                <div class="ping_text">
-                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
-                    <div class="wrapper">
-                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
-                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+            @foreach (ProductReview item in ViewBag.ProReview as List<ProductReview>)
+            {
+                <div class="pingjia_item">
+                    @*<img src="/Common/img/img_06.jpg" />*@
+                    <i>李易峰</i><span>06-21 23:22</span>
+                    <div class="ping_text">
+                        <p>@item.Content</p>
+                        <div class="wrapper">
+                            <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+                            <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="pingjia_item">
-                <img src="/Common/img/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
-                <div class="ping_text">
-                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
-                </div>
-            </div>
-            <div class="pingjia_item">
-                <img src="/Common/img/img_06.jpg"><i>李易峰</i><span>06-21 23:22</span>
-                <div class="ping_text">
-                    <p>冬虫夏草为虫体与菌座相冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成冬虫夏草为虫体与菌座相连而成连而成，难得的真品，收到货了，确实不错！！</p>
-                    <div class="wrapper">
-                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
-                        <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
-                    </div>
-                </div>
-            </div>
+            }
+          
         </div>
         </div>
         <link href="css/fullscreenstyle.css" type="text/css" rel="stylesheet" />

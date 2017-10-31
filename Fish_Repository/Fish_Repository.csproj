@@ -50,6 +50,7 @@
     <Compile Include="BannerRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DbContextFactory.cs" />
+    <Compile Include="ProductReviewRepository.cs" />
     <Compile Include="ProPagesRepository.cs" />
     <Compile Include="ProRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,7 +66,7 @@
       <Name>Fish_IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{2e2bd443-28b9-4bb5-a677-f2dbba5d7b10}</Project>
+      <Project>{fd0f8142-25a4-4ba4-a5d4-3b96f7221191}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

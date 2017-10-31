@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBannerRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IProductReviewRepository.cs" />
     <Compile Include="IProPagesRepository.cs" />
     <Compile Include="IProRepository.cs" />
     <Compile Include="IShwoNewsRepository.cs" />
@@ -53,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{2e2bd443-28b9-4bb5-a677-f2dbba5d7b10}</Project>
+      <Project>{fd0f8142-25a4-4ba4-a5d4-3b96f7221191}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>
