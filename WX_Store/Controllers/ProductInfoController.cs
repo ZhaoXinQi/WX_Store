@@ -23,6 +23,7 @@ namespace WX_Store.Controllers
             ViewBag.name = pro.Name;
             ViewBag.describe = pro.Describe;//描述
             ViewBag.price = pro.Price;
+            ViewBag.img = pro.img;
             //遍历出来图片
             //for(int i=0;i < pro.img.Split(',').Length;i++)
             //{
@@ -38,7 +39,10 @@ namespace WX_Store.Controllers
             //根据商品查询处商品规格
             int? id = pro.SpecificationId;
             Specification specification = SpecificationService.GetEntity(x => x.Id == id);
-            ViewBag.Spcification = specification.Style;
+            var specification1 = SpecificationService.GetEntities(x => x.ProCode == pro.Code);
+            ViewBag.Spcification = specification1;
+            //产品描述
+            ViewBag.describe = pro.Describe;
             return View();
         }
     }

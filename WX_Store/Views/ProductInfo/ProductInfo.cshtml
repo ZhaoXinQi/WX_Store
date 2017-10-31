@@ -2,7 +2,7 @@
 @{
     Layout = null;
 }
-
+@using WxShop_Model
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width" />
 <link href="~/Common/css/Cbase.css" rel="stylesheet" />
@@ -63,11 +63,10 @@
         <div class="pro_stand">
             <dl>
                 <dt>规格</dt>
-                <dd>@ViewBag.Spcification</dd>
-                <dd>奶油味</dd>
-                <dd>碳烤味</dd>
-                <dd>五香味</dd>
-                <dd>香辣味</dd>
+               @foreach (var item in ViewBag.Spcification)
+               {
+                <dd>@item.Style</dd>
+               }              
             </dl>
         </div>
         <div class="shu"><i>购买数量</i><span class="jia"><img src="/Common/img/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jian"><img src="/Common/img/icon_016.png"></span></div>
@@ -77,9 +76,9 @@
         var jian = $(".jian");
         var jia = $(".jia");
         var kunchun = 10; //当库存不足时，可以提醒用户。
-        jia.click(function() {
+                        jia.click(function() {
             var n = $(this).siblings("input").val();
-            n++;
+                        n++;
             if (n > kunchun) {
                 alert("库存不足啦!");
 				$(this).siblings("input").val(kunchun - 1);
@@ -87,14 +86,14 @@
             }
             $(this).siblings("input").val(n)
 			return false;
-        });
+                    });
 		jian.click(function() {
             var n = $(this).siblings("input").val();
-            n--;
+                    n--;
             if (n < 1) {
                 $(this).siblings("input").val(n + 1);
-                return false;
-            }
+                        return false;
+                    }
             $(this).siblings("input").val(n)
 			return false
         })
@@ -103,10 +102,10 @@
     <div class="pro_description modular">
         <h2><span>商品描述</span></h2>
         <div class="miaoshu">
-            冬虫夏草为虫体与菌座相连而成，全长9～12厘米。虫体如三眠老蚕，长约3～6厘米，粗约0.4～0.7厘米。外表呈深黄色，粗糙，背部有多数横皱纹，腹面有足8对，位于虫体中部的4对明显易见。
+            @ViewBag.describe
         </div>
     </div>
-    <div class="pro_description modular">
+    @*<div class="pro_description modular">
         <h2><span>基本参数</span></h2>
         <div class="canshu">
             <table>
@@ -115,11 +114,14 @@
                 <tr><td>产地</td><td>中国云南</td></tr>
             </table>
         </div>
-    </div>
+    </div>*@
     <div class="pro_description modular">
         <h2><span>更多图片</span></h2>
         <div class="tu_pian">
-            <img src="/Common/img/img_04.jpg"><img src="/Common/img/img_07.jpg"><img src="/Common/img/img_08.jpg">
+          @foreach (var item in ViewBag.img.Split(','))
+          {
+            <img src="/Common/img/@item">
+          }
         </div>
     </div>
     <div class="pro_description modular">
