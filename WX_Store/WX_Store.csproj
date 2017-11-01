@@ -226,6 +226,7 @@
     <Content Include="Common\img\index_img01.jpg" />
     <Content Include="Common\img\index_img02.jpg" />
     <Content Include="Common\img\index_img03.jpg" />
+    <Content Include="Common\img\lasi.jpg" />
     <Content Include="Common\img\line.jpg" />
     <Content Include="Common\img\logo.png" />
     <Content Include="Common\img\map_03.jpg" />
@@ -313,7 +314,7 @@
       <Name>IBaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{fd0f8142-25a4-4ba4-a5d4-3b96f7221191}</Project>
+      <Project>{b6f4b9c8-3e9e-4e82-85c4-471bfde4068f}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>

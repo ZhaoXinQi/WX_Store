@@ -22,6 +22,10 @@ namespace WxShop_Model
 
         public Guid id { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+
         public int OpenId { get; set; }
 
         [Required]

@@ -105,7 +105,7 @@
             @ViewBag.describe
         </div>
     </div>
-    @*<div class="pro_description modular">
+    <div class="pro_description modular">
         <h2><span>基本参数</span></h2>
         <div class="canshu">
             <table>
@@ -114,7 +114,7 @@
                 <tr><td>产地</td><td>中国云南</td></tr>
             </table>
         </div>
-    </div>*@
+    </div>
     <div class="pro_description modular">
         <h2><span>更多图片</span></h2>
         <div class="tu_pian">
@@ -127,21 +127,24 @@
     <div class="pro_description modular">
         <h2><span>用户评价</span></h2>
         <div class="pingjia">
-            @foreach (ProductReview item in ViewBag.ProReview as List<ProductReview>)
-            {
+            @{foreach (ProductReview item in ViewBag.ProReview as List<ProductReview>)
+                {
                 <div class="pingjia_item">
                     @*<img src="/Common/img/img_06.jpg" />*@
-                    <i>李易峰</i><span>06-21 23:22</span>
+                  
+                    <i>@item.Cid</i><span>06-21 23:22</span>
                     <div class="ping_text">
                         <p>@item.Content</p>
                         <div class="wrapper">
-                            <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
-                            <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/img_02.jpg"></a></div>
+                            @foreach (var ite in item.Image.Split(','))
+                            {
+                                <div class="image"><a rel="gallery" href="/Common/img/img_01.jpg"><img src="/Common/img/@ite"></a></div>
+                            }
                         </div>
                     </div>
                 </div>
-            }
-          
+                    }
+                }
         </div>
         </div>
         <link href="css/fullscreenstyle.css" type="text/css" rel="stylesheet" />

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
+    <Compile Include="ICustomarService.cs" />
     <Compile Include="IProductReviewService.cs" />
     <Compile Include="IProPagesService.cs" />
     <Compile Include="IShowNewsService.cs" />
@@ -58,7 +59,7 @@
       <Name>Fish_IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\WxShop_Model\WxShop_Model.csproj">
-      <Project>{fd0f8142-25a4-4ba4-a5d4-3b96f7221191}</Project>
+      <Project>{b6f4b9c8-3e9e-4e82-85c4-471bfde4068f}</Project>
       <Name>WxShop_Model</Name>
     </ProjectReference>
   </ItemGroup>
