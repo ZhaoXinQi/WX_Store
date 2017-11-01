@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/Master_Page.cshtml";
 }
 @using WxShop_Model
+
 <script>
     $(function () {
         $("#HotSell").click(function () {
@@ -51,6 +52,8 @@
 </script>
 @{Html.RenderPartial("Seach", "home");}
 <!--banner start-->
+
+
 <div class="swiper-container index_banner">
     <div class="swiper-wrapper">
         @foreach (Banner item in ViewBag.Banner as List<Banner>)

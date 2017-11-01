@@ -12,6 +12,9 @@
     <script src="~/Common/js/index.js"></script>
     <title>@ViewBag.Title</title>
     @RenderSection("style",false)
+    <!--jquery和jquery-weui-->
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
 </head>
 <body>
     <div>
@@ -31,7 +34,7 @@
             <span><img src="~/Common/img/navicon_50.png" class="img1"><img src="~/Common/img/navicon_32.png" class="img2"><em>12</em></span>
             <i>购物车</i>
         </a>
-        <a href="center.html" id="My">
+        <a href="~/User/Index" id="My">
             <span><img src="~/Common/img/navicon_42.png" class="img1"><img src="~/Common/img/navicon_35.png" class="img2"></span>
             <i>我的</i>
         </a>

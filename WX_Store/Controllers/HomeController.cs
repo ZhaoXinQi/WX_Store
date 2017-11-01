@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WxShop_Model;
 using IBaseService;
+using WX_Store.Filters;
 namespace WX_Store.Controllers
 {
     public class HomeController : Controller
@@ -13,6 +14,7 @@ namespace WX_Store.Controllers
         public IShowNewsService ShowNewsService { get; set; }//滚动新闻属性  依赖注入
         public IProService ProService { get; set; }
         // GET: Home
+        //[OAuth]
         public ActionResult Index()
         {
             //查询banner
@@ -20,7 +22,7 @@ namespace WX_Store.Controllers
             ViewBag.Banner = GetBanner.ToList();
             //查询滚动新闻
             var GetShowNews = ShowNewsService.GetEntities(x => true);
-            ViewBag.ShowNews = GetShowNews.ToList();          
+            ViewBag.ShowNews = GetShowNews.ToList();
             return View();
         }
         /// <summary>
