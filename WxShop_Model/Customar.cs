@@ -26,7 +26,9 @@ namespace WxShop_Model
         [StringLength(50)]
         public string Name { get; set; }
 
-        public int OpenId { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string OpenId { get; set; }
 
         [Required]
         [StringLength(11)]
