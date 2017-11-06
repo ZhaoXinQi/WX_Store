@@ -25,8 +25,6 @@ namespace WxShop_Model
 
         public bool IsReview { get; set; }
 
-        public virtual Customar Customar { get; set; }
-
         public virtual ProductInfo ProductInfo { get; set; }
     }
 }

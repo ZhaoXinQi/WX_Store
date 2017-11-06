@@ -43,8 +43,6 @@ namespace WxShop_Model
 
         public DateTime? ReceTime { get; set; }
 
-        public virtual Customar Customar { get; set; }
-
         public virtual PayMethod PayMethod { get; set; }
     }
 }

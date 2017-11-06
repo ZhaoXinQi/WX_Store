@@ -15,7 +15,8 @@ namespace WxShop_Model
         [StringLength(20)]
         public string SeachContent { get; set; }
 
-        public Guid? Cid { get; set; }
+        [StringLength(100)]
+        public string Cid { get; set; }
 
         public virtual Customar Customar { get; set; }
     }

@@ -11,7 +11,9 @@ namespace WxShop_Model
     {
         public Guid Id { get; set; }
 
-        public Guid? Cid { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Cid { get; set; }
 
         [StringLength(12)]
         public string Pcode { get; set; }

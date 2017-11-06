@@ -43,37 +43,24 @@ namespace WxShop_Model
             modelBuilder.Entity<Customar>()
                 .HasMany(e => e.Favarite)
                 .WithOptional(e => e.Customar)
-                .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Customar>()
-                .HasMany(e => e.OrderChild)
-                .WithRequired(e => e.Customar)
                 .HasForeignKey(e => e.Cid);
 
             modelBuilder.Entity<Customar>()
-                .HasMany(e => e.OrderFath)
-                .WithOptional(e => e.Customar)
-                .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Customar>()
                 .HasMany(e => e.ProductReview)
-                .WithOptional(e => e.Customar)
+                .WithRequired(e => e.Customar)
                 .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete();
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Customar>()
                 .HasMany(e => e.SeachProduct)
                 .WithOptional(e => e.Customar)
-                .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete();
+                .HasForeignKey(e => e.Cid);
 
             modelBuilder.Entity<Customar>()
                 .HasMany(e => e.ShoppongCart)
-                .WithOptional(e => e.Customar)
+                .WithRequired(e => e.Customar)
                 .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete();
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Favarite>()
                 .Property(e => e.Pcode)

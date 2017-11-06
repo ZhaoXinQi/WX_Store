@@ -13,20 +13,16 @@ namespace WxShop_Model
         public Customar()
         {
             Favarite = new HashSet<Favarite>();
-            OrderChild = new HashSet<OrderChild>();
-            OrderFath = new HashSet<OrderFath>();
             ProductReview = new HashSet<ProductReview>();
             SeachProduct = new HashSet<SeachProduct>();
             ShoppongCart = new HashSet<ShoppongCart>();
         }
 
-        public Guid id { get; set; }
-
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Required]
+        [Key]
         [StringLength(100)]
         public string OpenId { get; set; }
 
@@ -42,12 +38,6 @@ namespace WxShop_Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favarite> Favarite { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderChild> OrderChild { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderFath> OrderFath { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductReview> ProductReview { get; set; }

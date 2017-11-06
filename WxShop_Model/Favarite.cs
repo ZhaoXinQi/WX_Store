@@ -14,7 +14,8 @@ namespace WxShop_Model
         [StringLength(12)]
         public string Pcode { get; set; }
 
-        public Guid? Cid { get; set; }
+        [StringLength(100)]
+        public string Cid { get; set; }
 
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
