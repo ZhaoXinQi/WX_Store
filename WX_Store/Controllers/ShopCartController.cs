@@ -10,7 +10,6 @@ namespace WX_Store.Controllers
     public class ShopCartController : Controller
     {
         // GET: ShopCart
-        public 
         public ActionResult ShopCart()
         {
             string id = Request["id"];
