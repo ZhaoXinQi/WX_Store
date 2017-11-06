@@ -45,6 +45,7 @@
     <Compile Include="ICustomarService.cs" />
     <Compile Include="IProductReviewService.cs" />
     <Compile Include="IProPagesService.cs" />
+    <Compile Include="IShopCartService.cs" />
     <Compile Include="IShowNewsService.cs" />
     <Compile Include="ISortFirstService.cs" />
     <Compile Include="ISortSecondService.cs" />

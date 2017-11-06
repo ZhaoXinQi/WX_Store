@@ -46,6 +46,7 @@
     <Compile Include="IProductReviewRepository.cs" />
     <Compile Include="IProPagesRepository.cs" />
     <Compile Include="IProRepository.cs" />
+    <Compile Include="IShopCartRepository.cs" />
     <Compile Include="IShwoNewsRepository.cs" />
     <Compile Include="ISortFirstRepository.cs" />
     <Compile Include="ISortSecondRepository.cs" />

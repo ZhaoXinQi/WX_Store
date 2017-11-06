@@ -55,6 +55,7 @@
     <Compile Include="ProPagesRepository.cs" />
     <Compile Include="ProRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopCartRepository.cs" />
     <Compile Include="ShowNewsRepository.cs" />
     <Compile Include="SortFirstRepository.cs" />
     <Compile Include="SortSecondRepository.cs" />
