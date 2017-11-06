@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "ShopCart";
+    Layout = "~/Views/Shared/Master_Page.cshtml";
+}
+<!--ftop开始-->
+<div class="ftop">
+    <h3 style=" text-align:center; font-size:18px;">购物车</h3>
+    <a style="position:absolute; top:4px; font-size:14px; right:15px; color:#333" class="all">编辑</a>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
+<div class="shopcar">
+    <ul>
+        <li>
+            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="~/Common/img//img_01.jpg"></a></p>
+            <div class="shop_car">
+                <a href="product_xq.html"></a>
+                <span>规格：500g/袋</span>
+                <div class="shu"><span class="jian"><img src="~/Common/img//icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="~/Common/img//icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
+            </div>
+            <img class="delete" src="~/Common/img//icon_030.png">
+        </li>
+    </ul>
+    <div class="pay">
+        <label><input type="checkbox"><span>全选</span></label>
+        <div class="pay_right">
+            <p><span>合计：<b>￥898.50</b></span><i>不含运费</i></p>
+            <a href="confirm_order.html">结算（5）</a>
+        </div>
+    </div>
+    <!--弹窗-->
+    <div class="block_bg"></div>
+    <div class="delete_box">
+        <h2>确定要删除此商品吗？</h2>
+        <p><a class="cancel">取消</a><a class="sure">确定</a></p>
+    </div>
+</div>
+<script>
+	$(function(){
+        var jian = $(".jian");
+        var jia = $(".jia");
+        var kunchun = 10; //当库存不足时，可以提醒用户。
+        jia.click(function() {
+            var n = $(this).siblings("input").val();
+            n++;
+            if (n > kunchun) {
+                alert("库存不足啦!");
+				$(this).siblings("input").val(kunchun - 1);
+				return false;
+            }
+            $(this).siblings("input").val(n)
+			return false;
+        });
+		jian.click(function() {
+            var n = $(this).siblings("input").val();
+            n--;
+            if (n < 1) {
+                $(this).siblings("input").val(n + 1);
+                return false;
+            }
+            $(this).siblings("input").val(n)
+			return false
+        })
+
+		$("label input").click(function(){
+			$(this).parent().toggleClass("on");
+			var flag=1;
+			$("label input").each(function(){
+				if(!this.checked){
+					flag=0;
+				}
+			})
+			if(flag==1){
+				$(".car_pay span").addClass("on")
+			}
+			else{
+				$(".car_pay span").removeClass("on")
+			}
+		})
+		$(".pay label span").click(function(){
+			if($(this).hasClass("on")){
+				$(this).removeClass("on")
+				$("label input").prop("checked",false);
+				$("label").removeClass("on")
+			}
+			else{
+				$(this).addClass("on")
+				$("label input").prop("checked",true);
+				$("label").addClass("on")
+			}
+		})
+
+		$(".ftop .all").click(function(){
+		    var val=$(this).html();
+			if(val=="编辑"){
+			   $(this).html("完成")
+			}else{
+			   $(this).html("编辑")
+			}
+		})
+
+		$(".ftop .all").click(function(){
+             $(".shopcar ul li .delete").toggle();
+		})
+
+
+
+		$(".shopcar ul li .delete").click(function(){
+			$(".block_bg,.delete_box").fadeIn();
+	    })
+		$(".block_bg,.delete_box p a").click(function(){
+			$(".block_bg,.delete_box").fadeOut();
+	    })
+    });
+</script>
+
+
+
