@@ -25,30 +25,26 @@
                 $("dl dd").click(function () {
                     $("dl dd").attr("state", "0");
                     $(this).attr("state", "1");
-                    alert($(this).attr("state"));
+                   // alert($(this).attr("state"));
                 })
                 $("#joinShopCart").click(function () {
                     alert("click");
-                    var count = 0;
-                    alert("第一个："+count);
+                    var count = 0;;
                     var price = 0;
                     var id = null;                   
                     $(".mydd").each(function () {
-                        if ($(this).attr("state") != 0) {
-                            alert($(this).attr("state"));
+                        if ($(this).attr("state") != 0) {;
                             count = 1;
                             price = $("#price").attr("dava_price");
                             id = $(this).attr("data_value");
                             //alert(count);
                         }
                     })
-                    alert("第二个：" + count);
                     if (count == 0) {
                         alert("请选择规格");
                         return;
                     }
                     else if(count==1) {
-                        alert("elseif里面的"+count);
                         $.ajax({
                             type: "post",
                             data: { "id": id, "price": price },
@@ -113,7 +109,7 @@
                }              
             </dl>
         </div>
-        <div class="shu"><i>购买数量</i><span class="jia"><img src="~/Common/img/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jian"><img src="/Common/img/icon_016.png"></span></div>
+        <div class="shu"><i>购买数量</i><span class="jia"><img src="~/Common/img/icon_017.png"></span><input class="shopcart-td-num" type="text" value="1" id="num" /><span class="jian"><img src="/Common/img/icon_016.png"></span></div>
     </div>
     <script>
 	$(function(){

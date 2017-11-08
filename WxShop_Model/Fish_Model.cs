@@ -56,12 +56,6 @@ namespace WxShop_Model
                 .WithOptional(e => e.Customar)
                 .HasForeignKey(e => e.Cid);
 
-            modelBuilder.Entity<Customar>()
-                .HasMany(e => e.ShoppongCart)
-                .WithRequired(e => e.Customar)
-                .HasForeignKey(e => e.Cid)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Favarite>()
                 .Property(e => e.Pcode)
                 .IsUnicode(false);
@@ -142,12 +136,6 @@ namespace WxShop_Model
                 .HasMany(e => e.ProImage)
                 .WithRequired(e => e.ProductInfo)
                 .HasForeignKey(e => e.Pcode);
-
-            modelBuilder.Entity<ProductInfo>()
-                .HasMany(e => e.ShoppongCart)
-                .WithOptional(e => e.ProductInfo)
-                .HasForeignKey(e => e.Pcode)
-                .WillCascadeOnDelete();
 
             modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.Stock)

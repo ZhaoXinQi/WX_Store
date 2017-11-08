@@ -15,7 +15,6 @@ namespace WxShop_Model
             Favarite = new HashSet<Favarite>();
             ProductReview = new HashSet<ProductReview>();
             SeachProduct = new HashSet<SeachProduct>();
-            ShoppongCart = new HashSet<ShoppongCart>();
         }
 
         [Required]
@@ -44,8 +43,5 @@ namespace WxShop_Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeachProduct> SeachProduct { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShoppongCart> ShoppongCart { get; set; }
     }
 }

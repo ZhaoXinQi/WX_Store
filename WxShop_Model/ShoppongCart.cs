@@ -15,8 +15,11 @@ namespace WxShop_Model
         [StringLength(100)]
         public string Cid { get; set; }
 
+        [Required]
         [StringLength(12)]
         public string Pcode { get; set; }
+
+        public int num { get; set; }
 
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
@@ -25,9 +28,5 @@ namespace WxShop_Model
         public decimal Totale { get; set; }
 
         public DateTime CreateTime { get; set; }
-
-        public virtual Customar Customar { get; set; }
-
-        public virtual ProductInfo ProductInfo { get; set; }
     }
 }
