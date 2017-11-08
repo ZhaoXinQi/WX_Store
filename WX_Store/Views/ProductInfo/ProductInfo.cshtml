@@ -4,20 +4,64 @@
 }
 @using WxShop_Model
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width" />
-<link href="~/Common/css/Cbase.css" rel="stylesheet" />
-<link href="~/Common/css/index.css" rel="stylesheet" />
-<link href="~/Common/css/swiper.min.css" rel="stylesheet" />
-<script src="~/Common/js/jquery-1.7.2.min.js"></script>
-<script src="~/Common/js/base.js"></script>
-<script src="~/Common/js/swiper.min.js"></script>
-<script src="~/Common/js/index.js"></script>
-<script src="~/Common/js/timer.js"></script>
+
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Common/css/Cbase.css" rel="stylesheet" />
+    <link href="~/Common/css/index.css" rel="stylesheet" />
+    <link href="~/Common/css/swiper.min.css" rel="stylesheet" />
+    <script src="~/Common/js/jquery-1.7.2.min.js"></script>
+    <script src="~/Common/js/base.js"></script>
+    <script src="~/Common/js/swiper.min.js"></script>
+    <script src="~/Common/js/index.js"></script>
+    <script src="~/Common/js/timer.js"></script>
+    <script src="~/Common/js/jquery-1.7.2.min.js"></script>
     <title>商品页面</title>
+    <script type="text/javascript">
+            $(function () {
+                $("dl dd").click(function () {
+                    $("dl dd").attr("state", "0");
+                    $(this).attr("state", "1");
+                    alert($(this).attr("state"));
+                })
+                $("#joinShopCart").click(function () {
+                    alert("click");
+                    var count = 0;
+                    alert("第一个："+count);
+                    var price = 0;
+                    var id = null;                   
+                    $(".mydd").each(function () {
+                        if ($(this).attr("state") != 0) {
+                            alert($(this).attr("state"));
+                            count = 1;
+                            price = $("#price").attr("dava_price");
+                            id = $(this).attr("data_value");
+                            //alert(count);
+                        }
+                    })
+                    alert("第二个：" + count);
+                    if (count == 0) {
+                        alert("请选择规格");
+                        return;
+                    }
+                    else if(count==1) {
+                        alert("elseif里面的"+count);
+                        $.ajax({
+                            type: "post",
+                            data: { "id": id, "price": price },
+                            url: '/ShopCart/InsertShopCart',//注意url，容易出错
+                            success: function (data) {
+                                alert(data);
+                                return;
+                            }
+                        })
+                    }
+                })
+            })
+    </script>
 </head>
 <body class="modularbox">
     <!--ftop开始-->
@@ -44,7 +88,7 @@
             </h2>
             <p>@ViewBag.describe</p>
             <div class="pro_det">
-                <h3><i>￥</i><b>@ViewBag.price</b><span>特级</span><span>甄选</span></h3>
+                <h3><i>￥</i><b id="price" dava_price="@ViewBag.price">@ViewBag.price</b><span>特级</span><span>甄选</span></h3>
                 <p><span>库存：@ViewBag.stock </span><i></i><span>月销量：1988笔</span></p>
             </div>
         </div>
@@ -65,7 +109,7 @@
                 <dt id="guige">规格</dt>
                @foreach (var item in ViewBag.Spcification)
                {
-                <dd state="0">@item.Style</dd>
+                <dd state="0" class="mydd" data_value="@item.ProCode">@item.Style</dd>
                }              
             </dl>
         </div>
@@ -266,43 +310,12 @@ $(document).scroll(function() {
 			$("#box a.linka").eq(i).addClass('on');
 		}
 	}
-});
-        </script>
-    <script src="~/Common/js/jquery-1.7.2.min.js"></script>
-        <script>alert(1);
-            $(function () {     
-                    
-            //选择规格时给状态为1,
-                alert(2);
-                $("dl dd").click(function () {
-                    $("dl dd").attr("state", "0");
-                    $(this).attr("state", "1");
-                    alert($(this).attr("state"));
-                }); 
-                $("#joinShopCart").click(function () {
-                    alert("点击");
-                    var id = $(this).attr("data_value");
-                    var price = $(this).attr("data_price");
-                    $("dl dd").each(function () {
-                        alert($(this).attr("state"));
-                        if ($(this).attr("state") == 1) {
-                            $.ajax({
-                                type: "post",
-                                data: { "id": id, "price": price },
-                                url: '@Html.Action("InsertShopCart", "ShopCart")',
-                                success: function (data) {
-                                    alert(data);
-                                    return;
-                                }
-                            })
-                        }
-                        else {
-                            alert("请选择规格");
-                        }
-                    })
-                });
+            });
+            $("dl dd").each(function () {
+                alert($(this).attr("state"));
             })
         </script>
+
         </body>
 </html>
 

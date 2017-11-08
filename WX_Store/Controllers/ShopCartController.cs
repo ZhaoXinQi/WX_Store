@@ -15,18 +15,22 @@ namespace WX_Store.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 插入购物车
+        /// </summary>
+        /// <returns></returns>
         public ActionResult InsertShopCart()
         {
             string id = Request["id"];
             string price = Request["price"];
-            //  string cid = Session["cid"].ToString();
+            string cid = Session["cid"].ToString();
             Guid g = System.Guid.NewGuid();
-            
+            //把传过来的商品信息和用户信息添加到数据库
             ShoppongCart shoppongCart = new ShoppongCart
             {
                 
                 Id = g,
-                Cid = "oczTIwrQsLEa6Ik_TZr4ALu1iZCM",
+                Cid = cid,
                 Pcode = id,
                 Price = Convert.ToDecimal(price),
                 Totale = Convert.ToDecimal(price),

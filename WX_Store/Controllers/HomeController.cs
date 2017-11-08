@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using WxShop_Model;
 using IBaseService;
 using WX_Store.Filters;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+
 namespace WX_Store.Controllers
 {
     public class HomeController : Controller
@@ -14,9 +16,11 @@ namespace WX_Store.Controllers
         public IShowNewsService ShowNewsService { get; set; }//滚动新闻属性  依赖注入
         public IProService ProService { get; set; }
         // GET: Home
-        //[OAuth]
+        [OAuth]
         public ActionResult Index()
         {
+            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
+            Session["cid"] = userInfo.openid;
             //查询banner
             var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
