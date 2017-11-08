@@ -24,16 +24,18 @@ namespace WX_Store.Controllers
             string id = Request["id"];
             string price = Request["price"];
             string cid = Session["cid"].ToString();
+            int num = Convert.ToInt32(Request["num"]);
             Guid g = System.Guid.NewGuid();
             //把传过来的商品信息和用户信息添加到数据库
             ShoppongCart shoppongCart = new ShoppongCart
             {
-                
+
                 Id = g,
                 Cid = cid,
                 Pcode = id,
+                num = num,
                 Price = Convert.ToDecimal(price),
-                Totale = Convert.ToDecimal(price),
+                Totale = Convert.ToDecimal(price) * num,
                 CreateTime = DateTime.Now
             };
            if(ShopCartService.Add(shoppongCart))

@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 .index_search{ width:100%; padding:0 5px; padding-right:35px; position:relative;}
 .index_search input[type="text"]{ width:100%; background-color:#f2f3f7; border:0px; padding:8px 0; border-radius:40px; padding-left:35px; height: 36px; margin: 2px 0; background-image:url(../~/Common/img/icon_08.png); background-repeat:no-repeat; background-position:10px center; outline:none; background-size:18px auto; display: block;}
@@ -97,7 +97,7 @@
 .pingjia .pingjia_item .ping_text img{ display:block;margin-right:5px; margin-bottom:5px; border-radius:5px; overflow:hidden; width:60px; height:60px;}
 .pro_bottom{ overflow:hidden; height:45px; position:fixed; z-index:5; width:100%; left:0px; bottom:0px; background-color:#fff; border-top:1px solid #e6e6e6;padding:0px;}
 .pro_bottom span{ float:left;width:45%; overflow:hidden; }
-.pro_bottom span b{ float:left;font-weight:normal;font-size:12px;border-right:1px solid #e6e6e6; padding:0 15px; background-image:url(../~/Common/img/icon_010.png); background-position:center 4px; background-repeat:no-repeat; padding-top:26px; background-size:20px auto;}
+.pro_bottom span b{ float:left;font-weight:normal;font-size:12px;border-right:1px solid #e6e6e6; padding:0 15px; background-image:url(../img/icon_010.png); background-position:center 4px; background-repeat:no-repeat; padding-top:26px; background-size:20px auto;}
 .pro_bottom span b.on{ background-image:url(../~/Common/img/icon_023.png); color:#ff2f2f;}
 .pro_bottom span b a{ width:auto !important; font-size: 12px; text-align: center;}
 .pro_bottom>p{ float:right; width:55%;}
