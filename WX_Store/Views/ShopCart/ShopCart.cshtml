@@ -3,6 +3,50 @@
     ViewBag.Title = "ShopCart";
     Layout = "~/Views/Shared/Master_Page.cshtml";
 }
+@using WxShop_Model
+@using IBaseService
+<script>
+    $(function () {
+        $(".JianImg").click(function () {
+            var parent = $(this).parent().parent();
+            var num = parent.children("input").val();
+           // alert(parent);
+            var total = parent.find("b").text();
+            var total1 = parent.find("b");
+            var OneTotal = parseFloat(total) / parseFloat(num);// 获取单个价钱
+            var allTotal = 0;
+          //  alert(OneTotal);
+            if (num == 1) {//如果数量为一 则让商品价格为单价
+                total1.text(OneTotal);
+                $(".total").each(function () {
+                    allTotal += parseFloat($(this).text());
+                    $(".total_all").text(allTotal);
+                  //  alert(23);
+                })
+            } else {//如果不是就让价格等于单价乘以数量                
+                total1.text(parseFloat(OneTotal) * parseFloat(num) - parseFloat( OneTotal));
+                $(".total").each(function () {
+                    allTotal += parseFloat($(this).text());
+                    $(".total_all").text(allTotal);
+                })
+            }
+        })
+        $(".JiaImg").click(function () {
+            var parent = $(this).parent().parent();
+            var num = parent.children("input").val();
+            var total = parent.find("b").text();
+            var total1 = parent.find("b");
+            var allTotal = 0;
+            var OneTotal = parseFloat(total) / parseFloat(num);// 获取单个价钱           
+            total1.text(parseFloat(OneTotal) * parseFloat(num) + parseFloat(OneTotal));
+            $(".total").each(function () {
+                allTotal += parseFloat($(this).text());
+                $(".total_all").text(allTotal);
+              //  alert(22);
+            })
+        })
+    })
+</script>
 <!--ftop开始-->
 <div class="ftop">
     <h3 style=" text-align:center; font-size:18px;">购物车</h3>
@@ -12,20 +56,34 @@
 <!--ftop开始-->
 <div class="shopcar">
     <ul>
-        <li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="~/Common/img//img_01.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html"></a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="~/Common/img//icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="~/Common/img//icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="~/Common/img//icon_030.png">
-        </li>
+        @foreach (ShoppongCart item in ViewBag.shopCart as List<ShoppongCart>)
+        {
+           
+            // 循环出来图片，因为他们不是一个表
+            foreach (var pro in (ViewBag.pro as IProService).GetEntities(x => x.Code == item.Pcode))
+            {
+                string img = pro.img.Split(',')[1];//查找出来商品的图片
+                <li>
+                    <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="~/Common/img//@img"></a></p>
+                    <div class="shop_car">
+                        <a href="product_xq.html">@pro.Name</a>
+                        @{ var spec=(ViewBag.Speci as ISpecificationService).GetEntity(x => x.ProCode == item.Pcode);
+                            <span>@spec.Style</span>
+                        }                          
+                      <div class="shu"><span class="jian"><img src="~/Common/img//icon_016.png" class="JianImg"></span>
+                        <input class="shopcart-td-num" type="text" value="@item.num" readonly/>
+                        <span class="jia"><img src="~/Common/img//icon_017.png" class="JiaImg"></span>
+                        <a><i>￥</i><b class="total">@item.Totale</b></a></div>
+                    </div>
+                    <img class="delete" src="~/Common/img//icon_030.png">
+                </li>
+            }
+        }
     </ul>
     <div class="pay">
         <label><input type="checkbox"><span>全选</span></label>
         <div class="pay_right">
-            <p><span>合计：<b>￥898.50</b></span><i>不含运费</i></p>
+            <p><span>合计：￥<b class="total_all"></b></span><i>不含运费</i></p>
             <a href="confirm_order.html">结算（5）</a>
         </div>
     </div>
@@ -44,13 +102,13 @@
         jia.click(function() {
             var n = $(this).siblings("input").val();
             n++;
-            if (n > kunchun) {
-                alert("库存不足啦!");
-				$(this).siblings("input").val(kunchun - 1);
-				return false;
-            }
+    //        if (n > kunchun) {
+    //            alert("库存不足啦!");
+				//$(this).siblings("input").val(kunchun - 1);
+				//return false;
+    //        }
             $(this).siblings("input").val(n)
-			return false;
+			//return false;
         });
 		jian.click(function() {
             var n = $(this).siblings("input").val();

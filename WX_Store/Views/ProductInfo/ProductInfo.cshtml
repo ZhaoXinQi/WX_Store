@@ -33,12 +33,12 @@
                     var price = 0;
                     var id = null;
                     var num = $("#num").val();
-                    alert(num);
+                  //  alert(num);
                     $(".mydd").each(function () {
                         if ($(this).attr("state") != 0) {;
-                            count = 1;
-                            price = $("#price").attr("dava_price");
-                            id = $(this).attr("data_value");
+                            count = 1;//遍历出来规格，如果有选中的规格则count+1 
+                            price = $("#price").attr("dava_price");//找出商品价钱
+                            id = $(this).attr("data_value");//找出商品id
                         //    alert(num * price);
                         }
                     })
@@ -237,7 +237,10 @@ $(function(){
 });
         </script>
         <div class="fixft pro_bottom">
-            <span><b style="background-image:url(/Common/img/icon_022.png)"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">客服</a></b><b style="background-image:url(/Common/img/icon_010.png)">收藏</b></span>
+            <span><b style="background-image:url(/Common/img/icon_022.png)"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">客服</a></b>
+            <b style="background-image:url(/Common/img/icon_010.png)">收藏</b>
+            <b style="background-image:url(/Common/img/icon_026.png)"><a href="/ShopCart/ShopCart">购物车</a></b>
+            </span>
             <p><a  id="joinShopCart" href="#" data_value="@ViewBag.code" data_price="@ViewBag.price">加入购物车</a><a href="~/Views/ShopCart/ShopCart.cshtml">立即购买</a></p>
         </div>
 
