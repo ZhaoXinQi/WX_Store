@@ -6,43 +6,123 @@
 @using WxShop_Model
 @using IBaseService
 <script>
-    $(function () {
-        $(".JianImg").click(function () {
-            var parent = $(this).parent().parent();
-            var num = parent.children("input").val();
-           // alert(parent);
-            var total = parent.find("b").text();
-            var total1 = parent.find("b");
-            var OneTotal = parseFloat(total) / parseFloat(num);// 获取单个价钱
-            var allTotal = 0;
-          //  alert(OneTotal);
-            if (num == 1) {//如果数量为一 则让商品价格为单价
-                total1.text(OneTotal);
-                $(".total").each(function () {
-                    allTotal += parseFloat($(this).text());
-                    $(".total_all").text(allTotal);
-                  //  alert(23);
+    $(function () {    
+        var total = 0;//定义总价变量
+        var checked = 0;//定义选择的个数，用于判断是否全选
+        //点击全选时候的按钮
+        $(".Sum_Price").click(function () {//点击全选按钮
+            var checked = $(this).attr("data_Check");//获取全选按钮属性
+            if (checked == 0) {//如果未选中，把他们变为全选
+                $(this).children().find('img').attr('src', '/Common/img/icon_032.png');//全选的图片变为选中状态
+                $(this).attr('data_Check', '1');//并且把它们属性变为选中    
+                var sum = 0;
+                $(".my_a").each(function () {//遍历商品
+                    $(this).children('img').attr('src', '/Common/img/icon_032.png');//把商品的图片变为以选择
+                    $(this).attr('data_Check', '1');////把商品的状态变为以选择
+                    var li = $(this).parents('li');//获取点击的父集元素，方便找到它的价格  
+                    var total_One = li.children().find("b").text();//找到这个商品的价格
+                 //   alert(total);
+               
+                    sum = parseFloat(sum) + parseFloat(total_One);//获取总价
+                 //   alert(total);
+                    $(".total_all").text(sum);
+                
                 })
-            } else {//如果不是就让价格等于单价乘以数量                
-                total1.text(parseFloat(OneTotal) * parseFloat(num) - parseFloat( OneTotal));
-                $(".total").each(function () {
-                    allTotal += parseFloat($(this).text());
-                    $(".total_all").text(allTotal);
+            } else if (checked == 1) {//如果是选中的状态，就把他们变为未选中的状态
+                $(this).children().find('img').attr('src', '/Common/img/icon_031.png');//全选的图片变为未选中状态
+                $(this).attr('data_Check', '0');//并且把它们属性变为未选中
+                $(".my_a").each(function () {
+                    $(this).children('img').attr('src', '/Common/img/icon_031.png');//把商品的图片变为未选择
+                    $(this).attr('data_Check', '0');//把商品的状态变为未选择
+                    $(".total_all").text(0);
+                })
+            }
+        })     
+        $(".my_a").click(function () {//点击选中按钮
+            var IsCheck = $(this).attr("data_Check");//获取是否选中的状态
+            var li = $(this).parents('li');//获取点击的父集元素，方便找到它的价格              
+            if (IsCheck == 0) {//如果没有选中，点击后就让他选中
+                $(this).children('img').attr('src', '/Common/img/icon_032.png');//改变选中后的图片
+                $(this).attr('data_Check', '1');//把选中后的的状态改为选中
+                var total_One = li.children().find("b").text(); //找到这个商品的价格
+              //  alert(total_One);
+                total = parseFloat(total) + parseFloat(total_One);//获取总价
+                $(".total_all").text(total);
+
+            } else if (IsCheck == 1) {//如果是选中的状态，
+                $(this).children('img').attr('src', '/Common/img/icon_031.png');//把图片改为未选中的图片
+                $(this).attr('data_Check', '0');//把状态改为未选中
+                var total_One = li.children().find("b").text(); //找到这个商品的价格
+               // alert(total_One);
+                var total_Jian = $(".total_all").text();//获取总价
+             //   alert(total_Jian);
+                var total_1 = parseFloat(total_Jian) - parseFloat(total_One);//总价减去未选中的商品
+                $(".total_all").text(total_1);
+            }
+
+            var Check = $(this).attr("data_Check");
+            //alert(Check);
+            if (Check == 1) {//如果是选中的状态
+                checked += 1;//选中加一
+            } else if (Check == 0) {//如果不是选中状态
+                checked -= 1;//选中减一
+            }
+            if (checked == $(".my_a").length) {//如果选中的个数，更商品的个数一致
+                $(".Sum_Price").attr("data_Check", "1");//把全选的状态变为选中
+                $(".imgAll").attr('src', '/Common/img/icon_032.png');//把全选图片变为选中
+            } else {
+                $(".Sum_Price").attr("data_Check", "0");//把全选的状态变为为选中
+                $(".imgAll").attr('src', '/Common/img/icon_031.png');//把全选的图片变为未选中
+            }
+        })
+        var _Jian = $(".JianImg");
+        var _Jia = $(".JiaImg");
+        _Jian.click(function () {
+            var _Price = $(this).attr("data_money");//获取商品的单价
+            var parent = $(this).parent().parent();
+            var _Num = parent.children("input").val();//获取商品数量
+            var _Total = parent.find("b");//找到价格信息
+           // alert(_Total.text());
+            if (_Num == 1) {
+                _Total.text(_Price);
+            } else {
+                _Total.text((parseFloat(_Num) - 1) * parseFloat(_Price));
+                var total_Lost = 0;
+                $(".my_a").each(function () {
+                    // alert(22);
+                    if ($(this).attr("data_Check") == 1) {
+                        var li = $(this).parents('li');//获取点击的父集元素，方便找到它的价格        
+                        console.log(li);
+                        var total_One = li.children().find("b").text();
+                      //  alert(total_One);
+                        total_Lost = parseFloat(total_Lost) + parseFloat(total_One);
+                        $(".total_all").text(total_Lost);
+                    }
                 })
             }
         })
-        $(".JiaImg").click(function () {
+        _Jia.click(function () {
+            var _Price = $(this).attr("data_money");//获取商品的单价
+            //alert(_Price);
             var parent = $(this).parent().parent();
-            var num = parent.children("input").val();
-            var total = parent.find("b").text();
-            var total1 = parent.find("b");
-            var allTotal = 0;
-            var OneTotal = parseFloat(total) / parseFloat(num);// 获取单个价钱           
-            total1.text(parseFloat(OneTotal) * parseFloat(num) + parseFloat(OneTotal));
-            $(".total").each(function () {
-                allTotal += parseFloat($(this).text());
-                $(".total_all").text(allTotal);
-              //  alert(22);
+            var _Num = parent.children("input").val();//获取商品数量
+            var _Total = parent.find("b");//找到价格信息
+            var _code = $(this).attr("data_code");
+            console.log(_code);
+           // alert(_Num);
+           // alert(_Num * _Price);
+            _Total.text((parseFloat(_Num) + 1) * parseFloat(_Price));
+            var total_Lost = 0;
+            $(".my_a").each(function () {
+               // alert(22);
+                if ($(this).attr("data_Check") == 1) {
+                    var li = $(this).parents('li');//获取点击的父集元素，方便找到它的价格        
+                    console.log(li);
+                    var total_One = li.children().find("b").text();
+                   // alert(total_One);
+                    total_Lost = parseFloat(total_Lost) + parseFloat(total_One);
+                    $(".total_all").text(total_Lost);
+                }
             })
         })
     })
@@ -57,22 +137,21 @@
 <div class="shopcar">
     <ul>
         @foreach (ShoppongCart item in ViewBag.shopCart as List<ShoppongCart>)
-        {
-           
+        {           
             // 循环出来图片，因为他们不是一个表
             foreach (var pro in (ViewBag.pro as IProService).GetEntities(x => x.Code == item.Pcode))
             {
                 string img = pro.img.Split(',')[1];//查找出来商品的图片
                 <li>
-                    <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="~/Common/img//@img"></a></p>
+                    <p><label><a href="javascript::" class="my_a" data_Check="0" ><img src="~/Common/img/icon_031.png" class="my_img" style="width:16px;height:16px" /></a></label><a href="product_xq.html"><img src="~/Common/img/@img"></a></p>
                     <div class="shop_car">
                         <a href="product_xq.html">@pro.Name</a>
                         @{ var spec=(ViewBag.Speci as ISpecificationService).GetEntity(x => x.ProCode == item.Pcode);
-                            <span>@spec.Style</span>
+                            <span>规格：@spec.Style</span>
                         }                          
-                      <div class="shu"><span class="jian"><img src="~/Common/img//icon_016.png" class="JianImg"></span>
+                      <div class="shu"><span class="jian"><img src="~/Common/img//icon_016.png" class="JianImg" data_money="@pro.Price"></span>
                         <input class="shopcart-td-num" type="text" value="@item.num" readonly/>
-                        <span class="jia"><img src="~/Common/img//icon_017.png" class="JiaImg"></span>
+                        <span class="jia"><img src="~/Common/img//icon_017.png" class="JiaImg" data_money="@pro.Price" data_id="@pro.Code"></span>
                         <a><i>￥</i><b class="total">@item.Totale</b></a></div>
                     </div>
                     <img class="delete" src="~/Common/img//icon_030.png">
@@ -81,10 +160,10 @@
         }
     </ul>
     <div class="pay">
-        <label><input type="checkbox"><span>全选</span></label>
+        <p><a class="Sum_Price" data_Check="0" href="#"><label><img src="~/Common/img/icon_031.png" style="width:15px;height:18px;padding-top:3px" class="imgAll" />全选</label></a></p> 
         <div class="pay_right">
             <p><span>合计：￥<b class="total_all"></b></span><i>不含运费</i></p>
-            <a href="confirm_order.html">结算（5）</a>
+            <a href="confirm_order.html">结算</a>
         </div>
     </div>
     <!--弹窗-->
@@ -171,6 +250,8 @@
 			$(".block_bg,.delete_box").fadeOut();
 	    })
     });
+    $(".my_a").length;
+    
 </script>
 
 

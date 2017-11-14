@@ -20,12 +20,16 @@ namespace WX_Store.Controllers
             var shoppongCart = ShopCartService.GetEntities(x => x.Cid == cid);
             ViewBag.shopCart = shoppongCart.ToList();
             //把商品的信息传入前台供查询
-            var pro = proService.GetEntity(x => x.Code == "E00100010001");
-            ViewBag.pro1 = pro.Name;
+           // var pro = proService.GetEntity(x => x.Code == "E00100010001");
+          //  ViewBag.pro1 = pro.Name;
             ViewBag.pro = proService;
             //把规格的信息传入前台
             ViewBag.Speci = specificationService;
             return View();
+        }
+        public ActionResult Jia()
+        {
+            return Content("213");
         }
         /// <summary>
         /// 插入购物车
