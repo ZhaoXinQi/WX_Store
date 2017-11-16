@@ -42,5 +42,11 @@ namespace WX_Store.Controllers
             }
           
         }
+        public ActionResult Address()
+        {
+            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
+        
+            return View(userInfo);
+        }
     }
 }

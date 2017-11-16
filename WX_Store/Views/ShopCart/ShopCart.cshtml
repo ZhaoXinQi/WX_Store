@@ -125,6 +125,22 @@
                 }
             })
         })
+        $("#clear").click(function () {
+            alert(2);
+            var Have = 0;
+            var id ="" ;
+            $(".my_a").each(function () {
+                if ($(this).attr("data_Check") != 0) {
+                    Have++;
+                    id += $(this).attr("data_code") + ",";
+                }
+            })
+            if (Have != 0) {
+                $(this).attr("href", "/Order/Index?id=" + id);
+            } else if (Have == 0){
+                alert("请选择商品");
+            }
+        })
     })
 </script>
 <!--ftop开始-->
@@ -143,7 +159,7 @@
             {
                 string img = pro.img.Split(',')[1];//查找出来商品的图片
                 <li>
-                    <p><label><a href="javascript::" class="my_a" data_Check="0" ><img src="~/Common/img/icon_031.png" class="my_img" style="width:16px;height:16px" /></a></label><a href="product_xq.html"><img src="~/Common/img/@img"></a></p>
+                    <p><label><a href="javascript::" class="my_a" data_Check="0" data_code="@pro.Code" ><img src="~/Common/img/icon_031.png" class="my_img" style="width:16px;height:16px" /></a></label><a href="product_xq.html"><img src="~/Common/img/@img"></a></p>
                     <div class="shop_car">
                         <a href="product_xq.html">@pro.Name</a>
                         @{ var spec=(ViewBag.Speci as ISpecificationService).GetEntity(x => x.ProCode == item.Pcode);
@@ -163,7 +179,7 @@
         <p><a class="Sum_Price" data_Check="0" href="#"><label><img src="~/Common/img/icon_031.png" style="width:15px;height:18px;padding-top:3px" class="imgAll" />全选</label></a></p> 
         <div class="pay_right">
             <p><span>合计：￥<b class="total_all"></b></span><i>不含运费</i></p>
-            <a href="confirm_order.html">结算</a>
+            <a id="clear">结算</a>
         </div>
     </div>
     <!--弹窗-->

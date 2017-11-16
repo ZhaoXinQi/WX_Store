@@ -64,5 +64,6 @@ namespace Fish_IRepository
         /// <returns></returns>
         IEnumerable<TEntity> SelectEntitiesByPage<Ttype>(int pageindex, int pagesize, bool isAsc,
            Expression<Func<TEntity, Ttype>> orderlambda, Expression<Func<TEntity, bool>> wherelambda);
+        //bool InsertOrder(object order,params object[] param);
     }
 }
