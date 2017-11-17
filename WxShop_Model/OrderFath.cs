@@ -9,16 +9,19 @@ namespace WxShop_Model
     [Table("OrderFath")]
     public partial class OrderFath
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid? Cid { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Cid { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string ChirldOrderId { get; set; }
 
         [Required]
         [StringLength(5)]
         public string state { get; set; }
-
-        [Column(TypeName = "money")]
-        public decimal OrderPrie { get; set; }
 
         [Column(TypeName = "money")]
         public decimal ExpresPrice { get; set; }
@@ -32,16 +35,17 @@ namespace WxShop_Model
         public string ReMark { get; set; }
 
         [Required]
-        [StringLength(20)]
-        public string CheckUser { get; set; }
+        [StringLength(50)]
+        public string Createtime { get; set; }
 
-        public DateTime Createtime { get; set; }
+        [StringLength(50)]
+        public string PayTime { get; set; }
 
-        public DateTime? PayTime { get; set; }
+        [StringLength(50)]
+        public string PostTime { get; set; }
 
-        public DateTime? PostTime { get; set; }
-
-        public DateTime? ReceTime { get; set; }
+        [StringLength(50)]
+        public string ReceTime { get; set; }
 
         public virtual PayMethod PayMethod { get; set; }
     }

@@ -12,6 +12,7 @@ namespace WxShop_Model
         {
         }
 
+        public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Customar> Customar { get; set; }
         public virtual DbSet<Favarite> Favarite { get; set; }
@@ -73,10 +74,6 @@ namespace WxShop_Model
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<OrderFath>()
-                .Property(e => e.OrderPrie)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<OrderFath>()
                 .Property(e => e.ExpresPrice)
                 .HasPrecision(19, 4);
 
@@ -120,11 +117,6 @@ namespace WxShop_Model
                 .WithOptional(e => e.ProductInfo)
                 .HasForeignKey(e => e.Pcode)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ProductInfo>()
-                .HasMany(e => e.OrderChild)
-                .WithRequired(e => e.ProductInfo)
-                .HasForeignKey(e => e.Pcode);
 
             modelBuilder.Entity<ProductInfo>()
                 .HasMany(e => e.ProductReview)

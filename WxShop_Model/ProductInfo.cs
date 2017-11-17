@@ -14,7 +14,6 @@ namespace WxShop_Model
         {
             Banner = new HashSet<Banner>();
             Favarite = new HashSet<Favarite>();
-            OrderChild = new HashSet<OrderChild>();
             ProductReview = new HashSet<ProductReview>();
             ProImage = new HashSet<ProImage>();
             Stock = new HashSet<Stock>();
@@ -57,9 +56,6 @@ namespace WxShop_Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favarite> Favarite { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderChild> OrderChild { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductReview> ProductReview { get; set; }

@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 b{ font-weight: normal;}
 input:focus{ outline: none;}
@@ -24,13 +24,13 @@ i,em{font-style: normal;}
 .centerindex .link .sg .biga.bg{ background-position: 98% center; background-repeat: no-repeat; background-size: 11px auto; background-image: url("../~/Common/img/centericon_48.png");}
 .centerindex .link .sg .biga span{ display: block; float: left; color: #000; padding-left: 34px; background-position: left center; background-repeat: no-repeat; background-size: 24px auto;}
 .centerindex .link .sg .biga i{ display: block; float: right; color: #666; padding-right: 20px; background-image: url("../~/Common/img/centericon_14.png"); background-size: 13px auto; background-repeat: no-repeat; font-size: 14px; background-position: right center; background-size: 10px auto;}
-.centerindex .link .sg .biga span.bg1{ background-image: url("../~/Common/img/centericon_11.png");}
-.centerindex .link .sg .biga span.bg2{ background-image: url("../~/Common/img/centericon_36.png");}
-.centerindex .link .sg .biga span.bg3{ background-image: url("../~/Common/img/centericon_51.png");}
-.centerindex .link .sg .biga span.bg4{ background-image: url("../~/Common/img/centericon_56.png");}
-.centerindex .link .sg .biga span.bg5{ background-image: url("../~/Common/img/centericon_59.png");}
-.centerindex .link .sg .biga span.bg6{ background-image: url("../~/Common/img/centericon_63.png");}
-.centerindex .link .sg .biga span.bg7{ background-image: url("../~/Common/img/centericon_65.png");}
+.centerindex .link .sg .biga span.bg1{ background-image: url("/Common/img/centericon_11.png");}
+.centerindex .link .sg .biga span.bg2{ background-image: url("Common/img/centericon_36.png");}
+.centerindex .link .sg .biga span.bg3{ background-image: url("../img//centericon_51.jpg")}/*url("Common/img/centericon_51.png");*/
+.centerindex .link .sg .biga span.bg4{ background-image: url("~/Common/img/centericon_56.png");}
+.centerindex .link .sg .biga span.bg5{ background-image: url("~/Common/img/centericon_59.png");}
+.centerindex .link .sg .biga span.bg6{ background-image: url("~/Common/img/centericon_63.png");}
+.centerindex .link .sg .biga span.bg7{ background-image: url("~/Common/img/centericon_65.png");}
 .centerindex .link .sg .both{ overflow: hidden; border-bottom: 1px solid #e5e5e5; padding: 0px 12px;}
 .centerindex .link .sg .both a{ padding: 12px 0; display: block; float: left; width: 50%; text-align: center; font-size: 14px; color: #666; line-height: 24px; background-image: url("../~/Common/img/centericon_14.png"); background-size: 10px auto; background-position: 90% center; background-repeat: no-repeat;}
 .centerindex .link .sg .both a span{ display:block; font-size: 14px; line-height: 30px;}

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE11308B-D803-4208-9B18-87161F673EA4}</ProjectGuid>
+    <ProjectGuid>{DBC73C25-FE4C-495D-AF9C-193CF0CBEB0F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WxShop_Model</RootNamespace>
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="Customar.cs" />
     <Compile Include="Favarite.cs" />

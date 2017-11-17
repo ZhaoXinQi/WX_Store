@@ -48,5 +48,9 @@ namespace WX_Store.Controllers
         
             return View(userInfo);
         }
+        public ActionResult AddAddress()
+        {
+            return View();
+        }
     }
 }

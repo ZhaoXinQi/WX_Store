@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAddress</title>
+    <link href="~/Common/css/Cbase.css" rel="stylesheet" />
+    <link href="~/Common/css/center.css" rel="stylesheet" />
+    <script src="~/Common/js/jquery-1.7.2.min.js"></script>
+    <script src="~/Common/js/base.js"></script>
+</head>
+<body>
+    <!--ftop开始-->
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="~/Common/img/icon_03.png"></a>
+        <h2>修改收货地址</h2>
+        <a class="comea deletea">删除</a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <!--个人中心-收货地址-->
+    <div class="address">
+        <div class="fill">
+            <a class="bg" href="center-address-addcity.html"><span>所在地区</span><input type="text" placeholder="请选择所在地区" readonly></a>
+            <a><span>街道</span><input type="text" placeholder="请输入街道信息"></a>
+            <a><span>详细地址</span><input type="text" placeholder="请输入详细地址"></a>
+            <a><span>收货人姓名</span><input type="text" placeholder="请输入收货人信息"></a>
+            <a><span>手机号码</span><input type="text" placeholder="请输入您的手机号码"></a>
+            <a><span>邮编</span><input type="text" placeholder="请输入邮政编码"></a>
+        </div>
+        <div class="chose"><span>设为默认地址</span></div>
+    </div>
+    <a class="makesure" href="center-address.html">保存</a>
+    <!--个人中心-收货地址-->
+    <!--很多弹窗-->
+    <div class="popbg"></div>
+    <div class="pop popdelete">
+        <h2>删除地址</h2>
+        <p>您真的要删除该地址吗？</p>
+        <div class="only"><a class="qx">取消</a><a class="qr">确认</a></div>
+    </div>
+    <!--很多弹窗-->
+
+
+    <script>
+    $(function () {
+        //删除订单
+        $(".ftop .deletea").click(function(){
+            $("body,html").css({"overflow":"hidden"});
+            $(".popbg").fadeIn();
+            $(".popdelete").fadeIn();
+        })
+
+        //关闭弹窗
+        $(".pop .only a.qx").click(function(){
+            $("body,html").css({"overflow":"auto"});
+            $(".popbg").fadeOut();
+            $(".pop").fadeOut();
+        })
+        $(".pop .only a.qr").click(function(){
+            $("body,html").css({"overflow":"auto"});
+            $(".popbg").fadeOut();
+            $(".pop").fadeOut();
+            window.location.href = 'center-address.html'
+        })
+
+        $(".chose").click(function(){
+            $(this).toggleClass("on");
+        })
+    })
+    </script>
+</body>
+</html>

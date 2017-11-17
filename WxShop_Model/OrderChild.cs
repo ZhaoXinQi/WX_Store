@@ -10,11 +10,13 @@ namespace WxShop_Model
     public partial class OrderChild
     {
         [Key]
-        [Column(Order = 0)]
-        public Guid Cid { get; set; }
+        public int cid { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
+        [StringLength(50)]
+        public string order_id { get; set; }
+
+        [Required]
         [StringLength(12)]
         public string Pcode { get; set; }
 
@@ -24,7 +26,5 @@ namespace WxShop_Model
         public decimal TotalPrice { get; set; }
 
         public bool IsReview { get; set; }
-
-        public virtual ProductInfo ProductInfo { get; set; }
     }
 }

@@ -21,7 +21,7 @@
 <body>
     <!--ftop开始-->
     <div class="ftop">
-        <a class="back" onClick="javascript:history.back(-1);"><img src="~/Common/img//icon_03.png"></a>
+        <a class="back" onClick="javascript:history.back(-1);"><img src="~/Common/img/icon_03.png"></a>
         <h2>确认订单</h2>
         <a class="comea">&nbsp;</a>
         <div style="clear: both;"></div>
@@ -35,8 +35,8 @@
     </div>
     <div class="goods_list">
         <h2>商品清单</h2>
-        <ul>
-            @{ foreach (var item in Request["id"].TrimEnd(',').Split(','))   @*这里的trimEnd方法是去除最后一个，的*@
+        <ul>@*这里的trimEnd方法是去除最后一个，的*@
+            @{ foreach (var item in Request["id"].TrimEnd(',').Split(','))   
                  {
                     var shopCart = (ViewBag.shopcartService as IShopCartService).GetEntity(x => x.Cid==Session["cid"].ToString() &&x.Pcode==item);
                     var pro = (ViewBag.pro as IProService).GetEntity(x => x.Code == item);
