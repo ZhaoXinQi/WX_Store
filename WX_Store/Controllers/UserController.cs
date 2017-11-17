@@ -12,6 +12,7 @@ namespace WX_Store.Controllers
     public class UserController : Controller
     {
         public ICustomarService customarService { get; set; }
+        public IAddressService addressService { get; set; }
         // GET: User
         [OAuth]
         public ActionResult Index()
@@ -42,10 +43,13 @@ namespace WX_Store.Controllers
             }
           
         }
+        //用户地址
         public ActionResult Address()
         {
             OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
-        
+            string cid = userInfo.openid;
+            var address = addressService.GetEntities(x => x.cid == cid);
+            ViewBag.add = address.ToList();
             return View(userInfo);
         }
         public ActionResult AddAddress()

@@ -15,6 +15,9 @@ namespace WxShop_Model
         [StringLength(100)]
         public string cid { get; set; }
 
+        [StringLength(50)]
+        public string name { get; set; }
+
         [Required]
         [StringLength(20)]
         public string tel { get; set; }

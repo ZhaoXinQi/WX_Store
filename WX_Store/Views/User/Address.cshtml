@@ -2,8 +2,8 @@
 @{
     Layout = null;
 }
+@using WxShop_Model
 @model Senparc.Weixin.MP.AdvancedAPIs.OAuth.OAuthUserInfo
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,16 +25,32 @@
     <!--个人中心-收货地址-->
     <div class="address">
         <div class="list">
-            <div class="sg on">
-                <!--<label></label>-->
-                <a href="center-address-add.html">
-                    <span class="name"><i>as </i><em>13253425342</em></span>
-                    <span class="place"><i>[默认]</i>河南省郑州市金水区祭城路街道商都路与中州大道交叉口建业五栋大楼B座</span>
-                </a>
-            </div>
+            @foreach (Address item in ViewBag.add as List<Address>)
+            {
+                if (item.IsDefault == true)
+                {
+                    <div class="sg on">
+                        <!--<label></label>-->
+                        <a href="center-address-add.html">
+                            <span class="name"><i>@item.name </i><em>@item.tel</em></span>
+                            <span class="place"><i>[默认]</i>@item.address1</span>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="sg">
+                        <!--<label></label>-->
+                        <a href="center-address-add.html">
+                            <span class="name"><i>@item.name </i><em>@item.tel</em></span>
+                            <span class="place"><i>[默认]</i>@item.address1</span>
+                        </a>
+                    </div>
+                }
+            }          
         </div>
     </div>
-    <a class="makesure" href="center-address-add.html">添加收货地址</a>
+    <a class="makesure" href="/user/AddAddress">添加收货地址</a>
     <!--个人中心-收货地址-->
 
 </body>
