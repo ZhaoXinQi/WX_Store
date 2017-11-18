@@ -13,6 +13,28 @@
     <link href="~/Common/css/center.css" rel="stylesheet" />
     <script src="~/Common/js/jquery-1.7.2.min.js"></script>
     <script src="~/Common/js/base.js"></script>
+    <script>
+        $(function () {
+            $("#check").click(function () {
+                $(this).toggleClass("1");
+            })
+            $(".makesure").click(function () {
+                var address = $("#address").val();
+                var name = $("#name").val();
+                var tel = $("#tel").val();
+                var ischeck = $("#check").attr("class");
+                alert(1);
+                $.ajax({
+                    type: 'post',
+                    url: '/User/AddressInsert',
+                    data: { "address": address, "name": name, "tel": tel, "check": ischeck },
+                    success: function (data) {
+                        alert(data);
+                    }
+                })
+            })
+        })
+    </script>
 </head>
 <body>
     <!--ftop开始-->
@@ -32,9 +54,9 @@
             <a><span>收货人姓名</span><input type="text" placeholder="请输入收货人信息" id="name"></a>
             <a><span>手机号码</span><input type="text" placeholder="请输入您的手机号码" id="tel"></a>           
         </div>
-        <div class="chose"><span>设为默认地址</span></div>
+        <div class="chose"><span data_check="0" id="check" class="0">设为默认地址</span></div>
     </div>
-    <a class="makesure" href="center-address.html">保存</a>
+    <p class="makesure">保存</p>
     <!--个人中心-收货地址-->
     <!--很多弹窗-->
     <div class="popbg"></div>

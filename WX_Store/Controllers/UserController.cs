@@ -56,5 +56,34 @@ namespace WX_Store.Controllers
         {
             return View();
         }
+        public ActionResult AddressInsert()
+        {
+            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
+            string cid = userInfo.openid;
+            var address = Request["address"];
+            var name = Request["name"];
+            var tel = Request["tel"];
+            var check = Request["check"];
+            bool ischeck = false;
+            if (check == "0")
+            {
+                ischeck = false;
+            }
+            else
+            {
+                ischeck = true;
+            }
+            Address addressEntity = new Address()
+            {
+                cid = cid,
+                address1 = address,
+                tel = tel,
+                name = name,
+                IsDefault= ischeck
+            };
+            bool IsOk = addressService.Add(addressEntity);
+          
+            return Content(IsOk.ToString());
+        }
     }
 }
