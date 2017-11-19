@@ -17,6 +17,16 @@
     <script src="~/Common/js/base.js"></script>
     <script src="~/Common/js/swiper.min.js"></script>
     <script src="~/Common/js/index.js"></script>
+    <script>
+        $(function () {
+            var price = 0;
+            $(".price").each(function () {
+                var onePrice = $(this).attr("data_value");
+                price = parseFloat(price) + parseFloat(onePrice);
+            })
+            $("#pay").text(price);
+        })
+    </script>
 </head>
 <body>
     <!--ftop开始-->
@@ -29,8 +39,8 @@
     <!--ftop开始-->
     <div class="address">
         <div>
-            <h2><span>收货人: 王名扬</span><i>13201562356</i></h2>
-            <p>收货地址：河南省郑州市金水区中州大道与商都路交叉口建业五栋大楼</p>
+            <h2><span>收货人: @ViewBag.name</span><i>13201562356</i></h2>
+            <p>收货地址：@ViewBag.address</p>
         </div>
     </div>
     <div class="goods_list">
@@ -42,10 +52,10 @@
                     var pro = (ViewBag.pro as IProService).GetEntity(x => x.Code == item);
                     <li>
                         <a href="product_xq.html">
-                            <img src="~/Common/img/img_014.jpg">
+                            <img src="~/Common/img/@pro.img.ToString().Split(',')[1]">
                             <div>
                                 <p>@pro.Name</p><span>规格：500g/袋</span>
-                                <h3><span>¥@shopCart.Price</span><i>x @shopCart.num</i></h3>
+                                <h3><span class="price" data_value="@shopCart.Price">¥@shopCart.Price</span><i>x @shopCart.num</i></h3>
                             </div>
                         </a>
                     </li>
@@ -56,16 +66,16 @@
         </ul>
     </div>
     <div class="delivery">
-        <span>配送费</span><p>免邮费/快递费<i>￥15</i></p>
+        <span>配送费</span><p>快递费<i>￥15</i></p>
     </div>
     <div class="message">
         <label>留言备注</label>
         <textarea rows="2" placeholder="请输入您想要备注的内容"></textarea>
     </div>
-    <p class="sunm">共<i>2</i>件商品，合计:<i>￥285</i>(含快递费)</p>
+    <p class="sunm">共<i>2</i>件商品，合计:<i>￥</i>(含快递费)</p>
     <div class="amount">
-        <span>需付:<i>￥285</i></span>
-        <a href="pay_order.html">提交订单</a>
+        <span>需付:￥<i id="pay"></i></span>
+        <a href="/order/orderPay?pid=">提交订单</a>
     </div>
 </body>
 </html>

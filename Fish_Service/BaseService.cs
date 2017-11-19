@@ -27,6 +27,13 @@ namespace Fish_Service
             baseRepository.Insert(entity);
             return baseRepository.savaChange();
         }
+
+        public object ExecuteCommand(string order, params object[] param)
+        {
+            return baseRepository.ExecuteCommand(order, param);
+             
+        }
+
         /// <summary>
         /// 查询多个实体      这个是BLL层
         /// </summary>

@@ -5,6 +5,7 @@
 }
 @using WxShop_Model
 
+
 <script>
     $(function () {
         $("#HotSell").click(function () {
@@ -47,7 +48,11 @@
                 }
             })
         })   
-            $("#Index").attr("class", "current");           
+        $("#Index").attr("class", "current");           
+        $("#num").text(@ViewBag.count);
+        $("#seac1").text(@ViewBag.show11);
+        //alert(@ViewBag.show11);
+      
     })
 </script>
 @{Html.RenderPartial("Seach", "home");}

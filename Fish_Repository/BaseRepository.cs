@@ -86,6 +86,9 @@ namespace Fish_Repository
             return dbset.FirstOrDefault(whereLambda);
         }
 
-      
+        public object ExecuteCommand(string order, params object[] param)
+        {
+            return dbcontext.Database.ExecuteSqlCommand(order, param);
+        }
     }
 }

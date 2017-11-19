@@ -53,5 +53,6 @@ namespace IBaseService
         /// <param name="whereLambda">查询实体的Lambdda</param>
         /// <returns></returns>
         IEnumerable<TEntity> GetEntityPages<type>(int pageIndex, int pageSize, bool isAsc,Expression<Func<TEntity, bool>> OrderByLambda, Expression<Func<TEntity, bool>> whereLambda);
+        object ExecuteCommand(string order, params object[] param);
     }
 }
