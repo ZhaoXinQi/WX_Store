@@ -44,6 +44,7 @@
     <Compile Include="IBannerRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="ICustomarRepository.cs" />
+    <Compile Include="IFavariteRepository.cs" />
     <Compile Include="IProductReviewRepository.cs" />
     <Compile Include="IProPagesRepository.cs" />
     <Compile Include="IProRepository.cs" />

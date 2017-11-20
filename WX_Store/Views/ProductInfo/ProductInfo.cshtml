@@ -28,7 +28,7 @@
                    // alert($(this).attr("state"));
                 })
                 $("#joinShopCart").click(function () {
-                    alert("click");
+                   // alert("click");
                     var count = 0;;
                     var price = 0;
                     var id = null;
@@ -57,6 +57,19 @@
                             }
                         })
                     }
+                })
+                $("#love").click(function () {
+                    alert(1);
+                    var pCode = $(".mydd").attr("data_value");//找出商品ID
+                    var price = $("#price").attr("dava_price");//找出商品价钱
+                    $.ajax({
+                        type: "post",
+                        data: { "pcode": pCode, "price": price },
+                        url: '/ShopCart/JoinLove',
+                        success: function (data) {
+                            alert(data);
+                        }
+                    })
                 })
             })
     </script>
@@ -238,7 +251,7 @@ $(function(){
         </script>
         <div class="fixft pro_bottom">
             <span><b style="background-image:url(/Common/img/icon_022.png)"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">客服</a></b>
-            <b style="background-image:url(/Common/img/icon_010.png)">收藏</b>
+            <b style="background-image:url(/Common/img/icon_010.png)" id="love">收藏</b>
             <b style="background-image:url(/Common/img/icon_026.png)"><a href="/ShopCart/ShopCart">购物车</a></b>
             </span>
             <p><a  id="joinShopCart" href="#" data_value="@ViewBag.code" data_price="@ViewBag.price">加入购物车</a><a href="~/Views/ShopCart/ShopCart.cshtml">立即购买</a></p>
@@ -313,7 +326,7 @@ $(document).scroll(function() {
 	}
             });
             $("dl dd").each(function () {
-                alert($(this).attr("state"));
+              //  alert($(this).attr("state"));
             })
         </script>
 

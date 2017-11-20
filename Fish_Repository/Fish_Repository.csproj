@@ -52,6 +52,7 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="CustomarRepository.cs" />
     <Compile Include="DbContextFactory.cs" />
+    <Compile Include="FavariteRepository.cs" />
     <Compile Include="ProductReviewRepository.cs" />
     <Compile Include="ProPagesRepository.cs" />
     <Compile Include="ProRepository.cs" />

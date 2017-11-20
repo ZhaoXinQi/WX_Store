@@ -44,6 +44,7 @@
     <Compile Include="BannerService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="CustomarService.cs" />
+    <Compile Include="FavariteService.cs" />
     <Compile Include="ProductReviewService.cs" />
     <Compile Include="ProPagesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

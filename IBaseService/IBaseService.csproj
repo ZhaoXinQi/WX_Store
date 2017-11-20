@@ -44,6 +44,7 @@
     <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="ICustomarService.cs" />
+    <Compile Include="IFavariteService.cs" />
     <Compile Include="IProductReviewService.cs" />
     <Compile Include="IProPagesService.cs" />
     <Compile Include="IShopCartService.cs" />

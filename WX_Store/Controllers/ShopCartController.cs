@@ -5,13 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using WxShop_Model;
 using IBaseService;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+
 namespace WX_Store.Controllers
 {
     public class ShopCartController : Controller
     {
-        public IShopCartService ShopCartService { get; set; }
-        public IProService proService { get; set; }
-        public ISpecificationService specificationService { get; set; }
+        public IShopCartService ShopCartService { get; set; }//购物车
+        public IProService proService { get; set; }//商品
+        public ISpecificationService specificationService { get; set; }//规格
+        public IFavariteService favariteService { get; set; }//收藏
         // GET: ShopCart
         public ActionResult ShopCart()
         {
@@ -61,6 +64,36 @@ namespace WX_Store.Controllers
             else
             {
                 return Content("未完成添加");
+            }
+        }
+        public ActionResult JoinLove()
+        {
+            string pcode = Request["pcode"];
+            string price = Request["price"];
+            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
+            string cid= userInfo.openid;//获取用户的id
+            Favarite favarite = new Favarite()//初始化一个收藏类
+            {
+                Pcode = pcode,
+                Cid = cid,
+                Price = Convert.ToDecimal(price),
+                Createtime = DateTime.Now
+            };
+            var haveLove = favariteService.GetEntity(x => x.Pcode == pcode);//查找收藏类里面有没有该商品
+            if (haveLove!=null)//如果存在则提示已经存在
+            {
+                return Content(" 已经存在");
+            }
+            else//如果不存在就添加
+            {
+                if (favariteService.Add(favarite))//如果添加成功，则提示
+                {
+                    return Content("加入成功");
+                }
+                else//添加不成功则提示失败
+                {
+                    return Content("加入失败,请重新尝试");
+                }
             }
         }
     }
