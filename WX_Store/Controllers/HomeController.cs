@@ -78,5 +78,13 @@ namespace WX_Store.Controllers
             ViewBag.Pro = GetPro.ToList();
             return PartialView();
         }
+		public ActionResult seachHtml1()
+		{
+			string seach = Request["seach"];
+			string sea = "%seach%";
+			var seachAll = ProService.GetEntities(x => x.Name == sea);
+			
+			return Content(seachAll.Count().ToString());
+		}
     }
 }

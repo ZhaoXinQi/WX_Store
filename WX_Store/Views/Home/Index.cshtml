@@ -8,7 +8,7 @@
 
 <script>
     $(function () {
-        $("#HotSell").click(function () {
+        $("#HotSell").click(function () {//热销
             $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
             $("tuijian").attr("class", "on1");
             $("xianshi").attr("class", "on1");
@@ -21,7 +21,7 @@
                 }
             })
         })
-        $("#tuijian").click(function () {
+        $("#tuijian").click(function () {//推荐
             $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
             $("HotSell").attr("class", "on1");
             $("xianshi").attr("class", "on1");
@@ -35,7 +35,7 @@
                 }
             })
         })
-        $("#xianshi").click(function () {
+        $("#xianshi").click(function () {//限时
             $(this).attr("class", "on");//谁显示就把Class属性变成 On ,不现实的变为On1
             $("tuijian").attr("class", "on1");
             $("HotSell").attr("class", "on1");
@@ -48,8 +48,8 @@
                 }
             })
         })   
-        $("#Index").attr("class", "current");           
-
+        $("#Index").attr("class", "current");   //把首页图片变成黑色的        
+      
         //alert(@ViewBag.show11);
       
     })

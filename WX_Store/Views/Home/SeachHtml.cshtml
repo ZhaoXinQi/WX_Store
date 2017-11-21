@@ -23,7 +23,7 @@
         <div class="index_search index_search01">
             <a class="back" onClick="javascript:history.back(-1);"><img src="~/Common/img/icon_03.png"></a>
             <div>
-                <input type="text" placeholder="请输入您要搜索的产品">
+                <input type="text" placeholder="请输入您要搜索的产品" id="my_seach">
                 <input onclick="document.location='search_list.html'" type="button" value=" ">
             </div>
         </div>
@@ -47,6 +47,18 @@
             })
             $(".block_bg,.prompt p a.cancel,.prompt p a.delete").click(function () {
                 $(".block_bg,.prompt").fadeOut();
+            })
+            $("#my_seach").blur(function () {
+                var seach = $(this).val();
+                alert(seach);
+                $.ajax({
+                    type: 'post',
+                    url: '/Home/SeachHtml1',
+                    data: { "seach": seach },
+                    success: function (data) {
+                        alert(data);
+                    }
+                })
             })
         })
     </script>
