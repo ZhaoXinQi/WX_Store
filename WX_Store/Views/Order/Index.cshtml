@@ -24,8 +24,8 @@
                 var onePrice = $(this).attr("data_value");
                 price = parseFloat(price) + parseFloat(onePrice);
             })
-            $("#pay").text(price);
-            $("#pay1").text(price);
+            $("#pay").text(price+15);
+            $("#pay1").text(price + 15);
             var str = "";
             $("li").each(function () {
                  str += $(this).attr("dava_pcode")+",";

@@ -55,6 +55,7 @@ namespace WX_Store.Controllers
                 num = num,
                 Price = Convert.ToDecimal(price),
                 Totale = Convert.ToDecimal(price) * num,
+				IsCheck=0,
                 CreateTime = DateTime.Now
             };
            if(ShopCartService.Add(shoppongCart))

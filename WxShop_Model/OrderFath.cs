@@ -15,9 +15,7 @@ namespace WxShop_Model
         [StringLength(100)]
         public string Cid { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string ChirldOrderId { get; set; }
+        public Guid ChirldOrderId { get; set; }
 
         [Required]
         [StringLength(5)]
@@ -28,8 +26,6 @@ namespace WxShop_Model
 
         [Column(TypeName = "money")]
         public decimal TotalPrice { get; set; }
-
-        public int? PayMthodid { get; set; }
 
         [StringLength(50)]
         public string ReMark { get; set; }
@@ -46,7 +42,5 @@ namespace WxShop_Model
 
         [StringLength(50)]
         public string ReceTime { get; set; }
-
-        public virtual PayMethod PayMethod { get; set; }
     }
 }

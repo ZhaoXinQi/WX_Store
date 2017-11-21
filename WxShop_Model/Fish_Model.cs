@@ -81,11 +81,6 @@ namespace WxShop_Model
 				.Property(e => e.TotalPrice)
 				.HasPrecision(19, 4);
 
-			modelBuilder.Entity<PayMethod>()
-				.HasMany(e => e.OrderFath)
-				.WithOptional(e => e.PayMethod)
-				.HasForeignKey(e => e.PayMthodid);
-
 			modelBuilder.Entity<ProductInfo>()
 				.Property(e => e.Code)
 				.IsUnicode(false);

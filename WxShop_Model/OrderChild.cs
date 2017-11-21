@@ -12,9 +12,7 @@ namespace WxShop_Model
         [Key]
         public int cid { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string order_id { get; set; }
+        public Guid? order_id { get; set; }
 
         [Required]
         [StringLength(12)]
