@@ -13,6 +13,8 @@ namespace WX_Store.Controllers
     {
         public ICustomarService customarService { get; set; }
         public IAddressService addressService { get; set; }
+		public IFavariteService favariteService { get; set; }
+		public IProService proService { get; set; }
         // GET: User
         [OAuth]
         public ActionResult Index()
@@ -56,6 +58,10 @@ namespace WX_Store.Controllers
         {
             return View();
         }
+		/// <summary>
+		/// 添加地址
+		/// </summary>
+		/// <returns></returns>
         public ActionResult AddressInsert()
         {
             OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
@@ -85,5 +91,16 @@ namespace WX_Store.Controllers
           
             return Content(IsOk.ToString());
         }
+		/// <summary>
+		/// 收藏
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult Love()
+		{
+			var love = favariteService.GetEntities(x => x.Cid == Session["cid"].ToString());
+			ViewBag.Love = love.ToList();
+			ViewBag.pro = proService;
+			return View();
+		}
     }
 }

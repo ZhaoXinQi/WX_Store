@@ -31,8 +31,9 @@ namespace WX_Store.Controllers
             var GetShowNews = ShowNewsService.GetEntities(x => true);
             ViewBag.ShowNews = GetShowNews.ToList();
             ViewBag.show11 = GetShowNews.Count();
-            
-            return View();
+            Session["count"]= shopcart.Count();
+			Session["shownews"]= GetShowNews.Count();
+			return View();
         }
         /// <summary>
         /// 搜索的分部视图

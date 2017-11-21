@@ -15,6 +15,13 @@
     <!--jquery和jquery-weui-->
     <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" />
     <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <script>
+        $(function () {
+         //  alert(11);
+            $("#num").text(@Session["count"]);//显示购物车里面的数量
+            $("#seac1").text(@Session["shownews"]);//显示信息的数量
+        })
+    </script>
 </head>
 <body>
     <div>

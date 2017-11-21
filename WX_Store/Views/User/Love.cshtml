@@ -1,0 +1,132 @@
+﻿
+@{
+    Layout = null;
+}
+@using WxShop_Model
+@using IBaseService
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Love</title>
+    <link href="~/Common/css/Cbase.css" type="text/css" rel="stylesheet">
+    <link href="~/Common/css/center.css" type="text/css" rel="stylesheet">
+    <script src="~/Common/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/Common/js/base.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--ftop开始-->
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="~/Common/img/icon_03.png"></a>
+        <h2>我的收藏</h2>
+        <a class="comea">编辑</a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <!--个人中心-我的收藏-->
+    <div class="collect">
+        <div class="list">
+            @foreach (Favarite item in ViewBag.Love as List<Favarite>)
+            {
+                <div class="sg">
+                    <label></label>
+                   @{  var pro = (ViewBag.pro as IProService).GetEntity(x => x.Code == item.Pcode);
+                   }
+                    <a href="product_xq.html">
+                        <span class="pic"><img src="~/Common/img/@pro.img.Split(',')[1]" alt=""></span>
+                        <span class="txt"><i>@pro.Name</i><em>价格：月销量：1456笔 </em><b>¥ <i>@pro.Price  </i></b></span>
+                    </a>
+                    <img src="~/Common/img/centdizhi_03.png" class="del">
+                </div> 
+             }           
+        </div>
+    </div>
+    <!--个人中心-我的收藏-->
+    <!--编辑处理-->
+    <div class="deal">
+        <span><em>全选</em></span>
+        <i>删除</i>
+    </div>
+    <!--编辑处理-->
+    <!--很多弹窗-->
+    <div class="popbg"></div>
+    <div class="pop popdelete">
+        <h2>确认删除收藏内容？</h2>
+        <p>您真的要删除收藏的商品吗？</p>
+        <div class="only"><a>取消</a><a>确认</a></div>
+    </div>
+    <!--很多弹窗-->
+
+    <script type="text/javascript">
+    $(function(){
+        $(".ftop .comea").click(function(){
+            var txt = $(this).text();
+
+            if(txt=='编辑'){
+                $(this).text("完成");
+                $(".list .sg").addClass("on");
+                $(".deal").slideDown();
+                $("body").css({"padding-bottom":"44px"});
+            }else{
+                $(this).text("编辑");
+                $(".list .sg").removeClass("on");
+                $(".deal").slideUp();
+                $("body").css({"padding-bottom":"0px"});
+            }
+        })
+
+        //全选
+        $(".deal span").attr("onoff",0);
+        $(".deal span").click(function(){
+            var num  = $(this).attr("onoff");
+            if(num==0){
+                $(".list .sg label").addClass("on");
+                $(".deal span").attr("onoff",1);
+            }else{
+                $(".list .sg label").removeClass("on");
+                $(".deal span").attr("onoff",0);
+            }
+        })
+
+
+
+        //删除订单
+        $(".deal i").click(function(){
+            $("body,html").css({"overflow":"hidden"});
+            $(".popbg").fadeIn();
+            $(".popdelete").fadeIn();
+        })
+
+
+        //关闭弹窗
+        $(".pop .only a").click(function(){
+            $("body,html").css({"overflow":"auto"});
+            $(".popbg").fadeOut();
+            $(".pop").fadeOut();
+
+            $(".ftop .comea").text("编辑");
+            $(".list .sg").removeClass("on");
+            $(".deal").slideUp();
+            $("body").css({"padding-bottom":"0px"});
+        })
+
+        //单个产品选择
+        $(".list .sg label").click(function(){
+            if($(this).hasClass("on")){
+                $(this).removeClass("on");
+            }else{
+                $(this).addClass("on");
+            }
+        })
+
+        //单个产品删除
+        $(".list .sg .del").click(function(){
+            $(this).parents(".sg").hide();
+        })
+
+    })
+    </script>
+
+</body>
+</html>
