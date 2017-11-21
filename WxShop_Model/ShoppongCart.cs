@@ -27,6 +27,8 @@ namespace WxShop_Model
         [Column(TypeName = "money")]
         public decimal Totale { get; set; }
 
+        public int IsCheck { get; set; }
+
         public DateTime CreateTime { get; set; }
     }
 }

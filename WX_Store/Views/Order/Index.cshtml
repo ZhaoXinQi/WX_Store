@@ -25,6 +25,14 @@
                 price = parseFloat(price) + parseFloat(onePrice);
             })
             $("#pay").text(price);
+            $("#pay1").text(price);
+            var str = "";
+            $("li").each(function () {
+                 str += $(this).attr("dava_pcode")+",";
+            })
+            $("#tijiao").click(function () {
+                $(this).attr("href","/order/JoinOrder?pid="+str)
+            })
         })
     </script>
 </head>
@@ -50,7 +58,7 @@
                  {
                     var shopCart = (ViewBag.shopcartService as IShopCartService).GetEntity(x => x.Cid==Session["cid"].ToString() &&x.Pcode==item);
                     var pro = (ViewBag.pro as IProService).GetEntity(x => x.Code == item);
-                    <li>
+                    <li dava_pcode="@item">
                         <a href="product_xq.html">
                             <img src="~/Common/img/@pro.img.ToString().Split(',')[1]">
                             <div>
@@ -60,9 +68,10 @@
                         </a>
                     </li>
                 }
-
             }
-           
+           @{ string[] str = Request["id"].TrimEnd(',').Split(',');
+               
+           }
         </ul>
     </div>
     <div class="delivery">
@@ -72,10 +81,10 @@
         <label>留言备注</label>
         <textarea rows="2" placeholder="请输入您想要备注的内容"></textarea>
     </div>
-    <p class="sunm">共<i>2</i>件商品，合计:<i>￥</i>(含快递费)</p>
+    <p class="sunm">共<i>@str.Length</i>件商品，合计:<i id="pay1">￥</i>(含快递费)</p>
     <div class="amount">
         <span>需付:￥<i id="pay"></i></span>
-        <a href="/order/orderPay?pid=">提交订单</a>
+        <a id="tijiao" >提交订单</a>
     </div>
 </body>
 </html>

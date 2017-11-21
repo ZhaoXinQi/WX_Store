@@ -38,13 +38,15 @@ namespace WX_Store.Controllers
             OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;//获取用户的信息
             string cid = userInfo.openid;//获取用户的openid
              
-            return View();
+            return RedirectToAction("JoinOrder");
         }
         public ActionResult JoinOrder()
         {
-
-            //addressService.ExecuteCommand()
-            return View();
+			OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;//获取用户的信息
+			string cid = userInfo.openid;//获取用户的openid
+			string pcode = Request["pid"];
+			addressService.ExecuteCommand("exec P_InsertOrer " + cid +","+ pcode + "," + "wxw00" + "," + "2" + "," + "10" + "," + "5" + "," + " 0" + "," + " 1" + "," + "''" + "," + "2009-02-12" + "," + "msg output");
+			return View();
         }
     }
 }
