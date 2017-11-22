@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WxShop_Model;
 using IBaseService;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using System.Data.SqlClient;
 
 namespace WX_Store.Controllers
 {
@@ -33,20 +34,24 @@ namespace WX_Store.Controllers
             ViewBag.address = address.address1;//把收货地址传到前台
             return View();
         }
-        public ActionResult orderPay()
-        {
-            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;//获取用户的信息
-            string cid = userInfo.openid;//获取用户的openid
-             
-            return RedirectToAction("JoinOrder");
-        }
-        public ActionResult JoinOrder()
+        public ActionResult JoinOrder(string remark,string youfei,string pay)
         {
 			OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;//获取用户的信息
 			string cid = userInfo.openid;//获取用户的openid
-			string pcode = Request["pid"];
-			addressService.ExecuteCommand("exec P_InsertOrer " + cid +","+ pcode + "," + "wxw00" + "," + "2" + "," + "10" + "," + "5" + "," + " 0" + "," + " 1" + "," + "''" + "," + "2009-02-12" + "," + "msg output");
-			return View();
+			SqlParameter Uid = new SqlParameter("@user_id", cid);
+			SqlParameter totalPrice = new SqlParameter("@total_Price", pay);
+			SqlParameter expressPrice = new SqlParameter("@expressPrice", youfei);
+			SqlParameter Remark = new SqlParameter("@ReMark", remark);
+			SqlParameter msg = new SqlParameter() {
+				 ParameterName= "@msg",
+				  SqlDbType= System.Data.SqlDbType.NVarChar,
+				  Size=50,
+				   Direction= System.Data.ParameterDirection.Output
+			};
+			//这里需要注意：利用这个方法的时候里面的@字段，需要与存储过程里面的字段保持一致，不然会出现：“参数只能是数据库参数和值的错误”
+			/* 如果存储过程里面有输出参数，同样需要参数化，只是参数化的方法不一样，需要指明参数名称、参数类型、类型的大小、描述：这个描述说明这个是一个输出的参数*/
+			addressService.ExecuteCommand("exec proInsertOrder @user_id,@total_Price,@expressPrice,@ReMark,@msg output", Uid,totalPrice,expressPrice, Remark, msg);
+			return Content("");
         }
     }
 }

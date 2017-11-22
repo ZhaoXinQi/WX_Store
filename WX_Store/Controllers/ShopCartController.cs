@@ -97,5 +97,23 @@ namespace WX_Store.Controllers
                 }
             }
         }
-    }
+		public ActionResult UpdateShopCart(string pcode)
+		{
+			string cid = Session["cid"].ToString();
+			var shop = ShopCartService.GetEntity(x => x.Cid == cid && x.Pcode == pcode);
+			shop.IsCheck = 1;
+			bool a= ShopCartService.Modify(shop);
+
+			return View();
+		}
+		public ActionResult UpdateShopCart1(string pcode)
+		{
+			string cid = Session["cid"].ToString();
+			var shop1 = ShopCartService.GetEntity(x => x.Cid == cid && x.Pcode == pcode);
+			shop1.IsCheck = 0;
+			bool a = ShopCartService.Modify(shop1);
+
+			return View();
+		}
+	}
 }

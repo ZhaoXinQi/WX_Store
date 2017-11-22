@@ -20,7 +20,7 @@
     <script>
         $(function () {
             var price = 0;
-            $(".price").each(function () {
+            $(".price").each(function () {//遍历价钱
                 var onePrice = $(this).attr("data_value");
                 price = parseFloat(price) + parseFloat(onePrice);
             })
@@ -29,9 +29,43 @@
             var str = "";
             $("li").each(function () {
                  str += $(this).attr("dava_pcode")+",";
-            })
+            })//获取商品，用不到
             $("#tijiao").click(function () {
-                $(this).attr("href","/order/JoinOrder?pid="+str)
+                alert("体检订单");
+                var remark = $("#liuyan").val();
+                var youfei = $("#youfei").text();
+                var pay = $("#pay").text();
+                alert(youfei + remark + pay);             
+                $.ajax({
+                    type: 'post',
+                    url: '/order/JoinOrder',
+                    data: { "remark": remark, "youfei": youfei, "pay": pay },
+                    success: function (data) {
+                        alert("yes");
+                        $(".block_bg,.delete_box").fadeIn();
+                        if (data == "") {
+                            $(".delete_box h2").html("订单生成成功!");
+                            var ti = setInterval(timer, 2000);
+                            function timer() {
+                                $(".block_bg,.delete_box").fadeOut();
+                                clearInterval(ti);
+                            }
+                            //alert(data);
+                            window.open("/AddOrder/paypage?id=" + data, "_self");
+                        }
+                        else {
+                            $(".delete_box h2").text("订单生成失败！");
+                            var ti = setInterval(timer, 2000);
+                            function timer() {
+                                $(".block_bg,.delete_box").fadeOut();
+                                clearInterval(ti);
+                            }
+
+                            //// alert("失败");
+                        }
+                    }
+                })
+                //$(this).attr("href","/order/JoinOrder?")
             })
         })
     </script>
@@ -74,17 +108,26 @@
            }
         </ul>
     </div>
+    <!--弹窗-->
+    <div class="block_bg"></div>
+    <div class="delete_box">
+        <h2 style="border:none">正在生成订单</h2>
+        @*<p><a class="cancel">取消</a><a class="sure">确定</a></p>*@
+    </div>
     <div class="delivery">
-        <span>配送费</span><p>快递费<i>￥15</i></p>
+        <span>配送费</span><p>快递费￥<i id="youfei">15</i></p>
     </div>
     <div class="message">
         <label>留言备注</label>
-        <textarea rows="2" placeholder="请输入您想要备注的内容"></textarea>
+        <textarea rows="2" placeholder="请输入您想要备注的内容" id="liuyan"></textarea>
     </div>
     <p class="sunm">共<i>@str.Length</i>件商品，合计:<i id="pay1">￥</i>(含快递费)</p>
     <div class="amount">
         <span>需付:￥<i id="pay"></i></span>
         <a id="tijiao" >提交订单</a>
     </div>
+
+ 
+   
 </body>
 </html>

@@ -9,13 +9,14 @@
     $(function () {    
         var total = 0;//定义总价变量
         var checked = 0;//定义选择的个数，用于判断是否全选
+        var sum = 0;
         //点击全选时候的按钮
         $(".Sum_Price").click(function () {//点击全选按钮
             var checked = $(this).attr("data_Check");//获取全选按钮属性
             if (checked == 0) {//如果未选中，把他们变为全选
                 $(this).children().find('img').attr('src', '/Common/img/icon_032.png');//全选的图片变为选中状态
                 $(this).attr('data_Check', '1');//并且把它们属性变为选中    
-                var sum = 0;
+               
                 $(".my_a").each(function () {//遍历商品
                     $(this).children('img').attr('src', '/Common/img/icon_032.png');//把商品的图片变为以选择
                     $(this).attr('data_Check', '1');////把商品的状态变为以选择
@@ -45,9 +46,19 @@
                 $(this).children('img').attr('src', '/Common/img/icon_032.png');//改变选中后的图片
                 $(this).attr('data_Check', '1');//把选中后的的状态改为选中
                 var total_One = li.children().find("b").text(); //找到这个商品的价格
-              //  alert(total_One);
+                //  alert(total_One);
+                var pcode = $(this).attr("data_code");
+               // alert(pcode);
                 total = parseFloat(total) + parseFloat(total_One);//获取总价
                 $(".total_all").text(total);
+                $.ajax({//这儿ajax是点击商品选中的状态，然后把数据库的ischeck字段变为1
+                    typt: 'post',
+                    url: '/ShopCart/UpdateShopCart',
+                    data: { "pcode": pcode },
+                    success: function (data) {
+
+                    }
+                })
 
             } else if (IsCheck == 1) {//如果是选中的状态，
                 $(this).children('img').attr('src', '/Common/img/icon_031.png');//把图片改为未选中的图片
@@ -58,6 +69,15 @@
              //   alert(total_Jian);
                 var total_1 = parseFloat(total_Jian) - parseFloat(total_One);//总价减去未选中的商品
                 $(".total_all").text(total_1);
+                var pcode = $(this).attr("data_code");
+                $.ajax({//这儿ajax是点击商品选中的状态，然后把数据库的ischeck字段变为
+                    typt: 'post',
+                    url: '/ShopCart/UpdateShopCart1',
+                    data: { "pcode": pcode },
+                    success: function (data) {
+
+                    }
+                })
             }
 
             var Check = $(this).attr("data_Check");
@@ -126,7 +146,7 @@
             })
         })
         $("#clear").click(function () {
-            //alert(2);
+            alert(2);
             var Have = 0;
             var id ="" ;
             $(".my_a").each(function () {
