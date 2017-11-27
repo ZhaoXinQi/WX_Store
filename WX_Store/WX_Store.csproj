@@ -319,6 +319,7 @@
     <Content Include="Views\User\AddAddress.cshtml" />
     <Content Include="Views\Order\JoinOrder.cshtml" />
     <Content Include="Views\User\Love.cshtml" />
+    <Content Include="Views\Order\OrderPay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

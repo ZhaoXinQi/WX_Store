@@ -15,6 +15,7 @@ namespace WX_Store.Controllers
         public IShopCartService ShopCartService { get; set; }
         public IAddressService addressService { get; set; }
         public IProService proService { get; set; }
+		public IOrderFathService orderFathService { get; set; }
 
         // GET: Order
         public ActionResult Index()
@@ -51,7 +52,14 @@ namespace WX_Store.Controllers
 			//这里需要注意：利用这个方法的时候里面的@字段，需要与存储过程里面的字段保持一致，不然会出现：“参数只能是数据库参数和值的错误”
 			/* 如果存储过程里面有输出参数，同样需要参数化，只是参数化的方法不一样，需要指明参数名称、参数类型、类型的大小、描述：这个描述说明这个是一个输出的参数*/
 			addressService.ExecuteCommand("exec proInsertOrder @user_id,@total_Price,@expressPrice,@ReMark,@msg output", Uid,totalPrice,expressPrice, Remark, msg);
-			return Content("");
+			return Content(msg.Value.ToString());
         }
+		public ActionResult OrderPay(string id)
+		{
+			ViewBag.num = id;
+			var order = orderFathService.GetEntity(x => x.ChirldOrderId == new Guid(id));
+			ViewBag.money = order.TotalPrice;
+			return View();
+		}
     }
 }

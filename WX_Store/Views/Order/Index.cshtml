@@ -41,9 +41,9 @@
                     url: '/order/JoinOrder',
                     data: { "remark": remark, "youfei": youfei, "pay": pay },
                     success: function (data) {
-                        alert("yes");
+                        alert(data);
                         $(".block_bg,.delete_box").fadeIn();
-                        if (data == "") {
+                        if (data != "") {
                             $(".delete_box h2").html("订单生成成功!");
                             var ti = setInterval(timer, 2000);
                             function timer() {
@@ -51,7 +51,7 @@
                                 clearInterval(ti);
                             }
                             //alert(data);
-                            window.open("/AddOrder/paypage?id=" + data, "_self");
+                            window.open("/order/OrderPay?id=" + data, "_self");
                         }
                         else {
                             $(".delete_box h2").text("订单生成失败！");
