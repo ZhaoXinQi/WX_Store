@@ -320,6 +320,7 @@
     <Content Include="Views\Order\JoinOrder.cshtml" />
     <Content Include="Views\User\Love.cshtml" />
     <Content Include="Views\Order\OrderPay.cshtml" />
+    <Content Include="Views\User\MyOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

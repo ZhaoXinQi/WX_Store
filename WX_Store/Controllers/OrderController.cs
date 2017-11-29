@@ -33,6 +33,7 @@ namespace WX_Store.Controllers
             var address = addressService.GetEntity(x => x.IsDefault == true&&x.cid==cid);//查找出关于用户的默认收货底座
             ViewBag.name = address.name;//把收货人传到前台
             ViewBag.address = address.address1;//把收货地址传到前台
+			ViewBag.tel = address.tel;
             return View();
         }
         public ActionResult JoinOrder(string remark,string youfei,string pay)
@@ -60,6 +61,14 @@ namespace WX_Store.Controllers
 			var order = orderFathService.GetEntity(x => x.ChirldOrderId == new Guid(id));
 			ViewBag.money = order.TotalPrice;
 			return View();
+		}
+		public ActionResult pay(Guid id)
+		{
+			var order = orderFathService.GetEntity(x => x.ChirldOrderId == id);
+			order.state = "2";
+			if (orderFathService.Modify(order)) return Content("支付成功");
+			else return Content("支付失败");
+
 		}
     }
 }

@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = null;
+}
+@using WxShop_Model
+@using IBaseService
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyOrder</title>
+    <link href="~/Common/css/Cbase.css" type="text/css" rel="stylesheet">
+    <link href="~/Common/css/center.css" type="text/css" rel="stylesheet">
+    <script src="~/Common/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/Common/js/base.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--ftop开始-->
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="/Common/img/icon_03.png"></a>
+        <h2>我的订单</h2>
+        <a class="comea" href="search.html"><img src="/Common/img/centerorder_03.png" alt="搜索"></a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <!--定位分类-->
+    <div class="orderkind">
+        <a href="center-order.html"><span>全部</span></a>
+        <a href="center-order.html"  class="on"><span>待付款</span></a>
+        <a href="center-order.html"><span>待发货</span></a>
+        <a href="center-order.html"><span>待收货</span></a>
+        <a href="center-order.html"><span>待评价</span></a>
+    </div>
+    <!--定位分类-->
+    <!--个人中心-订单-->
+    <div class="centerorder">
+        <div class="list">
+            <div class="sg">
+                @foreach (OrderFath item in ViewBag.WeiFuKuan as List<OrderFath>)
+                {
+                    <a class="num" href="center-order-success.html"><span>订单号：@item.ChirldOrderId</span><i>未付款</i></a>
+                            var numPro = (ViewBag.chirld as IOrderChirldService).GetEntities(x => x.order_id == item.ChirldOrderId);
+                            
+                            foreach (var it in (ViewBag.chirld as IOrderChirldService).GetEntities(x => x.order_id == item.ChirldOrderId))
+                            {
+                                var pro = (ViewBag.pro as IProService).GetEntity(x => x.Code == it.Pcode);
+                                var specid= pro.SpecificationId;
+                                var spec = (ViewBag.spec as ISpecificationService).GetEntity(x => x.Id == specid);
+                        <div class="thing">
+                            <a href="product_xq.html" class="imga"><img src="/Common/img/@pro.img.Split(',')[0]" alt=""></a>
+                            <div class="text">
+                                <a class="name" href="product_xq.html"><span><i>@pro.Name</i><em>规格：@spec.Style</em></span><span class="price"><i>¥@pro.Price</i><em>X @it.Num</em></span></a>
+                                <a class="discuss" href="center-order-pingjia.html">评价</a>
+                            </div>
+                        </div>
+                     }
+                        <div class="sum">共<i>@numPro.Count()</i>件商品  合计：<b>¥<em>@item.TotalPrice</em></b></div>
+                        <div class="caozuo" style="float:left"><a class="deletea">删除订单</a></div>
+                        <div class="caozuo"><a href="/order/OrderPay/@item.ChirldOrderId">等待付款</a></div>
+}
+
+            </div>
+        </div>
+    </div>
+    <!--个人中心-订单-->
+    <!--很多弹窗-->
+    <div class="popbg"></div>
+    <div class="pop popdelete">
+        <h2>确认删除订单？</h2>
+        <p>您真的要删除该订单吗？</p>
+        <div class="only"><a>取消</a><a>确认</a></div>
+    </div>
+    <div class="pop popcancle">
+        <h2>确认取消订单？</h2>
+        <p>您真的要取消该订单吗？</p>
+        <div class="only"><a>取消</a><a>确认</a></div>
+    </div>
+    <div class="pop popsure">
+        <h2>确认收货</h2>
+        <p>您真的要确认收货吗？</p>
+        <div class="only"><a>取消</a><a>确认</a></div>
+    </div>
+    <!--很多弹窗-->
+
+    <script>
+$(function () {
+    //删除订单
+    $(".caozuo .deletea").click(function(){
+        $("body,html").css({"overflow":"hidden"});
+        $(".popbg").fadeIn();
+        $(".popdelete").fadeIn();
+    })
+
+    //取消订单
+    $(".caozuo .canclea").click(function(){
+        $("body,html").css({"overflow":"hidden"});
+        $(".popbg").fadeIn();
+        $(".popcancle").fadeIn();
+    })
+
+    //确认收货
+    $(".caozuo .surea").click(function(){
+        $("body,html").css({"overflow":"hidden"});
+        $(".popbg").fadeIn();
+        $(".popsure").fadeIn();
+    })
+
+    //关闭弹窗
+    $(".pop .only a").click(function(){
+        $("body,html").css({"overflow":"auto"});
+        $(".popbg").fadeOut();
+        $(".pop").fadeOut();
+    })
+
+
+})
+    </script>
+
+
+
+
+</body>
+</html>

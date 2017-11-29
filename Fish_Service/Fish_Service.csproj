@@ -46,6 +46,7 @@
     <Compile Include="CustomarService.cs" />
     <Compile Include="FavariteService.cs" />
     <Compile Include="OrderFathService.cs" />
+    <Compile Include="OrederChirldService.cs" />
     <Compile Include="ProductReviewService.cs" />
     <Compile Include="ProPagesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,6 +15,9 @@ namespace WX_Store.Controllers
         public IAddressService addressService { get; set; }
 		public IFavariteService favariteService { get; set; }
 		public IProService proService { get; set; }
+		public IOrderFathService orderFathService { get; set; }
+		public IOrderChirldService orderChirldService { get; set; }
+		public ISpecificationService specificationService { get; set; }
         // GET: User
         [OAuth]
         public ActionResult Index()
@@ -69,7 +72,7 @@ namespace WX_Store.Controllers
             var address = Request["address"];
             var name = Request["name"];
             var tel = Request["tel"];
-            var check = Request["check"];
+            var check = Request["check"];//接收用户地址信息
             bool ischeck = false;
             if (check == "0")
             {
@@ -78,7 +81,7 @@ namespace WX_Store.Controllers
             else
             {
                 ischeck = true;
-            }
+            }///添加用户信息
             Address addressEntity = new Address()
             {
                 cid = cid,
@@ -100,6 +103,16 @@ namespace WX_Store.Controllers
 			var love = favariteService.GetEntities(x => x.Cid == Session["cid"].ToString());
 			ViewBag.Love = love.ToList();
 			ViewBag.pro = proService;
+			return View();
+		}
+		public ActionResult MyOrder()
+		{
+			string cid = Session["cid"].ToString();
+			var WeiFuKuan = orderFathService.GetEntities(x => x.state == "1").Where(x => x.Cid == cid);
+			ViewBag.WeiFuKuan = WeiFuKuan.ToList();
+			ViewBag.chirld = orderChirldService;
+			ViewBag.pro = proService;
+			ViewBag.spec = specificationService;
 			return View();
 		}
     }

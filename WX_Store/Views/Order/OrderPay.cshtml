@@ -27,22 +27,57 @@
     </div>
     <!--ftop开始-->
     <div class="number">
-        <p><span>订单编号：@ViewBag.num</span><i>等待付款</i></p>
+        <p id="order" data_order="@ViewBag.num"><span>订单编号：@ViewBag.num</span><i>等待付款</i></p>
     </div>
     <p class="money"><span>支付金额</span><i>¥@ViewBag.money</i></p>
     <div class="pay_way">
         <span>选择支付方式</span>
-        <p><label><img src="~/Common/img/icon_034.png"><i>微信支付</i><input type="radio" name="way"></label></p>
-        <p><label><img src="~/Common/img/icon_035.png"><i>支付宝支付</i><input type="radio" name="way"></label></p>
+        <p><label><img src="~/Common/img/icon_034.png"><i>微信支付</i><input type="radio" class ="way" data_check="0" pay="1"></label></p>
+        <p><label><img src="~/Common/img/icon_035.png"><i>支付宝支付</i><input type="radio" class="way" data_check="0" pay="2"></label></p>
     </div>
-    <a class="confirm_pay" href="pay_succeed.html">确认支付</a>
+    <a class="confirm_pay" href="javascript::" id="pay">确认支付</a>
     <script>
-$(function(){
-  $(".pay_way p").click(function(){
-	  $(".pay_way p").removeClass("on");
-	  $(this).addClass("on");
-  })
-})
+        $(function () {
+            $(".pay_way p").click(function () {
+                $(".pay_way p").removeClass("on");
+                $(this).addClass("on");
+            })
+            /***************************************************************************************************/
+            /*下面自己写*/
+            $(".way").click(function () {      
+                $(".way").each(function () {
+                    $(this).attr("data_check", "0");
+                })
+                if ($(this).attr("data_check") == 0) $(this).attr("data_check", "1");
+                else $(this).attr("data_check", "0");
+            })
+            $("#pay").click(function () {
+                var check;
+                var id = $("#order").attr("data_order");
+                alert(id);
+                $(".way").each(function () {
+                    if ($(this).attr("data_check") == "1") {
+                        var pay = $(this).attr("pay");
+                        check += 1;
+                        alert(pay);
+                        $.ajax({
+                            type: 'post',
+                            url: "/order/pay",
+                            data: { "id": id },
+                            success: function (data) {
+                                alert(data);
+                            }
+                        })
+                    }
+                    else {
+                        check -= 1;               
+                    }
+                })
+                if (check == 0) {
+                    alert("请选择支付方式");
+                }
+            })
+        })
     </script>
 </body>
 </html>
