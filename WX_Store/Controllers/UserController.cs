@@ -105,11 +105,23 @@ namespace WX_Store.Controllers
 			ViewBag.pro = proService;
 			return View();
 		}
+		/*************************我的订单未付款***********************************/
 		public ActionResult MyOrder()
 		{
 			string cid = Session["cid"].ToString();
 			var WeiFuKuan = orderFathService.GetEntities(x => x.state == "1").Where(x => x.Cid == cid);
 			ViewBag.WeiFuKuan = WeiFuKuan.ToList();
+			ViewBag.chirld = orderChirldService;
+			ViewBag.pro = proService;
+			ViewBag.spec = specificationService;
+			return View();
+		}
+		/*************************我的订单待发货***********************************/
+		public ActionResult DaiFaHuo()
+		{
+			string cid = Session["cid"].ToString();
+			var DaiFaHuo1 = orderFathService.GetEntities(x => x.state == "2").Where(x => x.Cid == cid);
+			ViewBag.daifahuo = DaiFaHuo1.ToList();
 			ViewBag.chirld = orderChirldService;
 			ViewBag.pro = proService;
 			ViewBag.spec = specificationService;
