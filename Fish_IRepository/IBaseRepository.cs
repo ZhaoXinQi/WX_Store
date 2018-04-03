@@ -41,7 +41,7 @@ namespace Fish_IRepository
         /// <param name="whereLambda">lambda表达式</param>
         /// <returns></returns>
         /// 单个实体查询 Func<T,Tresult> f 就是一个内置的委托，而lambda表达式也是一个委托（匿名委托）
-        //单个肯定带有条件 where 
+        ///单个肯定带有条件 where 
         TEntity SelectEntity(Func<TEntity, bool> whereLambda);
         /// <summary>
         /// 查询多个

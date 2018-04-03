@@ -12,10 +12,11 @@ namespace WX_Store.Controllers
 {
     public class OAuthController : Controller
     {
-        //appID已经在配置里面填写,所以这里只需要里面配置里面appsettings的索引就能得到,这个在GetAuthorizeUrl()里面要用
-        public static readonly string appID = ConfigurationManager.AppSettings["appID"];
+		//appID已经在配置里面填写,所以这里只需要里面配置里面appsettings的索引就能得到,这个在GetAuthorizeUrl()里面要用
+
+		public static readonly string appID = ConfigurationManager.AppSettings["appID"];
         public static readonly string appsecret = ConfigurationManager.AppSettings["appsecret"];
-        public static readonly string Domin = "http://zhao.zhaoxinqi.xin";
+        public static readonly string Domin = "http://wx.zhaoxinqi.xin";
         // GET: OAuth
         public ActionResult Index(string returnUrl)
         {

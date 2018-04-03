@@ -17,13 +17,13 @@ namespace WX_Store.Controllers
         public IProService ProService { get; set; }
         public IShopCartService shopCartService { get; set; }
         // GET: Home
-        [OAuth]
+        //[OAuth]
         public ActionResult Index()
         {
-            OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
-            Session["cid"] = userInfo.openid;
-            var shopcart = shopCartService.GetEntities(x => x.Cid == userInfo.openid);
-            ViewBag.count = shopcart.Count();   
+            //OAuthUserInfo userInfo = Session["userInfo"] as OAuthUserInfo;
+            //Session["cid"] = userInfo.openid;
+            //var shopcart = shopCartService.GetEntities(x => x.Cid == userInfo.openid);
+            //ViewBag.count = shopcart.Count();   
             //查询banner
             var GetBanner = BannerService.GetEntities(x => true);
             ViewBag.Banner = GetBanner.ToList();
@@ -31,8 +31,8 @@ namespace WX_Store.Controllers
             var GetShowNews = ShowNewsService.GetEntities(x => true);
             ViewBag.ShowNews = GetShowNews.ToList();
             ViewBag.show11 = GetShowNews.Count();
-            Session["count"]= shopcart.Count();
-			Session["shownews"]= GetShowNews.Count();
+            //Session["count"]= shopcart.Count();
+			//Session["shownews"]= GetShowNews.Count();
 			return View();
         }
         /// <summary>
